@@ -180,7 +180,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"> <div class="product-card">
                     <img
                       class="product-image"
-                      src="/ing/ao.jpg"
+                      src="/img/ao.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Cotton jersey polo polo shirt</div>
@@ -199,7 +199,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"><div class="product-card">
                     <img
                       class="product-image"
-                      src="/ing/quancusi.jpg"
+                      src="/img/quancusi.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Cotton jersey basketball</div>
@@ -218,7 +218,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"><div class="product-card">
                     <img
                       class="product-image"
-                      src="img/ao01.png"
+                      src="/img/Light-Cotton-polyester-shirt-with-embroidery.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Equestrian cotton wool jacquard polo</div>
@@ -242,7 +242,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"> <div class="product-card">
                     <img
                       class="product-image"
-                      src="img/Light-Mesh-fabric-zip-jacket.jpg"
+                      src="/img/Light-Mesh-fabric-zip-jacket.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Mesh fabric zip</div>
@@ -261,7 +261,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"><div class="product-card">
                     <img
                       class="product-image"
-                      src="img/Light-Mesh-fabric-shorts.jpg"
+                      src="/img/Light-Mesh-fabric-shorts.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Mesh fabric shorts</div>
@@ -280,7 +280,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"><div class="product-card">
                     <img
                       class="product-image"
-                      src="img/Light-Silk-twill-equestrian-print-shirt.avif"
+                      src="/img/Light-Mesh-fabric-shorts.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Silk twill equestrian</div>
@@ -304,7 +304,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"> <div class="product-card">
                     <img
                       class="product-image"
-                      src="img/Light-Equestrian-print-silk-twill-shorts.jpg"
+                      src="/img/Light-Equestrian-print-silk-twill-shorts.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Equestrian print silk twill shorts</div>
@@ -323,7 +323,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"><div class="product-card">
                     <img
                       class="product-image"
-                      src="img/Light-Cotton-polyester-shirt-with-embroidery.jpg"
+                      src="/img/Light-Cotton-polyester-shirt-with-embroidery.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">Cotton polyester shirt </div>
@@ -342,7 +342,7 @@
                   <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded"> <div class="product-card">
                     <img
                       class="product-image"
-                      src="img/Light-GG-technical-jersey-zip-jacket.jpg"
+                      src="/img/Light-Cotton-polyester-shirt-with-embroidery.jpg"
                       alt="Product 1"
                     />
                     <div class="product-title">GG technical jersey zip jacket</div>
