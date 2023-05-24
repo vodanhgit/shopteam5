@@ -23,9 +23,17 @@ body{
 }
 body::-webkit-scrollbar { 
   display: none; 
+}	
+@media (max-width: 320px) {
+    .fancybox-navigation {
+        padding:0!important
+    }
+	.raffile-page .image-cover {
+        height: auto
+    }    
 }
 </style>
-<body class="container-fluid col-xl-12 col-sm-12" style="padding-left: 0; padding-right: 0">
+<body class="container-fluid col-xl-12 col-sm-12" style="padding-left: 0; padding-right: 0; position: relative;">
 
 
 <nav class="navbar navbar-expand-lg navbar-light" style="position: absolute; background-color: white; right: 0px; border-radius: 10px 10px; opacity: 0.8;">
@@ -43,15 +51,21 @@ body::-webkit-scrollbar {
     </div>
   </div>
 </nav>
-<ul class="list-group list-group-flush col-lg-2" style="left: 10%	; position: absolute; padding-top: 10%;">
+<a href=""><img src="/img/logoShopTeam5.png" alt="logoShopTeam5" style="position: absolute; margin-top: 3%; width: 300px; left: 4%"/></a>
+<ul class="list-group list-group-flush col-lg-2" style="left: 5%; position: absolute; margin-top: 10%;">
 <!--   <li class="list-group-item disabled" aria-disabled="true">Giới Thiệu</li> -->
   <a class="list-group-item" href="#" style="color: black; font-weight: bold; font-style: italic; border: none;">Giới Thiệu</a>
   <a class="list-group-item" href="#" style="color: black; font-weight: bold; font-style: italic; border: none;">A third item</a>
   <a class="list-group-item" href="#" style="color: black; font-weight: bold; font-style: italic; border: none;">A fourth item</a>
   <a class="list-group-item" href="#" style="color: black; font-weight: bold; font-style: italic; border: none;">And a fifth one</a>
 </ul>
+<div style= "position: absolute; margin-top: 43%; width: 1000px; height: 100px; right: 0px; color: white; font-family: cursive; font-size: 1.5em;">
+<marquee>
+Welcome to digital retail store
+</marquee>
+</div>
 
-		<a href="#"><img src="/img/trangchinh.jpg" alt="trangchinh" style="width: 100%; height: 712.6px;" /></a>
+		<a href="#"><img src="/img/trangchinh.jpg" alt="trangchinh" style="width: 100%; height: 712.6px;"/></a>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
