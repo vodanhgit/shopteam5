@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,10 +32,10 @@
 						</div>
 					</div>
 					<div class="col-md-10 col-sm-10">
-						
+
 						<div class="clearfix"></div>
 						<div class="header_bottom">
-						
+
 							<div class="navbar-collapse collapse">
 
 								<ul class="nav navbar-nav">
@@ -328,11 +328,11 @@
 						</li>
 					</ul>
 				</div>
-			
+
 				<div class="clearfix"></div>
 				<div class="our-brand">
 					<h3 class="title">
-						<strong>Nhãn </strong> Hàng
+						<strong>Nhãn Hàng</strong>
 					</h3>
 					<div class="control">
 						<a id="prev_brand" class="prev" href="#">&lt;</a><a
@@ -476,4 +476,5 @@
 		src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
 	<script defer src="js/jquery.flexslider.js"></script>
 	<script type="text/javascript" src="js/script.min.js"></script>
+</body>
 </html>

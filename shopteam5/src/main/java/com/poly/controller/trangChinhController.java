@@ -13,7 +13,7 @@ public class trangChinhController {
 		HttpServletRequest req;
 		@RequestMapping("index")
 		public String index() {
-		return "index";
+		return "accers/index";
 		}
 		public String dk() {
 		return "forward:/checkout";
@@ -22,6 +22,14 @@ public class trangChinhController {
 	}
 		@RequestMapping("formadmin")
 		public String adminform() {
-		return "home";
+		return "accers/home";
+		}
+		@RequestMapping("text")
+		public String text() {
+		return "/admin/text";
+		}
+		@RequestMapping("editprofile")
+		public String editprofile() {
+		return "/admin/editprofile";
 		}
 }
