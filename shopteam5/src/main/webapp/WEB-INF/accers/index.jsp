@@ -267,7 +267,7 @@
 									<div class="products">
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
-											<a href="details.html"><img
+											<a href="accers/detail"><img
 												src="images/products/small/products-01.png"
 												alt="Product Name"></a>
 										</div>
