@@ -17,5 +17,11 @@ public class trangChinhController {
 		}
 		public String dk() {
 		return "forward:/checkout";
+		
+		
 	}
+		@RequestMapping("formadmin")
+		public String adminform() {
+		return "home";
+		}
 }
