@@ -7,21 +7,41 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 public class trangChinhController {
-		@Autowired
-		HttpServletRequest req;
-		@RequestMapping("index")
-		public String index() {
+	@Autowired
+	HttpServletRequest req;
+
+	@RequestMapping("index")
+	public String index() {
 		return "index";
-		}
-		public String dk() {
-		return "forward:/checkout";
-		
-		
 	}
-		@RequestMapping("formadmin")
-		public String adminform() {
-		return "/admin/test";
-		}
+
+	public String dk() {
+		return "forward:/checkout";
+
+	}
+
+	@RequestMapping("indexadmin")
+	public String indexadmin() {
+		return "/admin/index";
+	}
+
+	@RequestMapping("accountadmin")
+	public String accountadmin() {
+		return "/admin/accounts/account";
+	}
+	@RequestMapping("productadmin")
+	public String productadmin() {
+		return "/admin/products/product";
+	}
+	@RequestMapping("categorieadmin")
+	public String categorieadmin() {
+		return "/admin/categories/category";
+	}
+	
+	
+
+	
 }
