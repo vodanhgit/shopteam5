@@ -22,6 +22,6 @@ public class trangChinhController {
 	}
 		@RequestMapping("formadmin")
 		public String adminform() {
-		return "home";
+		return "/admin/test";
 		}
 }
