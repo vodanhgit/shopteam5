@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="images/shopteam5_logo.png">
 <title>Welcome to ShopTeam 5</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 <link
@@ -28,8 +28,7 @@
 				<div class="row">
 					<div class="col-md-2 col-sm-2">
 						<div class="logo">
-							<a href="index.html"><img src="images/logo.png"
-								alt="FlatShop"></a>
+							<a href="index.html"> <img src="images/shopteam5_logo.png" alt="shopteam5" width="100px"></a>
 						</div>
 					</div>
 					<div class="col-md-10 col-sm-10">
@@ -40,6 +39,7 @@
 									<ul class="usermenu">
 										<li><a href="checkout.html" class="log">Đăng nhập</a></li>
 										<li><a href="checkout2.html" class="reg">Đăng kí</a></li>
+<!-- 										<li><a href="checkout.html" class="log">Tài khoản của tôi</a></li> -->
 									</ul>
 								</div>
 							</div>
@@ -49,58 +49,14 @@
 							<ul class="option">
 								<li id="search" class="search">
 									<form>
-										<input class="search-submit" type="submit" value=""><input
-											class="search-input" placeholder="Enter your search term..."
-											type="text" value="" name="search">
+										
 									</form>
 								</li>
 								<li class="option-cart"><a href="#" class="cart-icon">cart
 										<span class="cart_no">02</span>
 								</a>
-									<ul class="option-cart-item">
-										<li>
-											<div class="cart-item">
-												<div class="image">
-													<img src="images/products/thum/products-01.png" alt="">
-												</div>
-												<div class="item-description">
-													<p class="name">Lincoln chair</p>
-													<p>
-														Size: <span class="light-red">One size</span><br>Quantity:
-														<span class="light-red">01</span>
-													</p>
-												</div>
-												<div class="right">
-													<p class="price">$30.00</p>
-													<a href="#" class="remove"><img src="images/remove.png"
-														alt="remove"></a>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="cart-item">
-												<div class="image">
-													<img src="images/products/thum/products-02.png" alt="">
-												</div>
-												<div class="item-description">
-													<p class="name">Lincoln chair</p>
-													<p>
-														Size: <span class="light-red">One size</span><br>Quantity:
-														<span class="light-red">01</span>
-													</p>
-												</div>
-												<div class="right">
-													<p class="price">$30.00</p>
-													<a href="#" class="remove"><img src="images/remove.png"
-														alt="remove"></a>
-												</div>
-											</div>
-										</li>
-										<li><span class="total">Total <strong>$60.00</strong></span>
-										<button class="checkout"
-												onClick="location.href='checkout.html'">CheckOut</button></li>
-
-									</ul></li>
+									
+									</li>
 
 							</ul>
 							<div class="navbar-collapse collapse">
@@ -108,20 +64,8 @@
 								<ul class="nav navbar-nav">
 									<li class="active dropdown"><a href="#"
 										class="dropdown-toggle" data-toggle="dropdown">Trang Chủ</a>
-										<div class="dropdown-menu">
-											<ul class="mega-menu-links">
-												<li><a href="index.html">home</a></li>
-												<li><a href="home2.html">home2</a></li>
-												<li><a href="home3.html">home3</a></li>
-												<li><a href="productlitst.html">Productlitst</a></li>
-												<li><a href="productgird.html">Productgird</a></li>
-												<li><a href="details.html">Details</a></li>
-												<li><a href="cart.html">Cart</a></li>
-												<li><a href="checkout.html">CheckOut</a></li>
-												<li><a href="checkout2.html">CheckOut2</a></li>
-												<li><a href="contact.html">contact</a></li>
-											</ul>
-										</div></li>
+										
+										</li>
 									<!-- <li><a href="productgird.html">Nam</a></li> -->
 									<li class="dropdown"><a href="#" class="dropdown-toggle"
 										data-toggle="dropdown">Nam</a>
@@ -199,7 +143,7 @@
                            Details</a></div> -->
 							<div class="flat-image formBottom delay200" data-duration="5"
 								data-bottom="true">
-								<img src="images/Layer 1.png" alt="">
+								<img src="images/Layer 1_ct.png" alt="">
 							</div>
 						</li>
 						<li>
@@ -210,7 +154,7 @@
 								<h2>Chỉ có hàng mới, không có giá mới.</h2>
 							</div> <!-- <div class="flat-button caption5 formLeft delay600"><a class="more" href="#">More Details</a></div> -->
 							<div class="flat-image formBottom delay200" data-bottom="true">
-								<img src="images/slider-image-02.png" alt="">
+								<img src="images/Layer 2_ct.png" alt="">
 							</div>
 						</li>
 						<li>
@@ -221,7 +165,7 @@
 								<p>Tận hưởng việc diện đồ là nghệ thuật đích thực.</p>
 							</div>
 							<div class="flat-image formBottom delay200" data-bottom="true">
-								<img src="images/slider-image-03.png" alt="">
+								<img src="images/Layer 3_ct.png" alt="">
 							</div>
 						</li>
 					</ul>
@@ -232,17 +176,17 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="promo-box">
-								<img src="images/promotion-01.png" alt="">
+								<img src="images/promotion-01_ct.png" alt="">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="promo-box">
-								<img src="images/promotion-02.png" alt="">
+								<img src="images/promotion-02_ct.png" alt="">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="promo-box">
-								<img src="images/promotion-03.png" alt="">
+								<img src="images/promotion-03_ct.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -279,9 +223,6 @@
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
 											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -301,9 +242,6 @@
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -326,9 +264,6 @@
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
 											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -349,9 +284,7 @@
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
 											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
+											
 										</div>
 									</div>
 								</div>
@@ -374,9 +307,25 @@
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
+											</button>										
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="products">
+										<div class="offer">- %20</div>
+										<div class="thumbnail">
+											<a href="details.html"><img
+												src="images/products/small/products-01.png"
+												alt="Product Name"></a>
+										</div>
+										<div class="productname">Đầm không tay vải Cotton</div>
+										<h4 class="price">999.000 VND</h4>
+										<div class="button_group">
+											<button class="button add-cart" type="button">Thêm
+												vào giỏ</button>
+											<button class="button compare" type="button">
+												<i class="fa fa-exchange"></i>
 											</button>
 										</div>
 									</div>
@@ -397,9 +346,6 @@
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
 											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -418,31 +364,6 @@
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/small/products-01.png"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Đầm không tay vải Cotton</div>
-										<h4 class="price">999.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -643,7 +564,7 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="footer-logo">
-								<a href="#"><img src="images/logo.png" alt=""></a>
+								 <img src="images/shopteam5_logo.png" alt="shopteam5" width="100px">
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
@@ -672,8 +593,8 @@
 							</h4>
 
 							<form class="newsletter">
-								<input type="text" name="" placeholder="Type your email....">
-								<input type="submit" value="SignUp" class="button">
+								<input type="text" name="" placeholder="Nhập email của bạn....">
+								<input type="submit" value="Gửi" class="button">
 							</form>
 						</div>
 					</div>

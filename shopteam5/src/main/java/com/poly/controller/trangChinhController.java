@@ -25,20 +25,20 @@ public class trangChinhController {
 
 	@RequestMapping("indexadmin")
 	public String indexadmin() {
-		return "/admin/index";
+		return "/index";
 	}
 
 	@RequestMapping("accountadmin")
 	public String accountadmin() {
-		return "/admin/accounts/account";
+		return "/accounts/account";
 	}
 	@RequestMapping("productadmin")
 	public String productadmin() {
-		return "/admin/products/product";
+		return "/products/product";
 	}
 	@RequestMapping("categorieadmin")
 	public String categorieadmin() {
-		return "/admin/categories/category";
+		return "/categories/category";
 	}
 	
 	
