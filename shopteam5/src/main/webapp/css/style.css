@@ -3497,3 +3497,21 @@ option {
         margin-bottom: 20px;
     }
 }
+/* tang so luong */
+.quantity-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .quantity-button {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 1px solid #c0c0c0;
+        }

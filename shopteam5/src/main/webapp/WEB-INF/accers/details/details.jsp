@@ -16,6 +16,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+   
     <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
 </script>
@@ -182,7 +183,7 @@
                           </div>
                           <div class="right">
                             <p class="price">
-                              $30.00
+                              VNĐ30.00
                             </p>
                             <a href="#" class="remove">
                               <img src="images/remove.png" alt="remove">
@@ -213,7 +214,7 @@
                           </div>
                           <div class="right">
                             <p class="price">
-                              $30.00
+                              VNĐ30.00
                             </p>
                             <a href="#" class="remove">
                               <img src="images/remove.png" alt="remove">
@@ -225,7 +226,7 @@
                         <span class="total">
                           Total 
                           <strong>
-                            $60.00
+                            VNĐ60.00
                           </strong>
                         </span>
                         <button class="checkout" onClick="location.href='checkout.html'">
@@ -251,23 +252,23 @@
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
                     <li class="active dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <a href="index.jsp" class="dropdown-toggle" data-toggle="dropdown">
                         Home
                       </a>
                       <div class="dropdown-menu">
                         <ul class="mega-menu-links">
                           <li>
-                            <a href="index.html">
+                            <a href="index.jsp">
                               home
                             </a>
                           </li>
                           <li>
-                            <a href="home2.html">
+                            <a href="">
                               home2
                             </a>
                           </li>
                           <li>
-                            <a href="home3.html">
+                            <a href="">
                               home3
                             </a>
                           </li>
@@ -432,7 +433,7 @@
         <div class="page-index">
           <div class="container">
             <p>
-              Home - CheckOut
+              Home - Products Details
             </p>
           </div>
         </div>
@@ -442,300 +443,415 @@
       <div class="container_fullwidth">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
-              <div class="special-deal leftbar" style="margin-top:0;">
-                <h4 class="title">
-                  Special 
-                  <strong>
-                    Deals
-                  </strong>
-                </h4>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-01.png" alt="">
+            <div class="col-md-12">
+              <div class="products-details">
+                <div class="preview_image">
+                  <div class="preview-small">
+                    <img id="zoom_03" src="images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg" alt="">
+                  </div>
+                  <div class="thum-image">
+                    <ul id="gallery_01" class="prev-thum">
+                      <li>
+                        <a href="#" data-image="images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg">
+                          <img src="images/products/thum/products-01.png" alt="">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" data-image="images/products/medium/products-02.jpg" data-zoom-image="images/products/Large/products-02.jpg">
+                          <img src="images/products/thum/products-02.png" alt="">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" data-image="images/products/medium/products-03.jpg" data-zoom-image="images/products/Large/products-03.jpg">
+                          <img src="images/products/thum/products-03.png" alt="">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" data-image="images/products/medium/products-04.jpg" data-zoom-image="images/products/Large/products-04.jpg">
+                          <img src="images/products/thum/products-04.png" alt="">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" data-image="images/products/medium/products-05.jpg" data-zoom-image="images/products/Large/products-05.jpg">
+                          <img src="images/products/thum/products-05.png" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                    <a class="control-left" id="thum-prev" href="javascript:void(0);">
+                      <i class="fa fa-chevron-left">
+                      </i>
                     </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-02.png" alt="">
+                    <a class="control-right" id="thum-next" href="javascript:void(0);">
+                      <i class="fa fa-chevron-right">
+                      </i>
                     </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-03.png" alt="">
-                    </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
                   </div>
                 </div>
-              </div>
-              <div class="product-tag leftbar">
-                <h3 class="title">
-                  Products 
-                  <strong>
-                    Tags
-                  </strong>
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#">
-                      Lincoln us
+                <div class="products-description">
+                  <h5 class="name">
+                    Lincoln Corner Unit Products
+                  </h5>
+                  <p>
+                    <img alt="" src="images/star.png">
+                    <a class="review_num" href="#">
+                      02 Đánh giá
                     </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      SDress for Girl
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Corner
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Window
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PG
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Oscar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bath room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PSD
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="get-newsletter leftbar">
-                <h3 class="title">
-                  Get 
-                  <strong>
-                    newsletter
-                  </strong>
-                </h3>
-                <p>
-                  Casio G Shock Digital Dial Black.
-                </p>
-                <form>
-                  <input class="email" type="text" name="" placeholder="Your Email...">
-                  <input class="submit" type="submit" value="Submit">
-                </form>
-              </div>
-              <div class="fbl-box leftbar">
-                <h3 class="title">
-                  Facebook
-                </h3>
-                <span class="likebutton">
-                  <a href="#">
-                    <img src="images/fblike.png" alt="">
-                  </a>
-                </span>
-                <p>
-                  12k people like Flat Shop.
-                </p>
-                <ul>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                </ul>
-                <div class="fbplug">
-                  <a href="#">
-                    <span>
-                      <img src="images/fbicon.png" alt="">
+                  </p>
+                  <p>
+                   Sẵn có:
+                    <span class=" light-red">
+                      Còn hàng
                     </span>
-                    Facebook social plugin
-                  </a>
+                  </p>
+                  <p>
+                    Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
+                  </p>
+                  <hr class="border">
+                  <div class="price">
+                    Giá : 
+                    <span class="new_price">
+                      400.000 
+                      <sup>
+                       VNĐ
+                      </sup>
+                    </span>
+                    <span class="old_price">
+                      450.00
+                      <sup>
+                        VNĐ
+                      </sup>
+                    </span>
+                  </div>
+                  <hr class="border">
+                  <div class="wided">
+                  <div class="col-md-4">
+                    <div class="size">
+                      Kích cỡ: &nbsp;&nbsp;: 
+                      <select>
+                        <option>
+                          S
+                        </option>
+                         <option>
+                          M
+                        </option>
+                         <option>
+                          L
+                        </option>
+                         <option>
+                          XL
+                        </option>
+                        <option>
+                          XXL
+                        </option>
+                      </select>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+          <div class="quantity-container">
+       Số lượng &nbsp;&nbsp;: &nbsp;&nbsp; <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+        <input class="quantity-input" type="text" value="0" id="quantityInput">
+        <button class="quantity-button" onclick="increaseQuantity()">+</button>
+    </div>
+    </div>
+                    <div class="button_group">
+                      <button class="button" >
+                        Thêm giỏ hàng
+                      </button>
+                      
+                    </div>
+                  </div>
+                  <div class="clearfix">
+                  </div>
+                  <hr class="border">
+                  <img src="images/share.png" alt="" class="pull-right">
                 </div>
               </div>
-            </div>
-            <div class="col-md-9">
-              <div class="checkout-page">
-                <ol class="checkout-steps">
-                  <li class="steps active">
-                    <a href="checkout.html" class="step-title">
-                      01. checkout opition
-                    </a>
-                    <div class="step-description">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                          <div class="new-customer">
-                            <h5>
-                              New Customer
-                            </h5>
-                            <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user">
-                              </span>
-                              <span class="text">
-                                I wish to subscribe to the Herbal Store newsletter.
-                              </span>
-                            </label>
-                            <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user">
-                              </span>
-                              <span class="text">
-                                My delivery and billing addresses are the same.
-                              </span>
-                            </label>
-                            <p class="requir">
-                              By creating an account you will be able to shop faste be up to date on an order's status, and keep track of the orders you have previously made.
-                            </p>
-                            <button>
-                              Continue
+              <div class="clearfix">
+              </div>
+              <div class="tab-box">
+                <div id="tabnav">
+                  <ul>
+                    <li>
+                      <a href="#Descraption">
+                        Mô tả
+                      </a>
+                    </li>
+                             
+                  </ul>
+                </div>
+                <div class="tab-content-wrap">
+                  <div class="tab-content" id="Descraption">
+                   
+                    <p>
+                     Đồ mặc rất thoải mái
+                    </p>
+                  </div>
+                  
+                  <div class="tab-content" id="tags">
+                    <div class="tag">
+                      Add Tags : 
+                      <input type="text" name="">
+                      <input type="submit" value="Tag">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix">
+              </div>
+              <div id="productsDetails" class="hot-products">
+                <h3 class="title">
+                  <strong>
+                    Hot
+                  </strong>
+                  Sản phẩm
+                </h3>
+                <div class="control">
+                  <a id="prev_hot" class="prev" href="#">
+                    &lt;
+                  </a>
+                  <a id="next_hot" class="next" href="#">
+                    &gt;
+                  </a>
+                </div>
+                <ul id="hot">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="offer">
+                            - %20
+                          </div>
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-01.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                              Thêm giỏ hàng
                             </button>
+                          
                           </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                          <div class="run-customer">
-                            <h5>
-                              Rerunning Customer
-                            </h5>
-                            <form>
-                              <div class="form-row">
-                                <label class="lebel-abs">
-                                  Email 
-                                  <strong class="red">
-                                    *
-                                  </strong>
-                                </label>
-                                <input type="text" class="input namefild" name="">
-                              </div>
-                              <div class="form-row">
-                                <label class="lebel-abs">
-                                  Password 
-                                  <strong class="red">
-                                    *
-                                  </strong>
-                                </label>
-                                <input type="text" class="input namefild" name="">
-                              </div>
-                              <p class="forgoten">
-                                <a href="#">
-                                  Forgoten your password?
-                                </a>
-                              </p>
-                              <button>
-                                Login
-                              </button>
-                            </form>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-02.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                             Thêm giỏ hàng
+                            </button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="offer">
+                            Mới
+                          </div>
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-03.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                             Thêm giỏ hàng
+                            </button>
+                           
                           </div>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      02. billing information
-                    </a>
+                  <li>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="offer">
+                            - %20
+                          </div>
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-01.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                              Thêm giỏ hàng
+                            </button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-02.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                              Thêm giỏ hàng
+                            </button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="offer">
+                            Mới
+                          </div>
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-03.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ 451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                              Thêm giỏ hàng
+                            </button>
+                           
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </li>
-                  <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      03. Shipping information
-                    </a>
+                  <li>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="offer">
+                            - %20
+                          </div>
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-01.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                             Thêm giỏ hàng
+                            </button>
+                            <button class="button compare" type="button">
+                              <i class="fa fa-exchange">
+                              </i>
+                            </button>
+                            <button class="button wishlist" type="button">
+                              <i class="fa fa-heart-o">
+                              </i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-02.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                              Thêm giỏ hàng
+                            </button>
+                            <button class="button compare" type="button">
+                              <i class="fa fa-exchange">
+                              </i>
+                            </button>
+                            <button class="button wishlist" type="button">
+                              <i class="fa fa-heart-o">
+                              </i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="products">
+                          <div class="offer">
+                            New
+                          </div>
+                          <div class="thumbnail">
+                            <img src="images/products/small/products-03.png" alt="Product Name">
+                          </div>
+                          <div class="productname">
+                            Iphone 5s Gold 32 Gb 2013
+                          </div>
+                          <h4 class="price">
+                            VNĐ451.00
+                          </h4>
+                          <div class="button_group">
+                            <button class="button add-cart" type="button">
+                          Thêm giỏ hàng
+                            </button>
+                            <button class="button compare" type="button">
+                              <i class="fa fa-exchange">
+                              </i>
+                            </button>
+                            <button class="button wishlist" type="button">
+                              <i class="fa fa-heart-o">
+                              </i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      04. shipping method 
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      05. payment information 
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      06. oder review
-                    </a>
-                  </li>
-                </ol>
+                </ul>
+              </div>
+              <div class="clearfix">
               </div>
             </div>
+            
           </div>
           <div class="clearfix">
           </div>
           <div class="our-brand">
             <h3 class="title">
               <strong>
-                Our 
+                Thương hiệu 
               </strong>
-              Brands
+              của chúng tôi
             </h3>
             <div class="control">
               <a id="prev_brand" class="prev" href="#">
@@ -843,9 +959,9 @@
               </div>
               <div class="col-md-3 col-sm-6">
                 <h4 class="title">
-                  Contact 
+                  Thông tin 
                   <strong>
-                    Info
+                    liên hệ 
                   </strong>
                 </h4>
                 <p>
@@ -860,9 +976,10 @@
               </div>
               <div class="col-md-3 col-sm-6">
                 <h4 class="title">
-                  Customer
+                  Hỗ trợ 
                   <strong>
-                    Support
+                   khách hàng
+
                   </strong>
                 </h4>
                 <ul class="support">
@@ -890,9 +1007,9 @@
               </div>
               <div class="col-md-3">
                 <h4 class="title">
-                  Get Our 
+                 Nhận bản tin 
                   <strong>
-                    Newsletter 
+                   của chúng tôi
                   </strong>
                 </h4>
                 <p>
@@ -911,7 +1028,7 @@
             <div class="row">
               <div class="col-md-6">
                 <p>
-                  Copyright � 2012. Designed by 
+                  Copyright Â© 2012. Designed by 
                   <a href="#">
                     Michael Lee
                   </a>
@@ -952,7 +1069,11 @@
     </script>
     <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js">
     </script>
-    <script type="text/javascript" src="js/script.min.js" >
+    <script type="text/javascript" src='js/jquery.elevatezoom.js'>
     </script>
+    <script type="text/javascript" src="js/script.min.js" >
+   
+    </script>
+     <script type="text/javascript"  src="js/tangSoLuong.js" ></script>
   </body>
 </html>

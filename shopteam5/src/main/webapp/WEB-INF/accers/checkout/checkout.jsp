@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,6 +16,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    
     <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
 </script>
@@ -501,56 +503,7 @@
                   </div>
                 </div>
               </div>
-              <div class="product-tag leftbar">
-                <h3 class="title">
-                  Products 
-                  <strong>
-                    Tags
-                  </strong>
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#">
-                      Lincoln us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      SDress for Girl
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Corner
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Window
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PG
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Oscar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bath room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PSD
-                    </a>
-                  </li>
-                </ul>
-              </div>
+    
               <div class="get-newsletter leftbar">
                 <h3 class="title">
                   Get 
@@ -625,15 +578,10 @@
             <div class="col-md-9">
               <div class="checkout-page">
                 <ol class="checkout-steps">
-                  <li class="steps">
-                    <div class="step-title">
-                      01. checkout opition
-                    </div>
-                  </li>
                   <li class="steps active">
-                    <a href="checkout.html" class="step-title">
-                      02. billing information
-                    </a>
+                  <h2 class="step-title">  Thông tin thanh toán</h2>
+                    
+                 
                     <div class="step-description">
                       <form>
                         <div class="row">
@@ -814,24 +762,8 @@
                     </div>
                   </li>
                   <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      03. Shipping information
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      04. shipping method 
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      05. payment information 
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      06. oder review
-                    </a>
+
+                    
                   </li>
                 </ol>
               </div>
