@@ -13,9 +13,9 @@ public class trangChinhController {
 	@Autowired
 	HttpServletRequest req;
 
-	@RequestMapping("index")
+	@RequestMapping("/index")
 	public String index() {
-		return "index";
+		return "indexSP";
 	}
 	
 }
