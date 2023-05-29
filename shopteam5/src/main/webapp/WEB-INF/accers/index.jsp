@@ -53,7 +53,7 @@
 									</form>
 								</li>
 								<li class="option-cart"><a href="#" class="cart-icon">cart
-										<span class="cart_no">02</span>
+										
 								</a>
 									
 									</li>

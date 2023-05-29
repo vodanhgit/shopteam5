@@ -17,31 +17,5 @@ public class trangChinhController {
 	public String index() {
 		return "index";
 	}
-
-	public String dk() {
-		return "forward:/checkout";
-
-	}
-
-	@RequestMapping("indexadmin")
-	public String indexadmin() {
-		return "/index";
-	}
-
-	@RequestMapping("accountadmin")
-	public String accountadmin() {
-		return "/accounts/account";
-	}
-	@RequestMapping("productadmin")
-	public String productadmin() {
-		return "/products/product";
-	}
-	@RequestMapping("categorieadmin")
-	public String categorieadmin() {
-		return "/categories/category";
-	}
-	
-	
-
 	
 }
