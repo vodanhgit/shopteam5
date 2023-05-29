@@ -15,7 +15,7 @@ public class trangChinhController {
 
 	@RequestMapping("/index")
 	public String index() {
-		return "indexSP";
+		return "index";
 	}
 	
 }
