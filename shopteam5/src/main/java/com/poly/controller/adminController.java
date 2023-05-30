@@ -11,21 +11,21 @@ public class adminController {
 
 	@RequestMapping("indexadmin")
 	public String indexadmin() {
-		return "/index";
+		return "/admin/index";
 	}
 
 	@RequestMapping("accountadmin")
 	public String accountadmin() {
-		return "/accounts/account";
+		return "/admin/accounts/account";
 	}
 
 	@RequestMapping("productadmin")
 	public String productadmin() {
-		return "/products/product";
+		return "/admin/products/product";
 	}
 
 	@RequestMapping("categorieadmin")
 	public String categorieadmin() {
-		return "/categories/category";
+		return "/admin/categories/category";
 	}
 }
