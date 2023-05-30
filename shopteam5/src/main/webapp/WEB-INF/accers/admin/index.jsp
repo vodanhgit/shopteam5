@@ -22,7 +22,7 @@
 				style="background-color: #0a3d62; height: 100vh">
 				<div class="d-flex justify-content-center">
 					<a class="navbar-brand" href="#"> <img alt="logo"
-						src="/public/images/logo-ico.svg" width="100"
+						src="images/shopteam5_logo.png" width="100"
 						height="100">
 					</a>
 				</div>
@@ -36,7 +36,7 @@
 						class="list-group-item list-group-item-action border-0"
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-user fs-6 px-1"></i></span> Quản lý tài khoản
-					</a> <a href="#"
+					</a> <a href="/productadmin"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm

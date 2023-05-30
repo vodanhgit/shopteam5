@@ -68,7 +68,7 @@
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="#">Navbar</a>
+					
 						<button class="navbar-toggler" type="button"
 							data-bs-toggle="collapse" data-bs-target="#navbarText"
 							aria-controls="navbarText" aria-expanded="false"
@@ -158,7 +158,7 @@
 													<form:errors path="password" cssClass="text-danger" /> -->
 												</div>
 												<div>
-													<label for="hinhanh">Hình ảnh</label>
+													<label for="hinhanh">Images</label>
 													<input type="file" class="form-control" id="hinhanh" name="image"/>
 													<!-- <form:input path="avatar" class="form-control"
 														name="avatar" />
@@ -199,13 +199,12 @@
 							<table class="table table-bordered">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>Full name</th>
-										<th>User name</th>
+										<th>Mã tài khoản</th>
+										<th>Họ và Tên</th>
+										<th>Tên tài khoản</th>
 										<th>Email</th>
-										<th>Photo</th>
-										<th>Activated</th>
-										<th>Role</th>
+										<th>Hình ảnh</th>
+										<th>Quyền</th>
 										<th colspan="2">Action</th>
 									</tr>
 								</thead>
