@@ -23,44 +23,38 @@
 			<div class="col-2 p-4 shadow"
 				style="background-color: #0a3d62; height: 100vh">
 				<div class="d-flex justify-content-center">
-					<a class="navbar-brand" href="#"> <img alt="logo"
-						src="/public/images/logo-ico.svg" width="100"
-						height="100">
+					<a class="navbar-brand" href="index"> <img alt="logo" s
+						src="images/shopteam5_logo.png" width="100" height="100">
 					</a>
 				</div>
 				<hr>
 				<div class="list-group">
 					<p class="text-secondary fw-bold">Danh sách</p>
-					<a href="#" class="list-group-item list-group-item-action border-0"
+					<a href="index" class="list-group-item list-group-item-action border-0"
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-gauge-high fs-6 px-1"></i></span>Trang chủ
-					</a> <a href="#"
+					</a> <a href="account"
 						class="list-group-item list-group-item-action border-0"
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-user fs-6 px-1"></i></span> Quản lý tài khoản
-					</a> <a href="#"
+					</a> <a href="product"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
-					</a> <a href="#"
+					</a> <a href="categori"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP
-					</a>  <a href="#"
+					</a> <a href="oder"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
-					</a> 
-					<p class="text-secondary fw-bold">Bổ sung</p>
-					<a href="#"
-						class="list-group-item list-group-item-action border-0 "
+					</a> </a> <a href="#"
+						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-message fs-6 px-1"></i></span> Phản hồi
-					</a> <a href="#"
-						class="list-group-item list-group-item-action border-0 "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-gear fs-6 px-1"></i></span> Cài đặt
+							class="fa-solid fa fa-line-chart fs-6 px-1"></i></span> Thống kê
 					</a>
+
 				</div>
 			</div>
 			
@@ -77,12 +71,7 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarText">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link active"
-									aria-current="page" href="/home">Trang chủ</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Tài khoản</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="#">QL đơn hàng</a>
-								</li>
+								 
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false"> 
@@ -101,14 +90,6 @@
 						</div>
 					</div>
 				</nav>
-				<div class="bg-light p-3">
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb mb-0">
-							<li class="breadcrumb-item"><a href="/admin">Quản lý</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Tài khoản</li>
-						</ol>
-					</nav>
-				</div>
 				<div class="px-4 p-3">
 					<div class="row">
 						<div class="col-3">
@@ -158,7 +139,7 @@
 													<form:errors path="password" cssClass="text-danger" /> -->
 												</div>
 												<div>
-													<label for="hinhanh">Images</label>
+													<label for="hinhanh">Hình ảnh</label>
 													<input type="file" class="form-control" id="hinhanh" name="image"/>
 													<!-- <form:input path="avatar" class="form-control"
 														name="avatar" />
@@ -170,8 +151,8 @@
 														
 <!-- 													</form:select> -->
 														<select class="form-control" >
-														<option label="admin">Quản lý</option>
-														<option label="member">Thành viên</option>
+														<option value="admin">Quản lý</option>
+														<option value="member">Thành viên</option>
 														</select>
 												</div>
 												<button class="btn btn-primary w-100 mt-3" id="liveToastBtn"
@@ -209,7 +190,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${ data.content }" var="acc">
+								 
 										<tr>
 											<td>NV1</td>
 											<td>Nguyen Van A</td>
@@ -217,12 +198,13 @@
 											<td>NVA@gmail.com</td>
 											<td class="text-center"><img src="/src/main/webapp/images/anhmeo.jpg" width="50" height="50" /></td>
 											<td>${ acc.actived == 0 ? "In-Active" : "Active" }</td>
-											<td>${ acc.admin == 1 ? "Admin" : "Member" }</td>
+											
 											<td class="text-center">
 												<button class="btn btn-primary" data-bs-toggle="modal"
 													data-bs-target="#modalUpdate_${acc.id }">
 													<i class="fa-solid fa-pen-to-square"></i>
-												</button> <!-- Modal update -->
+												</button>
+												</td> <!-- Modal update -->
 												<div class="modal fade" id="modalUpdate_${acc.id}"
 													data-bs-backdrop="static" data-bs-keyboard="false"
 													tabindex="-1" aria-labelledby="staticBackdropLabel"
@@ -231,65 +213,82 @@
 														<div class="modal-content">
 															<div class="modal-header bg-info">
 																<h5 class="modal-title text-white"
-																	id="staticBackdropLabel">Update a account</h5>
+																	id="staticBackdropLabel">Cập nhập tài khoản</h5>
 																<button type="button" class="btn"
 																	data-bs-dismiss="modal" aria-label="Close">
 																	<i class="fa-solid fa-xmark fs-5 text-white"></i>
 																</button>
 															</div>
 															<div class="modal-body">
-																<form:form action="/admin/accounts/update/${ acc.id }"
-																	method="post" modelAttribute="account">
-																	<div style="text-align: left;">
-																		<label>Full name</label>
-																		<form:input path="fullname" class="form-control"
-																			value="${ acc.fullname }" />
-																	</div>
-																	<div style="text-align: left;">
-																		<label>Email</label>
-																		<form:input path="email" type="email"
-																			class="form-control" value="${ acc.email }" />
-																	</div>
-																	<div style="text-align: left;">
-																		<label>User name</label>
-																		<form:input path="username" class="form-control"
-																			value="${ acc.username }" />
-																	</div>
-																	<div style="text-align: left;">
-																		<label>Photo</label>
-																		<form:input path="avatar" class="form-control"
-																			value="${ acc.avatar }" />
-																	</div>
-																	<div style="text-align: left;">
-																		<label>Admin</label>
-																		<form:select path="admin" class="form-select">
-																			<form:option value="0"
-																				selected="${ acc.admin == 0 ? 'true' : 'false' }">Member</form:option>
-																			<form:option value="1"
-																				selected="${ acc.admin == 1 ? 'true' : 'false' }">Admin</form:option>
-																		</form:select>
-																	</div>
-																	<button class="btn btn-primary w-100 mt-3"
-																		id="liveToastBtn">Update</button>
-																	<div class="position-fixed top-0 end-0 p-5"
-																		style="z-index: 11">
-																		<div style="background-color: #2ecc71" id="liveToast"
-																			class="toast align-items-center text-white border-0"
-																			role="alert" aria-live="assertive" aria-atomic="true">
-																			<div class="d-flex">
-																				<div class="toast-body">Successful !</div>
-																				<button type="button"
-																					class="btn-close btn-close-white me-2 m-auto"
-																					data-bs-dismiss="toast" aria-label="Close"></button>
-																			</div>
-																		</div>
-																	</div>
-																</form:form>
+																<form:form action="/admin/accounts/store" method="post"
+												modelAttribute="account" name="account_form">
+												<div>
+													<label for="name">Họ tên</label>
+<!-- 													<form:input path="fullname" class="form-control" -->
+<!-- 														name="fullname" /> -->
+<!-- 													<form:errors path="fullname" cssClass="text-danger" /> -->
+															<input type="text" class="form-control" id="name" name="name"/>
+										
+												</div>
+												<div>
+													<label for="email">Email</label>
+													<input type="email" class="form-control" id="email" name="email"/>
+													<!-- <form:input path="email" type="email" class="form-control"
+														name="email" />
+													<form:errors path="email" cssClass="text-danger" /> -->
+												</div>
+												<div>
+													<label for="username">Tên đăng nhập</label>
+													<input type="text" class="form-control" id="username" name="username"/>
+													<!-- <form:input path="username" class="form-control"
+														name="username" />
+													<form:errors path="username" cssClass="text-danger" /> -->
+												</div>
+												<div>
+													<label for="pass">Mật khẩu</label>
+													<input type="text" class="form-control" id="pass" name="password"/>
+													<!-- <form:password path="password" class="form-control"
+														name="password" />
+													<form:errors path="password" cssClass="text-danger" /> -->
+												</div>
+												<div>
+													<label for="hinhanh">Hình ảnh</label>
+													<input type="file" class="form-control" id="hinhanh" name="image"/>
+													<!-- <form:input path="avatar" class="form-control"
+														name="avatar" />
+													<form:errors path="avatar" cssClass="text-danger" /> -->
+												</div>
+												<div>
+													<label>Admin</label>
+<!-- 													<form:select path="admin" class="form-select" name="admin"> -->
+														
+<!-- 													</form:select> -->
+														<select class="form-control" >
+														<option value="admin">Quản lý</option>
+														<option value="member">Thành viên</option>
+														</select>
+												</div>
+												<button class="btn btn-primary w-100 mt-3" id="liveToastBtn"
+													type="submit">Cập nhập</button>
+												<div class="position-fixed top-0 end-0 p-5"
+													style="z-index: 11">
+<!-- 													thông báo cập nhập -->
+<!-- 													<div style="background-color: #2ecc71" id="liveToast" -->
+<!-- 														class="toast align-items-center text-white border-0" -->
+<!-- 														role="alert" aria-live="assertive" aria-atomic="true"> -->
+<!-- 														<div class="d-flex"> -->
+<!-- 															<div class="toast-body">Cập nhập thành công !</div> -->
+<!-- 															<button type="button" -->
+<!-- 																class="btn-close btn-close-white me-2 m-auto" -->
+<!-- 																data-bs-dismiss="toast" aria-label="Close"></button> -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+												</div>
+											</form:form>
 															</div>
 														</div>
 													</div>
 												</div>
-											</td>
 											<td class="text-center">
 												<button class="btn btn-danger" data-bs-toggle="modal"
 													data-bs-target="#modalDelte_${acc.id }">
@@ -303,26 +302,26 @@
 														<div class="modal-content">
 															<div class="modal-header bg-danger">
 																<h5 class="modal-title text-white"
-																	id="staticBackdropLabel">Delete a account !</h5>
+																	id="staticBackdropLabel">Xóa tài khoản !</h5>
 																<button type="button" class="btn"
 																	data-bs-dismiss="modal" aria-label="Close">
 																	<i class="fa-solid fa-xmark fs-5 text-white"></i>
 																</button>
 															</div>
 															<div class="modal-body" style="background-color: #fff2df">
-																<p>Warning : You are trying a account. This account
-																	will be permanently deleted !</p>
+																<p>Cảnh báo: Bạn đang cố gắng xóa tài khoản này,
+																 Tài khoản sau khi xóa không thể khôi phục !</p>
 																<a role="button"
 																	href="/admin/accounts/delete/${ acc.id }"
-																	class="btn btn-danger w-100 "> Delete </a>
+																	class="btn btn-danger w-100 "> Xóa </a>
 															</div>
 														</div>
 													</div>
 												</div>
-											</td>
+											
 
 										</tr>
-									</c:forEach>
+									 
 								</tbody>
 							</table>
 						</div>
