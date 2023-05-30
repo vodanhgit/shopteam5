@@ -21,13 +21,12 @@
 			<div class="col-2 p-4 shadow"
 				style="background-color: #0a3d62; height: 100vh">
 				<div class="d-flex justify-content-center">
-					<a class="navbar-brand" href="#"> <img alt="logo"
-						src="images/shopteam5_logo.png" width="100"
-						height="100">
+					<a class="navbar-brand" href="#"> <img alt="logo"s
+						src="images/shopteam5_logo.png" width="100" height="100">
 					</a>
 				</div>
 				<hr>
-				<div class="list-group">
+				 <div class="list-group">
 					<p class="text-secondary fw-bold">Danh sách</p>
 					<a href="#" class="list-group-item list-group-item-action border-0"
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
@@ -44,29 +43,24 @@
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP
-					</a>  <a href="#"
+					</a> <a href="#"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
-					</a> 
-					<p class="text-secondary fw-bold">Bổ sung</p>
-					<a href="#"
-						class="list-group-item list-group-item-action border-0 "
+					</a> </a> <a href="#"
+						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-message fs-6 px-1"></i></span> Phản hồi
-					</a> <a href="#"
-						class="list-group-item list-group-item-action border-0 "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-gear fs-6 px-1"></i></span> Cài đặt
+							class="fa-solid fa fa-line-chart fs-6 px-1"></i></span> Thống kê
 					</a>
+					
 				</div>
 			</div>
-			
+
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="#">Navbar</a>
+						
 						<button class="navbar-toggler" type="button"
 							data-bs-toggle="collapse" data-bs-target="#navbarText"
 							aria-controls="navbarText" aria-expanded="false"
@@ -75,21 +69,13 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarText">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link active"
-									aria-current="page" href="/home">Trang chủ</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Tài khoản</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="#">QL đơn hàng</a>
-								</li>
+								
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> 
-<!-- 									<sec:authorize access="isAuthenticated()"> -->
-									<span>
-     									Xin chào <!--<sec:authentication property="principal.username" /> -->
-									</span>
-<!-- 									</sec:authorize> -->
-							 <i class="fa-solid fa-user fs-4"></i>
+								data-bs-toggle="dropdown" aria-expanded="false"> <!-- 									<sec:authorize access="isAuthenticated()"> -->
+								<span> Xin chào <!--<sec:authentication property="principal.username" /> -->
+							</span> <!-- 									</sec:authorize> --> <i
+								class="fa-solid fa-user fs-4"></i>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
@@ -99,48 +85,7 @@
 						</div>
 					</div>
 				</nav>
-				<div class="row m-0 p-5 g-3">
-					<div class="col-3">
-						<div class="card bg-info rounded">
-							<div class="card-header text-white">
-								Total account
-							</div>
-							<div class="card-body">
-								<p class="text-white">999</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="card bg-primary rounded">
-							<div class="card-header text-white">
-								Total product
-							</div>
-							<div class="card-body">
-								<p class="text-white">9999</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="card bg-success rounded">
-							<div class="card-header text-white">
-								Total order
-							</div>
-							<div class="card-body">
-								<p class="text-white">999</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="card bg-danger rounded">
-							<div class="card-header text-white">
-								Total payment
-							</div>
-							<div class="card-body">
-								<p class="text-white">99999</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
