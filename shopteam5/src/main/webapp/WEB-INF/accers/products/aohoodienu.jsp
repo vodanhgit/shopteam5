@@ -25,7 +25,10 @@
       <div class="container">
          <div class="row">
             <div class="col-md-2 col-sm-2">
-               <div class="logo"><a href="index.html"><img src="images/logo.png" alt="FlatShop"></a></div>
+              <div class="logo">
+							<a href="/index"> <img src="images/shopteam5_logo.png"
+								alt="shopteam5" width="100px"></a>
+						</div>
             </div>
             <div class="col-md-10 col-sm-10">
                <div class="header_top">
@@ -42,114 +45,64 @@
                <div class="clearfix"></div>
                <div class="header_bottom">
                   <ul class="option">
-                     <li id="search" class="search">
-                        <form><input class="search-submit" type="submit" value=""><input class="search-input"
-                              placeholder="Enter your search term..." type="text" value="" name="search"></form>
-                     </li>
-                     <li class="option-cart">
-                        <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
-                        <ul class="option-cart-item">
-                           <li>
-                              <div class="cart-item">
-                                 <div class="image"><img src="images/products/large/BSX750D.png" alt=""></div>
-                                 <div class="item-description">
-                                    <p class="name">Lincoln chair</p>
-                                    <p>Size: <span class="light-red">One size</span><br>Quantity: <span
-                                          class="light-red">01</span></p>
-                                 </div>
-                                 <div class="right">
-                                    <p class="price">$30.00</p>
-                                    <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="cart-item">
-                                 <div class="image"><img src="images/products/thum/products-02.png" alt=""></div>
-                                 <div class="item-description">
-                                    <p class="name">Lincoln chair</p>
-                                    <p>Size: <span class="light-red">One size</span><br>Quantity: <span
-                                          class="light-red">01</span></p>
-                                 </div>
-                                 <div class="right">
-                                    <p class="price">$30.00</p>
-                                    <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
-                                 </div>
-                              </div>
-                           </li>
-                           <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout"
-                                 onClick="location.href='checkout.html'">CheckOut</button></li>
+								<li id="search" class="search">
+									<form></form>
+								</li>
+								<li class="option-cart"><a href="#" class="cart-icon">cart
 
-                        </ul>
+								</a></li>
 
-                     </li>
-
-                  </ul>
+							</ul>
                   <div class="navbar-collapse collapse">
-                     
-                     <ul class="nav navbar-nav">
-                        <li class="active dropdown">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trang Chủ</a>
-                           <div class="dropdown-menu">
-                              <ul class="mega-menu-links">
-                                 <li><a href="index.html">home</a></li>
-                                 <li><a href="home2.html">home2</a></li>
-                                 <li><a href="home3.html">home3</a></li>
-                                 <li><a href="productlitst.html">Productlitst</a></li>
-                                 <li><a href="productgird.html">Productgird</a></li>
-                                 <li><a href="details.html">Details</a></li>
-                                 <li><a href="cart.html">Cart</a></li>
-                                 <li><a href="checkout.html">CheckOut</a></li>
-                                 <li><a href="checkout2.html">CheckOut2</a></li>
-                                 <li><a href="contact.html">contact</a></li>
-                              </ul>
-                           </div>
-                        </li>
-                        <!-- <li><a href="productgird.html">Nam</a></li> -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nam</a>
-                            <div class="dropdown-menu mega-menu">
-                               <div class="row">
-                                  <div class="col-md-6 col-sm-6">
-                                     <ul class="mega-menu-links">
-                                        <li><a href="FormAoNam.html">Tất cả áo</a></li>
-                                        <li><a href="thunnam.html">Áo thun nam</a></li>
-                                        <li><a href="polonam.html">Áo Polo</a></li>
-                                        <li><a href="aosominam.html">Áo sơ mi</a></li>
-                                        <li><a href="aolennam.html">Áo len</a></li>
-                                        <li><a href="aohoodienam.html">Áo Hoodie</a></li>
-                                     </ul>
-                                  </div>
-                               </div>
-                            </div>
-                         </li>
-                         <li class="dropdown">
-                          <a href="" class="dropdown-toggle" data-toggle="dropdown">Nữ</a>
-                          <div class="dropdown-menu mega-menu">
-                             <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                   <ul class="mega-menu-links">
-                                      <li><a href="FormAoNu.html">Tất cả áo</a></li>
-                                      <li><a href="thunnu.html">Áo thun nữ</a></li>
-                                      <li><a href="aosominu.html">Áo sơ mi</a></li>
-                                      <li><a href="aobranu.html">Áo Bra</a></li>
-                                      <li><a href="aolennu.html">Áo len</a></li>
-                                      <li><a href="hoodienu.html">Áo Hoodie</a></li>
-                                     
-                                   </ul>
-                                </div>
-                             </div>
-                          </div>
-                       </li>
-                        <li><a href="productgird.html">Bộ sưu tập</a></li>
+
+								<ul class="nav navbar-nav">
+									<li class="active dropdown"><a href="/index"
+										class="dropdown-toggle" data-toggle="dropdown">Trang Chủ</a>
+										
+										</li>
+									<!-- <li><a href="productgird.html">Nam</a></li> -->
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown">Nam</a>
+										<div class="dropdown-menu mega-menu">
+											<div class="row">
+												<div class="col-md-6 col-sm-6">
+													<ul class="mega-menu-links">
+														<li><a href="/formaonam">Tất cả áo</a></li>
+														<li><a href="/aothunnam">Áo thun nam</a></li>
+														<li><a href="/aopolonam">Áo Polo</a></li>
+														<li><a href="/aosominam">Áo sơ mi</a></li>
+														<li><a href="/aolennam">Áo len</a></li>
+														<li><a href="/aohoodienam">Áo Hoodie</a></li>
+													</ul>
+												</div>
+											</div>
+										</div></li>
+									<li class="dropdown"><a href="" class="dropdown-toggle"
+										data-toggle="dropdown">Nữ</a>
+										<div class="dropdown-menu mega-menu">
+											<div class="row">
+												<div class="col-md-6 col-sm-6">
+													<ul class="mega-menu-links">
+														<li><a href="/formaonu">Tất cả áo</a></li>
+														<li><a href="/aothunu">Áo thun nữ</a></li>
+														<li><a href="/aosominu">Áo sơ mi</a></li>
+														<li><a href="/aobra">Áo Bra</a></li>
+														<li><a href="/aolennu">Áo len</a></li>
+														<li><a href="/aohoodienu">Áo Hoodie</a></li>
+
+													</ul>
+												</div>
+											</div>
+										</div></li>
+									<li><a href="productgird.html">Bộ sưu tập</a></li>
 
 
-                        <li><a href="productgird.html">Tin Tức</a></li>
-                        <li><a href="contact.html">Liên Hệ</a></li>
+									<li><a href="productgird.html">Tin Tức</a></li>
+									<li><a href="contact.html">Liên Hệ</a></li>
 
-                     </ul>
+								</ul>
 
-                  </div>
+							</div>
 
                </div>
 
@@ -400,18 +353,19 @@
               <div class="clearfix">
               </div>
               <div class="row">
+               
                 <div class="col-md-4 col-sm-6">
                   <div class="products">
                     <div class="thumbnail">
                       <a href="details.html">
-                        <img src="images/products/large/BSX750D.png" alt="Product Name" style="height: 90%;">
+                        <img src="images/products/male/5.jpeg" alt="Product Name" style="height: 90%;">
                       </a>
                     </div>
                     <div class="productname">
-                     Áo thun nam cổ tròn
+                     Áo Hoodie nữ
                     </div>
                     <h4 class="price">
-                     158.000 VND
+                     499.000 VND
                     </h4>
                     <div class="button_group">
                       <button class="button add-cart" type="button">
@@ -429,7 +383,7 @@
                   </div>
                 </div>
                
-
+               
                 
                 
                
@@ -546,56 +500,69 @@
     <div class="clearfix">
     </div>
     <div class="footer">
-      <div class="footer-info">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-3">
-                  <div class="footer-logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <h4 class="title">Thông tin <strong>liên lạc</strong></h4>
-                  <p>Toà nhà FPT Polytechnic, đường số 22, phường Thường Thạnh, quận Cái Răng, TP Cần Thơ.</p>
-                  <p>Gọi: 098 388 1100</p>
-                  <p>Email : caodang@fpt.edu.vn</p>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <h4 class="title">Hỗ trợ <strong> Khách hàng</strong></h4>
-                  <ul class="support">
-                     <li><a href="#">FAQ</a></li>
-                     <li><a href="#">Payment Option</a></li>
-                     <li><a href="#">Booking Tips</a></li>
-                     <li><a href="#">Infomation</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-3">
-                  <h4 class="title">Liên hệ <strong>Chúng tôi </strong></h4>
-                  
-                  <form class="newsletter">
-                     <input type="text" name="" placeholder="Type your email....">
-                     <input type="submit" value="SignUp" class="button">
-                  </form>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="copyright-info">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <p>Copyright © 2023. Designed by <a href="#">ShopTeam5</a>. All rights reseved</p>
-               </div>
-               <div class="col-md-6">
-                  <ul class="social-icon">
-                     <li><a href="#" class="linkedin"></a></li>
-                     <li><a href="#" class="google-plus"></a></li>
-                     <li><a href="#" class="twitter"></a></li>
-                     <li><a href="#" class="facebook"></a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+			<div class="footer-info">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="footer-logo">
+								<img src="images/shopteam5_logo.png" alt="shopteam5"
+									width="100px">
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<h4 class="title">
+								Thông tin <strong>liên lạc</strong>
+							</h4>
+							<p>Toà nhà FPT Polytechnic, đường số 22, phường Thường Thạnh,
+								quận Cái Răng, TP Cần Thơ.</p>
+							<p>Gọi: 098 388 1100</p>
+							<p>Email : caodang@fpt.edu.vn</p>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<h4 class="title">
+								Hỗ trợ <strong> Khách hàng</strong>
+							</h4>
+							<ul class="support">
+								<li><a href="#">FAQ</a></li>
+								<li><a href="#">Payment Option</a></li>
+								<li><a href="#">Booking Tips</a></li>
+								<li><a href="#">Infomation</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<h4 class="title">
+								Liên hệ <strong>Chúng tôi </strong>
+							</h4>
+
+							<form class="newsletter">
+								<input type="text" name="" placeholder="Nhập email của bạn....">
+								<input type="submit" value="Gửi" class="button">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright-info">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>
+								Copyright © 2023. Designed by <a href="#">ShopTeam5</a>. All
+								rights reseved
+							</p>
+						</div>
+						<div class="col-md-6">
+							<ul class="social-icon">
+								<li><a href="#" class="linkedin"></a></li>
+								<li><a href="#" class="google-plus"></a></li>
+								<li><a href="#" class="twitter"></a></li>
+								<li><a href="#" class="facebook"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
   </div>
   <script type="text/javascript" src="js/jquery-1.10.2.min.js">
   </script>

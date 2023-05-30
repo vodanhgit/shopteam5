@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="images/shopteam5_logo.png">
 <title>Welcome to ShopTeam 5</title>
-<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bo	otstrap.css" rel="stylesheet">
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
 	rel='stylesheet' type='text/css'>
@@ -28,7 +28,8 @@
 				<div class="row">
 					<div class="col-md-2 col-sm-2">
 						<div class="logo">
-							<a href="index.html"> <img src="images/shopteam5_logo.png" alt="shopteam5" width="100px"></a>
+							<a href="/index"> <img src="images/shopteam5_logo.png"
+								alt="shopteam5" width="100px"></a>
 						</div>
 					</div>
 					<div class="col-md-10 col-sm-10">
@@ -39,7 +40,7 @@
 									<ul class="usermenu">
 										<li><a href="checkout.html" class="log">Đăng nhập</a></li>
 										<li><a href="checkout2.html" class="reg">Đăng kí</a></li>
-<!-- 										<li><a href="checkout.html" class="log">Tài khoản của tôi</a></li> -->
+										<!-- 										<li><a href="checkout.html" class="log">Tài khoản của tôi</a></li> -->
 									</ul>
 								</div>
 							</div>
@@ -48,24 +49,18 @@
 						<div class="header_bottom">
 							<ul class="option">
 								<li id="search" class="search">
-									<form>
-										
-									</form>
+									<form></form>
 								</li>
 								<li class="option-cart"><a href="#" class="cart-icon">cart
-										
-								</a>
-									
-									</li>
+
+								</a></li>
 
 							</ul>
 							<div class="navbar-collapse collapse">
 
 								<ul class="nav navbar-nav">
-									<li class="active dropdown"><a href="#"
-										class="dropdown-toggle" data-toggle="dropdown">Trang Chủ</a>
-										
-										</li>
+									<li class="active dropdown"><a href="/index"
+										class="dropdown-toggle" data-toggle="dropdown">Trang Chủ</a></li>
 									<!-- <li><a href="productgird.html">Nam</a></li> -->
 									<li class="dropdown"><a href="#" class="dropdown-toggle"
 										data-toggle="dropdown">Nam</a>
@@ -73,12 +68,12 @@
 											<div class="row">
 												<div class="col-md-6 col-sm-6">
 													<ul class="mega-menu-links">
-														<li><a href="">Tất cả áo</a></li>
-														<li><a href="">Áo thun nam</a></li>
-														<li><a href="">Áo Polo</a></li>
-														<li><a href="">Áo sơ mi</a></li>
-														<li><a href="">Áo len</a></li>
-														<li><a href="">Áo Hoodie</a></li>
+														<li><a href="/formaonam">Tất cả áo</a></li>
+														<li><a href="/aothunnam">Áo thun nam</a></li>
+														<li><a href="/aopolonam">Áo Polo</a></li>
+														<li><a href="/aosominam">Áo sơ mi</a></li>
+														<li><a href="/aolennam">Áo len</a></li>
+														<li><a href="/aohoodienam">Áo Hoodie</a></li>
 													</ul>
 												</div>
 											</div>
@@ -89,12 +84,12 @@
 											<div class="row">
 												<div class="col-md-6 col-sm-6">
 													<ul class="mega-menu-links">
-														<li><a href="productgird.html">Tất cả áo</a></li>
-														<li><a href="">Áo thun nữ</a></li>
-														<li><a href="">Áo sơ mi</a></li>
-														<li><a href="">Áo Bra</a></li>
-														<li><a href="">Áo len</a></li>
-														<li><a href="">Áo Hoodie</a></li>
+														<li><a href="/formaonu">Tất cả áo</a></li>
+														<li><a href="/aothunu">Áo thun nữ</a></li>
+														<li><a href="/aosominu">Áo sơ mi</a></li>
+														<li><a href="/aobra">Áo Bra</a></li>
+														<li><a href="/aolennu">Áo len</a></li>
+														<li><a href="/aohoodienu">Áo Hoodie</a></li>
 
 													</ul>
 												</div>
@@ -211,17 +206,20 @@
 									<div class="products">
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/small/products-01.png"
+											<a href="/mota"><img
+												src="images/products/large/ao len.jpeg" style="height: 90%;"
 												alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm không tay vải Cotton</div>
+										<div class="productname">Áo len Nam</div>
 										<h4 class="price">999.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -231,17 +229,19 @@
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
-												src="images/products/small/products-02.png"
-												alt="Product Name"></a>
+												src="images/products/large/938-9385688_o-s-mi-nam-mu-trng.png"
+												style="height: 90%;" alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm Mercerized Cotton Dáng Chữ
-											A</div>
+										<div class="productname">Áo sơ mi Nam</div>
 										<h4 class="price">550.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -252,17 +252,19 @@
 										<!-- <div class="offer">New</div> -->
 										<div class="thumbnail">
 											<a href="details.html"><img
-												src="images/products/small/products-03.png"
+												src="images/products/male/1.png" style="height: 90%;"
 												alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm Cotton Mini Xếp Tầng Ngắn
-											Tay</div>
+										<div class="productname">Áo thun nữ cổ tròn</div>
 										<h4 class="price">699.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -272,11 +274,10 @@
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
-												src="images/products/small/products-04.png"
+												src="images/products/male/2.png" style="height: 90%;"
 												alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm Mini Cổ V In Họa Tiết Ngắn
-											Tay</div>
+										<div class="productname">Áo sơ mi nữ</div>
 										<h4 class="price">599.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
@@ -284,7 +285,9 @@
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
 											</button>
-											
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
+											</button>
 										</div>
 									</div>
 								</div>
@@ -297,35 +300,19 @@
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
-												src="images/products/small/products-01.png"
+												src="images/products/large/ao len.jpeg" style="height: 90%;"
 												alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm không tay vải Cotton</div>
+										<div class="productname">Áo len Nam</div>
 										<h4 class="price">999.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
-											</button>										
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/small/products-01.png"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Đầm không tay vải Cotton</div>
-										<h4 class="price">999.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -335,16 +322,42 @@
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
-												src="images/products/small/products-01.png"
-												alt="Product Name"></a>
+												src="images/products/large/938-9385688_o-s-mi-nam-mu-trng.png"
+												style="height: 90%;" alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm không tay vải Cotton</div>
-										<h4 class="price">999.000 VND</h4>
+										<div class="productname">Áo sơ mi Nam</div>
+										<h4 class="price">550.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="products">
+										<div class="offer">- %20</div>
+										<!-- <div class="offer">New</div> -->
+										<div class="thumbnail">
+											<a href="details.html"><img
+												src="images/products/male/1.png" style="height: 90%;"
+												alt="Product Name"></a>
+										</div>
+										<div class="productname">Áo thun nữ cổ tròn</div>
+										<h4 class="price">699.000 VND</h4>
+										<div class="button_group">
+											<button class="button add-cart" type="button">Thêm
+												vào giỏ</button>
+											<button class="button compare" type="button">
+												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -354,16 +367,19 @@
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
-												src="images/products/small/products-01.png"
+												src="images/products/male/2.png" style="height: 90%;"
 												alt="Product Name"></a>
 										</div>
-										<div class="productname">Đầm không tay vải Cotton</div>
-										<h4 class="price">999.000 VND</h4>
+										<div class="productname">Áo sơ mi nữ</div>
+										<h4 class="price">599.000 VND</h4>
 										<div class="button_group">
 											<button class="button add-cart" type="button">Thêm
 												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"></i>
+											</button>
+											<button class="button wishlist" type="button">
+												<i class="fa fa-heart-o"></i>
 											</button>
 										</div>
 									</div>
@@ -373,118 +389,6 @@
 					</ul>
 				</div>
 				<div class="clearfix"></div>
-				<!-- <div class="featured-products">
-               <h3 class="title"><strong>Featured </strong> Products</h3>
-               <div class="control"><a id="prev_featured" class="prev" href="#">&lt;</a><a id="next_featured"
-                     class="next" href="#">&gt;</a></div>
-               <ul id="featured">
-                  <li>
-                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-05.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-06.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="offer">New</div>
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-07.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-04.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-01.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-02.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-03.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="products">
-                              <div class="thumbnail"><a href="details.html"><img
-                                       src="images/products/small/products-04.png" alt="Product Name"></a></div>
-                              <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                              <h4 class="price">$451.00</h4>
-                              <div class="button_group"><button class="button add-cart" type="button">Add To
-                                    Cart</button><button class="button compare" type="button"><i
-                                       class="fa fa-exchange"></i></button><button class="button wishlist"
-                                    type="button"><i class="fa fa-heart-o"></i></button></div>
-                           </div>
-                        </div>
-                     </div>
-                  </li>
-               </ul>
-            </div> -->
 				<div class="clearfix"></div>
 				<div class="our-brand">
 					<h3 class="title">
@@ -564,7 +468,8 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="footer-logo">
-								 <img src="images/shopteam5_logo.png" alt="shopteam5" width="100px">
+								<img src="images/shopteam5_logo.png" alt="shopteam5"
+									width="100px">
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
