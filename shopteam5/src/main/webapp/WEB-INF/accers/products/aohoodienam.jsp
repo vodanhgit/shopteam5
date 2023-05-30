@@ -47,7 +47,7 @@
                         <div class="header_bottom">
                             <ul class="option">
 								<li id="search" class="search">
-									<form></form>
+									<form><input type="text" class="form-control" placeholder="Search"></form>
 								</li>
 								<li class="option-cart"><a href="#" class="cart-icon">cart
 

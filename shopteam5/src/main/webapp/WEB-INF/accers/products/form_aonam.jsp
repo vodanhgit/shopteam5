@@ -46,10 +46,10 @@
 						<div class="header_bottom">
 							<ul class="option">
 								<li id="search" class="search">
-									<form></form>
+									<form><input type="text" class="form-control" placeholder="Search"></form>
 								</li>
 								<li class="option-cart"><a href="#" class="cart-icon">cart
-
+									
 								</a></li>
 
 							</ul>
@@ -247,6 +247,7 @@
 											<option value="Price">Giá</option>
 										</select>
 									</div>
+									
 
 								</div>
 								<div class="pager">
@@ -301,7 +302,9 @@
 											<button class="button wishlist" type="button">
 												<i class="fa fa-heart-o"> </i>
 											</button>
+											
 										</div>
+											
 									</div>
 								</div>
 								<div class="col-md-4 col-sm-6">
