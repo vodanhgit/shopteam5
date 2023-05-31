@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link rel="shortcut icon" href="images/shopteam5_logo.png">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 <!-- Bootstrap CSS -->
@@ -23,8 +23,8 @@
 				style="background-color: #0a3d62; height: 100vh">
 				<div class="d-flex justify-content-center">
 					<a class="navbar-brand" href="index"> 
-												<a href="/index"> <img src="images/shopteam5_logo.png" alt="shopteam5" width="100px"></a>
-					
+												<a href="/index"> <img src="admin/shopteam5_logo.png"
+								alt="shopteam5" width="100px"></a>
 <!-- 					<img alt="logo" src="images/shopteam5_logo.png" width="100" height="100"> -->
 					</a>
 				</div>
