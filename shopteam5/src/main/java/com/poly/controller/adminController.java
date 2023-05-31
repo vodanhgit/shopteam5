@@ -1,6 +1,7 @@
 package com.poly.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -32,5 +33,13 @@ public class adminController {
 	@RequestMapping("oder")
 	public String oder() {
 		return "/admin/categories/category";
+	}
+	@RequestMapping("management")
+	public String orderManagement() {
+		return "/admin/orderManagement/orderManagement";
+	}
+	@RequestMapping("infoManagement")
+	public String infoManagement() {
+		return "/admin/infoManagement/infoManagement";
 	}
 }

@@ -15,6 +15,7 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+
 <title>Order</title>
 </head>
 <body>
@@ -30,7 +31,8 @@
 				<hr>
 				<div class="list-group">
 					<p class="text-secondary fw-bold">Danh sách</p>
-					<a href="index" class="list-group-item list-group-item-action border-0"
+					<a href="index"
+						class="list-group-item list-group-item-action border-0"
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-gauge-high fs-6 px-1"></i></span>Trang chủ
 					</a> <a href="account"
@@ -49,8 +51,7 @@
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
-					</a> 
-					<a href="management"
+					</a> <a href="management"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-brands fa-wpforms fs-6 px-1"></i></span> Quản lí đơn hàng
@@ -61,6 +62,7 @@
 					</a>
 
 				</div>
+
 			</div>
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
@@ -165,127 +167,42 @@
 							</div>
 						</div>
 						<div class="col-3 offset-6">
-							<a type="button" class="btn btn-primary"
-								href="/admin/order/excel"> <i class="fa-solid fa-file-excel"></i>
-								<span>Export to excel</span>
+							<a type="button" class="btn btn-primary"> <span><div
+										class="timkiem">
+										<div class="search-bar">
+											<input type="text" class="form-control"
+												placeholder="Tìm kiếm...">
+											<button type="submit" class="btn btn-primary">Tìm
+												kiếm</button>
+										</div>
+									</div></span>
 							</a>
 						</div>
 						<div class="table-responsive mt-5" style="overflow-x: auto">
 							<table class="table table-bordered">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>Account ID</th>
-										<th>Shipping address</th>
-										<th>Order date</th>
-										<th>Order status</th>
-										<th colspan="2">Action</th>
+										<th>Họ và tên</th>
+										<th>Địa chỉ</th>
+										<th>Số điện thoại</th>
+										<th>Ngày đặt hàng</th>
+										<th>Email</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${ data.content }" var="od">
-										<tr>
-											<td>${ od.id }</td>
-											<td>${ od.account.id }</td>
-											<td>${ od.shippingAddress }</td>
-											<td>${ od.orderDate }</td>
-											<td>${ od.orderStatus }</td>
-											<td class="text-center">
-												<button class="btn btn-primary" data-bs-toggle="modal"
-													data-bs-target="#modalUpdate_${od.id }">
-													<i class="fa-solid fa-pen-to-square"></i>
-												</button> <!-- Modal update -->
-												<div class="modal fade" id="modalUpdate_${od.id}"
-													data-bs-backdrop="static" data-bs-keyboard="false"
-													tabindex="-1" aria-labelledby="staticBackdropLabel"
-													aria-hidden="true">
-													<div class="modal-dialog">
-														<div class="modal-content">
-															<div class="modal-header bg-info">
-																<h5 class="modal-title text-white"
-																	id="staticBackdropLabel">Update a order</h5>
-																<button type="button" class="btn"
-																	data-bs-dismiss="modal" aria-label="Close">
-																	<i class="fa-solid fa-xmark fs-5 text-white"></i>
-																</button>
-															</div>
-															<div class="modal-body">
-																<form:form action="/admin/orders/update/${ od.id }"
-																	method="post" modelAttribute="order">
-																	<div style="text-align: left;">
-																		<label>Account ID</label>
-																		<form:select path="account" class="form-select">
-																			<c:forEach items="${ listAcc }" var="acc">
-																				<form:option value="${ acc.id }"
-																					selected="${ acc.id == od.account.id ? 'true' : 'false' }">
-																		${ acc.id }
-																	</form:option>
-																			</c:forEach>
-																		</form:select>
-																	</div>
-																	<div style="text-align: left;">
-																		<label>Shipping address</label>
-																		<form:input path="shippingAddress"
-																			class="form-control" value="${ od.shippingAddress }" />
-																	</div>
-																	<div style="text-align: left;">
-																		<label>Order status</label>
-																		<form:input path="orderStatus" class="form-control"
-																			value="${ od.orderStatus }" />
-																	</div>
-																	<button class="btn btn-primary w-100 mt-3"
-																		id="liveToastBtn">Update</button>
-																	<div class="position-fixed top-0 end-0 p-5"
-																		style="z-index: 11">
-																		<div style="background-color: #2ecc71" id="liveToast"
-																			class="toast align-items-center text-white border-0"
-																			role="alert" aria-live="assertive" aria-atomic="true">
-																			<div class="d-flex">
-																				<div class="toast-body">Successful !</div>
-																				<button type="button"
-																					class="btn-close btn-close-white me-2 m-auto"
-																					data-bs-dismiss="toast" aria-label="Close"></button>
-																			</div>
-																		</div>
-																	</div>
-																</form:form>
-															</div>
-														</div>
-													</div>
-												</div>
-											</td>
-											<td class="text-center">
-												<button class="btn btn-danger" data-bs-toggle="modal"
-													data-bs-target="#modalDelte_${od.id }">
-													<i class="fa-solid fa-trash-can"></i>
-												</button> <!-- Modal delete -->
-												<div class="modal fade" id="modalDelte_${od.id}"
-													data-bs-backdrop="static" data-bs-keyboard="false"
-													tabindex="-1" aria-labelledby="staticBackdropLabel"
-													aria-hidden="true">
-													<div class="modal-dialog">
-														<div class="modal-content">
-															<div class="modal-header bg-danger">
-																<h5 class="modal-title text-white"
-																	id="staticBackdropLabel">Delete a order !</h5>
-																<button type="button" class="btn"
-																	data-bs-dismiss="modal" aria-label="Close">
-																	<i class="fa-solid fa-xmark fs-5 text-white"></i>
-																</button>
-															</div>
-															<div class="modal-body" style="background-color: #fff2df">
-																<p>Warning : You are trying a account. This order
-																	will be permanently deleted !</p>
-																<a role="button" href="/admin/orders/delete/${ od.id }"
-																	class="btn btn-danger w-100 "> Delete </a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</td>
-
-										</tr>
-									</c:forEach>
+									
+									<tr>
+        <td>Nguyễn Văn A</td>
+        <td>123 Đường ABC, Quận XYZ, TP HCM</td>
+        <td>0123456789</td>
+        <td>2023-05-31</td>
+        <td>example@example.com</td>
+        <td> <a class="btn btn-danger btn-sm" href="/admin/management" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+</svg></a></td>
+        </tr>
+        
 								</tbody>
 							</table>
 						</div>

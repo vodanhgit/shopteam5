@@ -49,6 +49,11 @@
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
+					</a>
+					<a href="management"
+						class="list-group-item list-group-item-action border-0  "
+						style="background-color: #0a3d62; color: #dcdde1"> <span><i
+							class="fa-brands fa-wpforms fs-6 px-1"></i></span> Quản lí đơn hàng
 					</a> </a> <a href="#"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i

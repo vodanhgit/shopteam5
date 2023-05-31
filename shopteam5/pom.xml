@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.poly</groupId>
-	<artifactId>shopteam5</artifactId>
+	<artifactId>hello</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>shopteam5</name>
+	<name>hello</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -22,6 +22,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
 <dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -37,6 +41,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+</dependency>
+<dependency>
+<groupId>org.glassfish.web</groupId>
+<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+</dependency>
 		<dependency>
 		    <groupId>org.apache.tomcat.embed</groupId>
 		    <artifactId>tomcat-embed-jasper</artifactId>
@@ -52,11 +65,6 @@
     <artifactId>servlet-api</artifactId>
     <version>2.5</version>
     <scope>provided</scope>
-</dependency>
-
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
 	</dependencies>
 
