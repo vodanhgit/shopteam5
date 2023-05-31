@@ -10,12 +10,9 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class trangChinhController {
-	@Autowired
-	HttpServletRequest req;
 
 	@RequestMapping("/index")
 	public String index() {
 		return "index";
 	}
-	
 }

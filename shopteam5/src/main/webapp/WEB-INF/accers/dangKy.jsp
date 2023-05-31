@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" href="images/shopteam5_logo.png">
 <title>Đăng Nhập</title>
 
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -13,7 +14,7 @@
 </head>
 <body>
 	<div class="de">
-		<a href="index.html"> <img class="logo"
+		<a href="/index"> <img class="logo"
 			src="/images/logoShopTeam5.png" alt=""></a>
 
 		</ul>
@@ -22,7 +23,7 @@
 	<div class="box">
 		<div class="container">
 			<div class="top">
-				<a href="dangnhap.html" class="dangky">Đăng nhập</a>
+				<a href="/trangDangNhap" class="dangky">Đăng nhập</a>
 				<header>Đăng ký</header>
 			</div>
 			<br>

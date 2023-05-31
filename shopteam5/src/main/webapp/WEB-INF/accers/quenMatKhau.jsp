@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" href="images/shopteam5_logo.png">
 <title>Quên mật khẩu</title>
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 	rel="stylesheet" />
@@ -19,7 +20,7 @@
 	<div class="box">
 		<div class="container">
 			<div class="top">
-				<a href="dangnhap.html" class="dangky">Đăng nhập</a>
+				<a href="/trangDangNhap" class="dangky">Đăng nhập</a>
 				<header>Quên mật khẩu</header>
 			</div>
 			<br>

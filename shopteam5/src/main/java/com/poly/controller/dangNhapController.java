@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-@RequestMapping("dangnhap")
 @Controller
 public class dangNhapController {
-	@Autowired
-	HttpServletRequest req;
-	@GetMapping("form")
-	public String form() {
-	return "dangNhap";
+	@GetMapping("/trangDangNhap")
+	public String trangDangNhap() {
+		return "dangNhap";
 	}
 }

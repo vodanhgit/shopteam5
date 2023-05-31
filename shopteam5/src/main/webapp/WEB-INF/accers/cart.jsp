@@ -41,9 +41,9 @@
 								<!-- dangnhap -->
 								<div class="col-sm-12">
 									<ul class="usermenu">
-										<li><a href="checkout.html" class="log">Đăng nhập</a></li>
-										<li><a href="checkout2.html" class="reg">Đăng kí</a></li>
-										<!-- 										<li><a href="checkout.html" class="log">Tài khoản của tôi</a></li> -->
+<!-- 										<li><a href="checkout.html" class="log">Đăng nhập</a></li> -->
+<!-- 										<li><a href="checkout2.html" class="reg">Đăng kí</a></li> -->
+																				<li><a href="/admin/index" class="log">Tài khoản của tôi</a></li>
 									</ul>
 								</div>
 							</div>
@@ -52,7 +52,7 @@
 						<div class="header_bottom">
 							<ul class="option">
 								<li id="search" class="search">
-									<form><input type="text" class="form-control" placeholder="Search"></form>
+<!-- 									<form><input type="text" class="form-control" placeholder="Search"></form> -->
 								</li>
 								<li class="option-cart"><a href="#" class="cart-icon">cart
 

@@ -6,14 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="/public/images/logo-ico.svg" />
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 <!-- Bootstrap CSS -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>Index</title>
+	<link rel="stylesheet" href="images/shopteam5_logo.png">
+<title>Trang Chủ - Thông Tin Tài Khoản</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -21,8 +22,10 @@
 			<div class="col-2 p-4 shadow"
 				style="background-color: #0a3d62; height: 100vh">
 				<div class="d-flex justify-content-center">
-					<a class="navbar-brand" href="index"> <img alt="logo" s
-						src="images/shopteam5_logo.png" width="100" height="100">
+					<a class="navbar-brand" href="index"> 
+												<a href="/index"> <img src="images/shopteam5_logo.png" alt="shopteam5" width="100px"></a>
+					
+<!-- 					<img alt="logo" src="images/shopteam5_logo.png" width="100" height="100"> -->
 					</a>
 				</div>
 				<hr>

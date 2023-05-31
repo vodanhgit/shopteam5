@@ -9,13 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-@RequestMapping("quenmatkhau")
 @Controller
 public class quenMatKhauController {
-	@Autowired
-	HttpServletRequest req;
-	@GetMapping("form")
-	public String form() {
-	return "quenMatKhau";
+	@GetMapping("trangQuenMatKhau")
+	public String index() {
+		return "quenMatKhau";
 	}
 }
