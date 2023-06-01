@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="shortcut icon" href="images/shopteam5_logo.png">
-<title>Đăng Nhập</title>
+<title>Đăng Ký</title>
 
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 	rel="stylesheet" />

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="/public/images/logo-ico.svg" />
+<link rel="icon" href="/images/shopteam5_logo.png" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 <!-- Bootstrap CSS -->
@@ -20,45 +20,7 @@
 		<div class="row">
 			<div class="col-2 p-4 shadow"
 				style="background-color: #0a3d62; height: 100vh">
-				<div class="d-flex justify-content-center">
-					<a class="navbar-brand" href="index"> <img alt="logo" s
-						src="images/shopteam5_logo.png" width="100" height="100">
-					</a>
-				</div>
-				<hr>
-				<div class="list-group">
-					<p class="text-secondary fw-bold">Danh sách</p>
-					<a href="index" class="list-group-item list-group-item-action border-0"
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-gauge-high fs-6 px-1"></i></span>Trang chủ
-					</a> <a href="account"
-						class="list-group-item list-group-item-action border-0"
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-user fs-6 px-1"></i></span> Quản lý tài khoản
-					</a> <a href="product"
-						class="list-group-item list-group-item-action border-0 "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
-					<!-- </a> <a href="categori"
-						class="list-group-item list-group-item-action border-0 "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP -->
-					<!-- </a> <a href="oder"
-						class="list-group-item list-group-item-action border-0  "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng -->
-					</a> 
-				<a href="management"
-						class="list-group-item list-group-item-action border-0  "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-brands fa-wpforms fs-6 px-1"></i></span> Quản lí đơn hàng
-					</a> </a> <a href="#"
-						class="list-group-item list-group-item-action border-0  "
-						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa fa-line-chart fs-6 px-1"></i></span> Thống kê
-					</a>
-
-				</div>
+				<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp" %>
 			</div>
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
@@ -87,6 +49,7 @@
 						</div>
 					</div>
 				</nav>
+				<br>
 				<div class="container">
 					<div class="border border-2">
 						<div class="container">
@@ -135,6 +98,10 @@
 											<label for="product-name" class="form-label">Giá</label> <input
 												type="text" class="form-control" id="product-name">
 										</div>
+										<div class="mb-1">
+											<label for="product-name" class="form-label">Giá giảm</label> <input
+												type="text" class="form-control" id="product-name">
+										</div>
 										<br>
 										<button type="button" class="btn btn-primary">Thêm</button>
 										&nbsp;&nbsp;
@@ -167,7 +134,7 @@
 										<td>Áo Thun</td>
 										<td>02</td>
 										<td>199.000 VND</td>
-										<td><img alt="" src="images/products/male/1.png"
+										<td><img alt="" src="/images/products/male/1.png"
 											width="50" height="50"></td>
 										<td>Áo thun nữ</td>
 										<td>
