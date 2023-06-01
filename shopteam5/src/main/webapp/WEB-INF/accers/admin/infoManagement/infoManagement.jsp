@@ -16,7 +16,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 
-<title>Order</title>
+<title>Quản lý Đơn hàng</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -43,14 +43,14 @@
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
-					</a> <a href="categori"
+					<!-- </a> <a href="categori"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP
-					</a> <a href="oder"
+							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP -->
+					<!-- </a> <a href="oder"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
+							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng -->
 					</a> <a href="management"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
@@ -68,34 +68,25 @@
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="#">Navbar w/ text</a>
-						<button class="navbar-toggler" type="button"
-							data-bs-toggle="collapse" data-bs-target="#navbarText"
-							aria-controls="navbarText" aria-expanded="false"
-							aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+					
+						
 						<div class="collapse navbar-collapse" id="navbarText">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link active"
-									aria-current="page" href="#">Home</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Features</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
-								</li>
+								
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize
-									access="isAuthenticated()">
-									<span> Welcome <sec:authentication
-											property="principal.username" />
+								data-bs-toggle="dropdown" aria-expanded="false"> 
+<!-- 									<sec:authorize access="isAuthenticated()"> -->
+									<span>
+     									Xin chào <!--<sec:authentication property="principal.username" /> -->
 									</span>
-								</sec:authorize> <i class="fa-solid fa-user fs-4"></i>
+<!-- 									</sec:authorize> -->
+							 <i class="fa-solid fa-user fs-4"></i>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
-								<li><a class="dropdown-item" href="/home">Home</a></li>
-								<li><a class="dropdown-item" href="/logout">Log out</a></li>
+								<li><a class="dropdown-item" href="/home">Trang chủ</a></li>
+								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
 							</ul>
 						</div>
 					</div>
@@ -103,8 +94,8 @@
 				<div class="bg-light p-3">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb mb-0">
-							<li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Orders</li>
+							<li class="breadcrumb-item"><a href="/admin">Quản lý đơn hàng</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Chi tiết Đơn hàng</li>
 						</ol>
 					</nav>
 				</div>
@@ -185,8 +176,11 @@
 										<th>Họ và tên</th>
 										<th>Địa chỉ</th>
 										<th>Số điện thoại</th>
-										<th>Ngày đặt hàng</th>
 										<th>Email</th>
+										<th>Tên sản phẩm</th>
+										<th>Giá</th>
+										<th>Số lượng</th>
+										<th>Thành tiền</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -195,13 +189,37 @@
         <td>Nguyễn Văn A</td>
         <td>123 Đường ABC, Quận XYZ, TP HCM</td>
         <td>0123456789</td>
-        <td>2023-05-31</td>
-        <td>example@example.com</td>
+        <td>h@gmail.com</td>
+        <td>Áo thun</td>
+        <td>100.000</td>
+        <td>01</td>
+        <td>100.000</td>
+        
+        
+        
         <td> <a class="btn btn-danger btn-sm" href="/admin/management" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 </svg></a></td>
         </tr>
+        <tr>
+        <td>Nguyễn Văn A</td>
+        <td>123 Đường ABC, Quận XYZ, TP HCM</td>
+        <td>0123456789</td>
+        <td>h@gmail.com</td>
+        <td>Áo thun</td>
+        <td>120.000</td>
+        <td>01</td>
+        <td>120.000</td>
+        
+        
+        
+        <td> <a class="btn btn-danger btn-sm" href="/admin/management" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+</svg></a></td>
+        </tr>
+        
         
 								</tbody>
 							</table>

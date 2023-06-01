@@ -15,7 +15,7 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>Order</title>
+<title>Shopteam5</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -41,14 +41,14 @@
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
-					</a> <a href="categori"
+					<!-- </a> <a href="categori"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP
-					</a> <a href="oder"
+							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP -->
+					<!-- </a> <a href="oder"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
+							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng -->
 					</a> 
 					<a href="management"
 						class="list-group-item list-group-item-action border-0  "
@@ -66,34 +66,25 @@
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="#">Navbar w/ text</a>
-						<button class="navbar-toggler" type="button"
-							data-bs-toggle="collapse" data-bs-target="#navbarText"
-							aria-controls="navbarText" aria-expanded="false"
-							aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+					
+						
 						<div class="collapse navbar-collapse" id="navbarText">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link active"
-									aria-current="page" href="#">Home</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Features</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
-								</li>
+								
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize
-									access="isAuthenticated()">
-									<span> Welcome <sec:authentication
-											property="principal.username" />
+								data-bs-toggle="dropdown" aria-expanded="false"> 
+<!-- 									<sec:authorize access="isAuthenticated()"> -->
+									<span>
+     									Xin chào <!--<sec:authentication property="principal.username" /> -->
 									</span>
-								</sec:authorize> <i class="fa-solid fa-user fs-4"></i>
+<!-- 									</sec:authorize> -->
+							 <i class="fa-solid fa-user fs-4"></i>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
-								<li><a class="dropdown-item" href="/home">Home</a></li>
-								<li><a class="dropdown-item" href="/logout">Log out</a></li>
+								<li><a class="dropdown-item" href="/home">Trang chủ</a></li>
+								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
 							</ul>
 						</div>
 					</div>
@@ -101,7 +92,7 @@
 				<div class="bg-light p-3">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb mb-0">
-							<li class="breadcrumb-item"><a href="/admin">Admin</a></li>
+							<li class="breadcrumb-item"><a href="/admin">Quản lý</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Orders</li>
 						</ol>
 					</nav>
@@ -110,7 +101,7 @@
 					<div class="row">
 						<div class="col-3">
 							<button class="btn btn-info text-white" data-bs-toggle="modal"
-								data-bs-target="#modalAdd">Add new</button>
+								data-bs-target="#modalAdd">Thêm mới</button>
 							<!-- Modal add -->
 							<div class="modal fade" id="modalAdd" data-bs-backdrop="static"
 								data-bs-keyboard="false" tabindex="-1"
@@ -165,10 +156,10 @@
 							</div>
 						</div>
 						<div class="col-3 offset-6">
-							<a type="button" class="btn btn-primary"
+							<!-- <a type="button" class="btn btn-primary"
 								href="/admin/order/excel"> <i class="fa-solid fa-file-excel"></i>
 								<span>Export to excel</span>
-							</a>
+							</a> -->
 						</div>
 						<div class="table-responsive mt-5" style="overflow-x: auto">
 							<table class="table table-bordered">

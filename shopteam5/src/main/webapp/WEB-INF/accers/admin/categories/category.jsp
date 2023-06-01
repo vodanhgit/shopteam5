@@ -41,14 +41,14 @@
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
-					</a> <a href="categori"
+					<!-- </a> <a href="categori"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP
-					</a> <a href="oder"
+							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP -->
+					<!-- </a> <a href="oder"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
+							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng -->
 					</a>
 					<a href="management"
 						class="list-group-item list-group-item-action border-0  "
@@ -66,7 +66,7 @@
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="#">Navbar w/ text</a>
+						<!-- <a class="navbar-brand" href="#">Navbar w/ text</a> -->
 						<button class="navbar-toggler" type="button"
 							data-bs-toggle="collapse" data-bs-target="#navbarText"
 							aria-controls="navbarText" aria-expanded="false"
@@ -75,12 +75,12 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarText">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link active"
+								<!-- <li class="nav-item"><a class="nav-link active"
 									aria-current="page" href="#">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="#">Features</a>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
-								</li>
+								</li> -->
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize

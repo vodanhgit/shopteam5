@@ -13,7 +13,7 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>ShopTeam 5 Admin</title>
+<title>Shopteam5</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -39,14 +39,14 @@
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
-					</a> <a href="categori"
+					<!-- </a> <a href="categori"
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP
-					</a> <a href="oder"
+							class="fa-solid fa-share-nodes fs-6 px-1"></i></span> Quản lý loại SP -->
+					<!-- </a> <a href="oder"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng
+							class="fa-solid fa-truck-fast fs-6 px-1"></i></span> Đặt hàng -->
 					</a> 
 				<a href="management"
 						class="list-group-item list-group-item-action border-0  "
