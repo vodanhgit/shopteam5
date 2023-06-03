@@ -42,4 +42,8 @@ public class adminController {
 	public String infoManagement() {
 		return "/admin/infoManagement/infoManagement";
 	}
+	@RequestMapping("thongke")
+	public String thongke() {
+		return "/admin/thongke/thongke";
+	}
 }

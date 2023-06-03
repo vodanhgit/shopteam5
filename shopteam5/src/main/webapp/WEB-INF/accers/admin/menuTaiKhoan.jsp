@@ -34,7 +34,7 @@
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-brands fa-wpforms fs-6 px-1"></i></span> Quản lí đơn hàng
-					</a>  </a> <a href="#"
+					</a>  </a> <a href="thongke"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa fa-line-chart fs-6 px-1"></i></span> Thống kê

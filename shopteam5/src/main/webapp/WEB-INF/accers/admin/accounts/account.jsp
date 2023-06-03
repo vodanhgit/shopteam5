@@ -165,7 +165,7 @@
 											<td>nva123</td>
 											<td>NVA@gmail.com</td>
 											<td class="text-center"><img src="/images/anhmeo.jpg" width="50" height="50" /></td>
-											<td>${ acc.actived == 0 ? "In-Active" : "Active" }</td>
+											<td>Quản lý</td>
 											
 											<td class="text-center">
 												<button class="btn btn-primary" data-bs-toggle="modal"
