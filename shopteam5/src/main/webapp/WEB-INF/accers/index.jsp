@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -25,8 +26,8 @@
 <body id="home">
 	<div class="wrapper">
 		<div class="header">
-		<%@include file="/WEB-INF/accers/menu.jsp" %>
-		
+			<%@include file="/WEB-INF/accers/menu.jsp"%>
+
 		</div>
 		<div class="clearfix"></div>
 		<div class="hom-slider">
@@ -119,29 +120,35 @@
 					<ul id="hot">
 						<li>
 							<div class="row">
+
 								<div class="col-md-3 col-sm-6">
+
 									<div class="products">
 										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="/mota"><img
-												src="images/products/large/ao len.jpeg" style="height: 90%;"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo len Nam</div>
-										<h4 class="price">999.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
+										<c:forEach var="item" items="${items}">
+											<div class="thumbnail">
+												<a href="/mota"><img
+													src="<!-- images/products/ -->${item.hinhAnh}"
+													style="height: 90%;" alt="Product Name"></a>
+											</div>
+											<div class="productname">${item.tenSanPham}</div>
+											<h4 class="price">${item.gia}</h4>
+											<div class="button_group">
+												<button class="button add-cart" type="button">Thêm
+													vào giỏ</button>
+												<button class="button compare" type="button">
+													<i class="fa fa-exchange"></i>
+												</button>
+												<button class="button wishlist" type="button">
+													<i class="fa fa-heart-o"></i>
+												</button>
+											</div>
+										</c:forEach>
 									</div>
+
 								</div>
-								<div class="col-md-3 col-sm-6">
+
+								<!-- <div class="col-md-3 col-sm-6">
 									<div class="products">
 										<div class="offer">- %20</div>
 										<div class="thumbnail">
@@ -166,7 +173,7 @@
 								<div class="col-md-3 col-sm-6">
 									<div class="products">
 										<div class="offer">- %20</div>
-										<!-- <div class="offer">New</div> -->
+										<div class="offer">New</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
 												src="images/products/male/1.png" style="height: 90%;"
@@ -207,10 +214,10 @@
 											</button>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</li>
-						<li>
+						<!-- <li>
 							<div class="row">
 								<div class="col-md-3 col-sm-6">
 									<div class="products">
@@ -259,7 +266,7 @@
 								<div class="col-md-3 col-sm-6">
 									<div class="products">
 										<div class="offer">- %20</div>
-										<!-- <div class="offer">New</div> -->
+										<div class="offer">New</div>
 										<div class="thumbnail">
 											<a href="details.html"><img
 												src="images/products/male/1.png" style="height: 90%;"
@@ -302,12 +309,12 @@
 									</div>
 								</div>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 				<div class="clearfix"></div>
 				<div class="clearfix"></div>
-				 <%@include file="/WEB-INF/accers/nhanhang.jsp" %>
+				<%@include file="/WEB-INF/accers/nhanhang.jsp"%>
 			</div>
 		</div>
 		<div class="clearfix"></div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="images/shopteam5_logo.png">
-<title>Áo Nam -  Shopteam5</title>
+<title>Áo Nam - Shopteam5</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
@@ -126,7 +127,7 @@
 							<div class="fbplug">
 								<a href="#"> <span> <img src="images/fbicon.png"
 										alt="">
-								</span> Facebook 
+								</span> Facebook
 								</a>
 							</div>
 						</div>
@@ -137,13 +138,15 @@
 					</div>
 					<div class="col-md-9">
 						<div class="banner">
-							<div class="bannerslide" id="bannerslide" >
+							<div class="bannerslide" id="bannerslide">
 								<ul class="slides">
-									<li><a href="#"> <img src="images/banner-thoi-trang-nu.jpg"
-											alt="" style="height: 100%" width="100%"/>
+									<li><a href="#"> <img
+											src="images/banner-thoi-trang-nu.jpg" alt=""
+											style="height: 100%" width="100%" />
 									</a></li>
-									<li><a href="#"> <img src="images/3cde53d8619069b98772edffe8c5dad1.jpg"
-											alt="" style="width: 100%" height="100%"/>
+									<li><a href="#"> <img
+											src="images/3cde53d8619069b98772edffe8c5dad1.jpg" alt=""
+											style="width: 100%" height="100%" />
 									</a></li>
 								</ul>
 							</div>
@@ -177,29 +180,33 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="row">
+
 								<div class="col-md-4 col-sm-6">
-									<div class="products">
-										<div class="thumbnail">
-											<a href="details.html"> <img
-												src="images/products/large/BSX750D.png" alt="Product Name"
-												style="height: 90%;">
-											</a>
+									<c:forEach items="${items}" var="pro">
+										<div class="products">
+											<div class="thumbnail">
+												<a href="details.html"> <img
+													src="images/products/large/BSX750D.png" alt="Product Name"
+													style="height: 90%;">
+												</a>
+											</div>
+											<div class="productname">${pro.tenSanPham}</div>
+											<h4 class="price">158.000 VND</h4>
+											<div class="button_group">
+												<button class="button add-cart" type="button">Thêm
+													vào giỏ</button>
+												<button class="button compare" type="button">
+													<i class="fa fa-exchange"> </i>
+												</button>
+												<button class="button wishlist" type="button">
+													<i class="fa fa-heart-o"> </i>
+												</button>
+											</div>
 										</div>
-										<div class="productname">Áo thun nam cổ tròn</div>
-										<h4 class="price">158.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"> </i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"> </i>
-											</button>
-										</div>
-									</div>
+									</c:forEach>
 								</div>
-								<div class="col-md-4 col-sm-6">
+
+								<!-- <div class="col-md-4 col-sm-6">
 									<div class="products">
 										<div class="thumbnail">
 											<a href="details.html"> <img
@@ -222,8 +229,8 @@
 										</div>
 
 									</div>
-								</div>
-								<div class="col-md-4 col-sm-6">
+								</div> -->
+								<!-- <div class="col-md-4 col-sm-6">
 									<div class="products">
 										<div class="offer">New</div>
 										<div class="thumbnail">
@@ -245,8 +252,8 @@
 											</button>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-4 col-sm-6">
+								</div> -->
+								<!-- <div class="col-md-4 col-sm-6">
 									<div class="products">
 										<div class="thumbnail">
 											<a href="details.html"> <img
@@ -267,8 +274,8 @@
 											</button>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-4 col-sm-6">
+								</div> -->
+								<!-- <div class="col-md-4 col-sm-6">
 									<div class="products">
 										<div class="thumbnail">
 											<a href="details.html"> <img
@@ -289,7 +296,7 @@
 											</button>
 										</div>
 									</div>
-								</div>
+								</div> -->
 
 
 

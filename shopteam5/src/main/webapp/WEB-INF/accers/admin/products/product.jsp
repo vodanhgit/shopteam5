@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- 	<%@ taglib prefix="sec" --%>
-<%-- 	uri="http://www.springframework.org/security/tags"%> --%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%-- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,26 +20,23 @@
 		<div class="row">
 			<div class="col-2 p-4 shadow"
 				style="background-color: #0a3d62; height: 100vh">
-				<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp" %>
+				<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp"%>
 			</div>
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
 					<div class="container-fluid">
-					
-						
+
+
 						<div class="collapse navbar-collapse" id="navbarText">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								
+
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> 
-<!-- 									<sec:authorize access="isAuthenticated()"> -->
-									<span>
-     									Xin chào <!--<sec:authentication property="principal.username" /> -->
-									</span>
-<!-- 									</sec:authorize> -->
-							 <i class="fa-solid fa-user fs-4"></i>
+								data-bs-toggle="dropdown" aria-expanded="false"> <!-- 									<sec:authorize access="isAuthenticated()"> -->
+								<span> Xin chào <!--<sec:authentication property="principal.username" /> -->
+							</span> <!-- 									</sec:authorize> --> <i
+								class="fa-solid fa-user fs-4"></i>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
@@ -59,7 +56,7 @@
 									<div class="panel-body">
 										<!-- <img src="images/products/male/1.png" style="height: 300px"
 											class="img-thumbnail" alt=""]> -->
-											<input type="file" id="file-upload" required />
+										<input type="file" id="file-upload" required />
 									</div>
 								</div>
 
@@ -99,8 +96,8 @@
 												type="text" class="form-control" id="product-name">
 										</div>
 										<div class="mb-1">
-											<label for="product-name" class="form-label">Giá giảm</label> <input
-												type="text" class="form-control" id="product-name">
+											<label for="product-name" class="form-label">Giá giảm</label>
+											<input type="text" class="form-control" id="product-name">
 										</div>
 										<br>
 										<button type="button" class="btn btn-primary">Thêm</button>
@@ -124,24 +121,29 @@
 									<th>Giá</th>
 									<th>Hình Ảnh</th>
 									<th>Mô Tả</th>
+									<th>Mô Tả</th>
+									<th>Mô Tả</th>
+									<th>Mô Tả</th>
+									<th>Mô Tả</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${ data.content }" var="pro">
+								<c:forEach var="item" items="${items}">
 									<tr>
-										<td>0156</td>
-										<td>Áo Thun Nữ</td>
-										<td>Áo Thun</td>
-										<td>02</td>
-										<td>199.000 VND</td>
-										<td><img alt="" src="/images/products/male/1.png"
+										<td>${item.maSanPham}</td>
+										<td>${item.tenSanPham}</td>
+										<td>${item.loai}</td>
+										<td>${item.soLuong}</td>
+										<td>${item.gia}</td>
+										<td><img alt="" src="/images/products/${item.hinhAnh}"
 											width="50" height="50"></td>
-										<td>Áo thun nữ</td>
+										<td>${item.moTa}</td>
+										<td>${item.moTa}</td>
 										<td>
-											<button class="btn btn-primary" data-bs-toggle="modal"
+											<%-- <button class="btn btn-primary" data-bs-toggle="modal"
 												data-bs-target="#modalUpdate_${pro.id }">
 												<i class="fa-solid fa-pen-to-square"></i>
-											</button> <!-- Modal update -->
+											</button> Modal update --%>
 										</td>
 
 
