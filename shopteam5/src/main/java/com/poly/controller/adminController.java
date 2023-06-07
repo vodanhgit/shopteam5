@@ -16,7 +16,7 @@ import com.poly.reponstory.SanPhamDao;
 @RequestMapping("admin")
 public class adminController {
 	@Autowired
-	SanPhamDao dao; // làm việc với bảng Product
+	SanPhamDao spdao; // làm việc với bảng Product
 
 	public String dk() {
 		return "forward:/checkout";
@@ -36,7 +36,7 @@ public class adminController {
 	public String product(Model model) {
 //		Product item = new Product();
 //		model.addAttribute("item", item);
-		List<SanPham> items = dao.findAll();
+		List<SanPham> items = spdao.findAll();
 		System.out.println(items);
 		model.addAttribute("items", items);
 		return "/admin/products/product";

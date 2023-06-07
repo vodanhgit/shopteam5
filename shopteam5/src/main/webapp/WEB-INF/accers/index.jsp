@@ -125,7 +125,7 @@
 
 									<div class="products">
 										<div class="offer">- %20</div>
-										<c:forEach var="item" items="${items}">
+										<%-- <c:forEach var="item" items="${items}"> --%>
 											<div class="thumbnail">
 												<a href="/mota"><img
 													src="<!-- images/products/ -->${item.hinhAnh}"
@@ -143,7 +143,7 @@
 													<i class="fa fa-heart-o"></i>
 												</button>
 											</div>
-										</c:forEach>
+										<%-- </c:forEach> --%>
 									</div>
 
 								</div>

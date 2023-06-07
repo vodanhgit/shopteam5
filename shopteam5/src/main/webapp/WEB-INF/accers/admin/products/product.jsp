@@ -114,31 +114,37 @@
 						<table class="table table-bordered">
 							<thead>
 								<tr>
-									<th>Mã</th>
-									<th>Tên Sản Phẩm</th>
-									<th>Loại</th>
-									<th>Số lượng</th>
+									<th>Mã Sản Phẩm</th>
 									<th>Giá</th>
 									<th>Hình Ảnh</th>
+									<th>Loại</th>
+									<th>Mã Khuyến Mãi</th>
+									<th>Màu</th>
 									<th>Mô Tả</th>
-									<th>Mô Tả</th>
-									<th>Mô Tả</th>
-									<th>Mô Tả</th>
-									<th>Mô Tả</th>
+									<th>Kích cỡ</th>
+									<th>Số Lượng</th>
+									<th>Tên Sản Phẩm</th>
+									<th>Trạng Thái</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="item" items="${items}">
 									<tr>
 										<td>${item.maSanPham}</td>
-										<td>${item.tenSanPham}</td>
-										<td>${item.loai}</td>
-										<td>${item.soLuong}</td>
 										<td>${item.gia}</td>
-										<td><img alt="" src="/images/products/${item.hinhAnh}"
+										<td>${item.hinhAnh}</td>
+										<td>${item.loai}</td>
+										<td>${item.maKhuyenMai}</td>
+										<td>${item.mau}</td>
+										<td>${item.moTa}</td>
+										<td>${item.size}</td>
+										<td>${item.soLuong}</td>
+										<td>${item.tenSanPham}</td>
+										<td>${item.trangThai}</td>
+										<%-- <td><img alt="" src="/images/products/${item.hinhAnh}"
 											width="50" height="50"></td>
 										<td>${item.moTa}</td>
-										<td>${item.moTa}</td>
+										<td>${item.moTa}</td> --%>
 										<td>
 											<%-- <button class="btn btn-primary" data-bs-toggle="modal"
 												data-bs-target="#modalUpdate_${pro.id }">
