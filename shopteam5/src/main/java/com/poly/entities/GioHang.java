@@ -19,7 +19,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "GioHang")
+@Table(name = "Giohang")
 public class GioHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -32,7 +32,7 @@ public class GioHang implements Serializable {
 
 	//bi-directional many-to-one association to TaiKhoan
 	@ManyToOne
-	@JoinColumn(name="MaTaiKhoan")
+	@JoinColumn(name="Mataikhoan")
 	private TaiKhoan taiKhoan;
 
 	//bi-directional many-to-one association to SanPham

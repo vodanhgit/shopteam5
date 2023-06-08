@@ -43,7 +43,7 @@ public class TaiKhoan implements Serializable {
 	@Column(name = "Tentaikhoan")
 	private String tenTaiKhoan;
 
-
+	
 	// bi-directional many-to-one association to GioHang
 	@OneToMany(mappedBy = "taiKhoan")
 	private List<GioHang> gioHangs;

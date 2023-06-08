@@ -18,7 +18,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "ChiTietGioHang")
+@Table(name = "Chitietgiohang")
 public class ChiTietGioHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 

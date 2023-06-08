@@ -125,8 +125,8 @@
 									<th>Số Lượng</th>
 									<th>Tên Sản Phẩm</th>
 									<th>Trạng Thái</th>
-									<th>ID_Giỏ</th>
-
+									<!-- <th>ID_Giỏ</th>
+ -->
 								</tr>
 							</thead>
 							<tbody>
@@ -143,6 +143,7 @@
 										<td>${item.soLuong}</td>
 										<td>${item.tenSanPham}</td>
 										<td>${item.trangThai}</td>
+										<%-- //<td>${item.ID_Gio}</td> --%>
 										<%-- <td>${item.ID_Gio}</td> --%>
 
 										<%-- <td><img alt="" src="/images/products/${item.hinhAnh}"
