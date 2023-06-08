@@ -27,7 +27,7 @@
 								<li id="search" class="search">
 									<form><input type="text" class="form-control" placeholder="Search"></form>
 								</li>
-								<li class="option-cart"><a href="/cart" class="cart-icon">cart
+								<li class="option-cart"><a href="/cart_products" class="cart-icon">cart
 
 								</a></li>
 
