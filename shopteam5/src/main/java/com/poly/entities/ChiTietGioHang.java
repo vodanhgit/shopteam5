@@ -25,17 +25,17 @@ public class ChiTietGioHang implements Serializable {
 	@Id
 	private int ID_ChiTiet;
 
-	@Column(name="SoLuong")
+	@Column(name="Soluong")
 	private int soLuong;
 
 	//bi-directional many-to-one association to GioHang
 	@ManyToOne
 	@JoinColumn(name="ID_Gio")
-	private GioHang gioHang;
+	private GioHang gioHang1;
 
 	//bi-directional many-to-one association to SanPham
 	@ManyToOne
 	@JoinColumn(name="MaSanPham")
-	private SanPham sanPham;
+	private SanPham sanPham1;
 
 	}

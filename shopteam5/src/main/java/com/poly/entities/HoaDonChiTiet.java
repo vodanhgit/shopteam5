@@ -22,16 +22,16 @@ public class HoaDonChiTiet implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="MaHoaDonChiTiet")
+	@Column(name="Mahoadonchitiet")
 	private int maHoaDonChiTiet;
 
-	@Column(name="DonGia")
+	@Column(name="Dongia")
 	private int donGia;
 
-	@Column(name="SoLuong")
+	@Column(name="Soluong")
 	private int soLuong;
 
-	@Column(name="ThanhTien")
+	@Column(name="Thanhtien")
 	private int thanhTien;
 
 	//bi-directional many-to-one association to HoaDon
@@ -42,7 +42,7 @@ public class HoaDonChiTiet implements Serializable {
 	//bi-directional many-to-one association to SanPham
 	@ManyToOne
 	@JoinColumn(name="MaSanPham")
-	private SanPham sanPham;
+	private SanPham sanPham2;
 
 	
 

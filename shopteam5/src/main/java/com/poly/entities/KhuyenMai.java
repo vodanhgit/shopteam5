@@ -19,19 +19,19 @@ public class KhuyenMai implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="MaKhuyenMai")
+	@Column(name="Makhuyenmai")
 	private int maKhuyenMai;
 
 	@Column(name="GiaKM")
 	private int giaKM;
 
-	@Column(name="MoTa")
+	@Column(name="Mota")
 	private String moTa;
 
 	//bi-directional many-to-one association to SanPham
 	@ManyToOne
 	@JoinColumn(name="MaSanPham")
-	private SanPham sanPham;
+	private SanPham sanPham3;
 
 	
 }

@@ -1,7 +1,5 @@
 package com.poly.controller;
 
-
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,10 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.poly.entities.GioHang;
 import com.poly.entities.HoaDon;
 import com.poly.entities.SanPham;
 import com.poly.entities.TaiKhoan;
+import com.poly.reponstory.GioHangDao;
+import com.poly.reponstory.HoaDonChiTietDao;
 import com.poly.reponstory.HoaDonDao;
+import com.poly.reponstory.KhuyenMaiDao;
 import com.poly.reponstory.SanPhamDao;
 import com.poly.reponstory.TaiKhoanDao;
 
@@ -26,17 +28,21 @@ import jakarta.servlet.ServletContext;
 public class adminController {
 	@Autowired
 	SanPhamDao spdao; // làm việc với bảng Product
-	
+
 	@Autowired
 	TaiKhoanDao taikhoandao;
-	
+
 	@Autowired
 	HoaDonDao hoadondao;
-	
+	@Autowired
+	GioHangDao giohangdao;
+	@Autowired
+	KhuyenMaiDao khuyenmaidao;
+	@Autowired
+	HoaDonChiTietDao hoadonchitietdao;
+
 	@Autowired
 	ServletContext app;
-	
-
 
 	public String dk() {
 		return "forward:/checkout";
@@ -44,12 +50,12 @@ public class adminController {
 
 	@RequestMapping("index")
 	public String index() {
-	
+
 		return "/admin/index";
 	}
 
 	@RequestMapping("account")
-	public String account( Model model, TaiKhoan taikhoan ) {
+	public String account(Model model, TaiKhoan taikhoan) {
 		TaiKhoan item = new TaiKhoan();
 		model.addAttribute("item", item);
 		List<TaiKhoan> items = taikhoandao.findAll();
@@ -59,11 +65,11 @@ public class adminController {
 
 	@RequestMapping("product")
 	public String product(Model model) {
-//		Product item = new Product();
-//		model.addAttribute("item", item);
-//		List<SanPham> items = spdao.findAll();
-//		System.out.println(items);
-//		model.addAttribute("items", items);
+		SanPham item = new SanPham();
+		model.addAttribute("item", item);
+		List<SanPham> items = spdao.findAll();
+	//	List<GioHang> items = giohangdao.findAll();
+		model.addAttribute("items", items);
 		return "/admin/products/product";
 	}
 
@@ -103,6 +109,7 @@ public class adminController {
 	public String thongke() {
 		return "/admin/thongke/thongke";
 	}
+
 	@ModelAttribute("list_yesno")
 	public Map<Boolean, String> getYesno() {
 		Map<Boolean, String> map = new HashMap<>();

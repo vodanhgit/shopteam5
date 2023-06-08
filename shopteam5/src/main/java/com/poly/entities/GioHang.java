@@ -27,7 +27,7 @@ public class GioHang implements Serializable {
 	private int ID_Gio;
 
 	//bi-directional many-to-one association to ChiTietGioHang
-	@OneToMany(mappedBy="gioHang")
+	@OneToMany(mappedBy="gioHang1")
 	private List<ChiTietGioHang> chiTietGioHangs;
 
 	//bi-directional many-to-one association to TaiKhoan
@@ -36,7 +36,7 @@ public class GioHang implements Serializable {
 	private TaiKhoan taiKhoan;
 
 	//bi-directional many-to-one association to SanPham
-	@OneToMany(mappedBy="gioHang")
+	@OneToMany(mappedBy="gioHang2")
 	private List<SanPham> sanPhams;
 
 	
