@@ -6,7 +6,6 @@ import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -17,34 +16,33 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "TaiKhoan")
+@Table(name = "Taikhoan")
 public class TaiKhoan implements Serializable {
-	private static final long serialVersionUID = 1L;
-
 	@Id
-	@Column(name = "MaTaiKhoan")
+	@Column(name = "Mataikhoan")
 	private int maTaiKhoan;
 
 	@Column(name = "Email")
 	private String email;
 
-	@Column(name = "GioiTinh")
+	@Column(name = "Gioitinh")
 	private boolean gioiTinh;
 
-	@Column(name = "HinhAnh")
+	@Column(name = "Hinhanh")
 	private String hinhAnh;
 
-	@Column(name = "HoTenNguoiDung")
+	@Column(name = "Hotennguoidung")
 	private String hoTenNguoiDung;
 
-	@Column(name = "MatKhau")
+	@Column(name = "Matkhau")
 	private String matKhau;
 
 	@Column(name = "Quyen")
 	private boolean quyen;
 
-	@Column(name = "TenTaiKhoan")
+	@Column(name = "Tentaikhoan")
 	private String tenTaiKhoan;
+
 
 	// bi-directional many-to-one association to GioHang
 	@OneToMany(mappedBy = "taiKhoan")
