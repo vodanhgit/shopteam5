@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%> --%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%> 
 <%-- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> --%>
 <%-- <%@ taglib prefix="sec" --%>
 <%-- 	uri="http://www.springframework.org/security/tags"%> --%>
@@ -149,11 +149,12 @@
 									</tr>
 								</thead>
 								<tbody>
+								<c:forEach var="hd" items="${hds}">								
 									<tr>
-										<td>1</td>
-										<td>100.000</td>
-										<td>Đang duyệt</td>
-										<td>01/01/2023</td>
+										<td>${hd.maHoaDon}</td>
+										<td>${hd.diaChi}</td>
+										<td>${hd.trangThai}</td>
+										<td>${hd.ngayDatHang}</td>
 										<td>
 											<!-- Example single danger button -->
 											<div class="btn-group">
@@ -179,38 +180,19 @@
 </svg></a>
 										</td>
 									</tr>
-									
+									</c:forEach>		
 								</tbody>
 							</table>
 						</div>
 
 
-						<div class="row">
-							<ul class="pagination justify-content-center">
-								<c:forEach var="index" begin="0" end="${ data.totalPages - 1 }">
-									<li class="page-item mx-1"><a
-										class="page-link ${ index==page?'bg-black text-white':'' }"
-										href="/admin/orders/index?page=${ index }">${ index + 1 }</a>
-									</li>
-								</c:forEach>
-							</ul>
-						</div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script>
-		var option = {
-			animation : true,
-			delay : 5000
-		}
-		document.getElementById("liveToastBtn").onclick = function() {
-			var myAlert = document.getElementById("liveToast");
-			var bsAlert = new bootstrap.Toast(myAlert, option);
-			bsAlert.show();
-		}
-	</script>
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

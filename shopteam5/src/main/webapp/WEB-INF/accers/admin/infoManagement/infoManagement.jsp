@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%> --%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%> 
 <%-- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> --%>
 <%-- <%@ taglib prefix="sec" --%>
 <%-- 	uri="http://www.springframework.org/security/tags"%> --%>
@@ -147,10 +147,10 @@
 									</tr>
 								</thead>
 								<tbody>
-									
+									<c:forEach var="item" && var="hd" items="${items}" && items="${hds}">	
 									<tr>
-        <td>Nguyễn Văn A</td>
-        <td>123 Đường ABC, Quận XYZ, TP HCM</td>
+        <td>${item.hoTenNguoiDung}</td>
+        <td>${item.gioiTinh}</td>
         <td>0123456789</td>
         <td>h@gmail.com</td>
         <td>Áo thun</td>
@@ -166,24 +166,8 @@
   <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 </svg></a></td>
         </tr>
-        <tr>
-        <td>Nguyễn Văn A</td>
-        <td>123 Đường ABC, Quận XYZ, TP HCM</td>
-        <td>0123456789</td>
-        <td>h@gmail.com</td>
-        <td>Áo thun</td>
-        <td><img alt="" src="images/Layer 2_ct.png"></td>
-        <td>120.000</td>
-        <td>01</td>
-        <td>120.000</td>
-        
-        
-        
-        <td> <a class="btn btn-danger btn-sm" href="/admin/management" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-</svg></a></td>
-        </tr>
+        </c:forEach>	
+       
         
         
 								</tbody>
@@ -191,32 +175,13 @@
 						</div>
 
 
-						<div class="row">
-							<ul class="pagination justify-content-center">
-								<c:forEach var="index" begin="0" end="${ data.totalPages - 1 }">
-									<li class="page-item mx-1"><a
-										class="page-link ${ index==page?'bg-black text-white':'' }"
-										href="/admin/orders/index?page=${ index }">${ index + 1 }</a>
-									</li>
-								</c:forEach>
-							</ul>
-						</div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script>
-		var option = {
-			animation : true,
-			delay : 5000
-		}
-		document.getElementById("liveToastBtn").onclick = function() {
-			var myAlert = document.getElementById("liveToast");
-			var bsAlert = new bootstrap.Toast(myAlert, option);
-			bsAlert.show();
-		}
-	</script>
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

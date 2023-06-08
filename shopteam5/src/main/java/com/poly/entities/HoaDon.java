@@ -13,29 +13,29 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "HoaDon")
+@Table(name = "Hoadon")
 public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="MaHoaDon")
+	@Column(name="Mahoadon")
 	private int maHoaDon;
 
-	@Column(name="DiaChi")
+	@Column(name="Diachi")
 	private String diaChi;
 
-	@Column(name="NgayDatHang")
+	@Column(name="Ngaydathang")
 	private String ngayDatHang;
 
-	@Column(name="TongTien")
+	@Column(name="Tongtien")
 	private int tongTien;
 
-	@Column(name="TrangThai")
+	@Column(name="Trangthai")
 	private String trangThai;
 
 	//bi-directional many-to-one association to TaiKhoan
 	@ManyToOne
-	@JoinColumn(name="MaTaiKhoan")
+	@JoinColumn(name="Mataikhoan")
 	private TaiKhoan taiKhoan;
 
 	//bi-directional many-to-one association to HoaDonChiTiet

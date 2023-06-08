@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.poly.entities.HoaDon;
 import com.poly.entities.SanPham;
 import com.poly.entities.TaiKhoan;
+import com.poly.reponstory.HoaDonDao;
 import com.poly.reponstory.SanPhamDao;
 import com.poly.reponstory.TaiKhoanDao;
 
@@ -31,6 +33,9 @@ public class adminController {
 	
 	@Autowired
 	TaiKhoanDao taikhoandao;
+	
+	@Autowired
+	HoaDonDao hoadondao;
 	
 	@Autowired
 	ServletContext app;
@@ -80,12 +85,24 @@ public class adminController {
 	}
 
 	@RequestMapping("management")
-	public String orderManagement() {
+	public String orderManagement(Model model) {
+		HoaDon hd = new HoaDon();
+		model.addAttribute("hd", hd);
+		List<HoaDon> hds = hoadondao.findAll();
+		model.addAttribute("hds", hds);
 		return "/admin/orderManagement/orderManagement";
 	}
 
 	@RequestMapping("infoManagement")
-	public String infoManagement() {
+	public String infoManagement(Model model) {
+		TaiKhoan item = new TaiKhoan();
+		model.addAttribute("item", item);
+		List<TaiKhoan> items = taikhoandao.findAll();
+		model.addAttribute("items", items);
+		HoaDon hd = new HoaDon();
+		model.addAttribute("hd", hd);
+		List<HoaDon> hds = hoadondao.findAll();
+		model.addAttribute("hds", hds);
 		return "/admin/infoManagement/infoManagement";
 	}
 
