@@ -134,7 +134,7 @@
 									<tr>
 										<td>${item.maSanPham}</td>
 										<td>${item.gia}</td>
-										<td>${item.hinhAnh}</td>
+										<td><img src="/images/products/large/${item.hinhAnh}" width=200px /></td>
 										<td>${item.loai}</td>
 										<td>${item.maKhuyenMai}</td>
 										<td>${item.mau}</td>
@@ -143,18 +143,12 @@
 										<td>${item.soLuong}</td>
 										<td>${item.tenSanPham}</td>
 										<td>${item.trangThai}</td>
-										<%-- //<td>${item.ID_Gio}</td> --%>
-										<%-- <td>${item.ID_Gio}</td> --%>
-
-										<%-- <td><img alt="" src="/images/products/${item.hinhAnh}"
-											width="50" height="50"></td>
-										<td>${item.moTa}</td>
-										<td>${item.moTa}</td> --%>
+										
 										<td>
-											<%-- <button class="btn btn-primary" data-bs-toggle="modal"
+											 <button class="btn btn-primary" data-bs-toggle="modal"
 												data-bs-target="#modalUpdate_${pro.id }">
 												<i class="fa-solid fa-pen-to-square"></i>
-											</button> Modal update --%>
+											</button> 
 										</td>
 
 
