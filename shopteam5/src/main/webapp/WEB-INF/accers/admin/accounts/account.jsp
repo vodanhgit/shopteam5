@@ -73,11 +73,12 @@
 												data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
 										<div class="modal-body">
-											<form:form action="/admin/accounts/store" method="post"
-												modelAttribute="taikhoan" name="account_form">
+											<form:form action="account" method="post"
+												modelAttribute="item" name="account_form" enctype="multipart/form-data">
+												
 												<div>
 													<label for="name">Họ tên</label> 
-													<form:input class="form-control" path="Hotennguoidung" />
+													<form:input class="form-control" path="hoTenNguoiDung" />
 
 												</div>
 												<div>
@@ -86,15 +87,15 @@
 												</div>
 												<div>
 													<label for="username">Tên đăng nhập</label> 
-													<form:input class="form-control" path="Tentaikhoan" />
+													<form:input class="form-control" path="tenTaiKhoan" />
 												</div>
 												<div>
 													<label for="pass">Mật khẩu</label> 
-													<form:input class="form-control" path="Matkhau" />
+													<form:input class="form-control" path="matKhau" />
 												</div>
 												<div>
 													<label for="hinhanh">Hình ảnh</label> 
-													<form:input class="form-control" path="Hinhanh" />
+													<input type="file" class="form-control" name="photo_file">
 												</div>
 												<div>
 													<label>Quyền</label> 
@@ -102,8 +103,7 @@
 														items="${list_role}" />
 													
 												</div>
-												<button class="btn btn-primary w-100 mt-3" id="liveToastBtn"
-													type="submit">Thêm</button>
+												<button  class="btn btn-primary" formaction="/admin/create"> Thêm </button>
 												<div class="position-fixed top-0 end-0 p-5"
 													style="z-index: 11">
 													<div style="background-color: #2ecc71" id="liveToast"

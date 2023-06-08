@@ -2,6 +2,8 @@ package com.poly.controller;
 
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.poly.entities.SanPham;
 import com.poly.entities.TaiKhoan;
@@ -37,9 +41,12 @@ public class adminController {
 		return "forward:/checkout";
 	}
 
-	@RequestMapping("index")
-	public String index() {
-	
+	@RequestMapping("trangchuadmin")
+	public String index(Model model, TaiKhoan taikhoan) {
+		TaiKhoan item = new TaiKhoan();
+		model.addAttribute("item", item);
+		List<TaiKhoan> items = taikhoandao.findAll();
+		model.addAttribute("items", items);
 		return "/admin/index";
 	}
 
@@ -100,5 +107,18 @@ public class adminController {
 		map.put(false, "Client");
 		map.put(true, "Admin");
 		return map;
+	}
+	@RequestMapping("create")
+	public String create(TaiKhoan item, @RequestParam("photo_file") MultipartFile img)
+			throws IllegalStateException, IOException {
+		String filename = img.getOriginalFilename();
+		File file = new File(app.getRealPath("/images/" + filename));
+		img.transferTo(file);
+		List<TaiKhoan> items = taikhoandao.findAll();
+		item.setMaTaiKhoan(items.size()+1);
+		item.setHinhAnh(filename);
+		taikhoandao.save(item);
+
+		return "redirect:account";
 	}
 }

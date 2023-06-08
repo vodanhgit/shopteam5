@@ -9,7 +9,7 @@
 	<hr>
 	<div class="list-group">
 					<p class="text-secondary fw-bold">Danh sách</p>
-					<a href="index"
+					<a href="trangchuadmin"
 						class="list-group-item list-group-item-action border-0"
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-gauge-high fs-6 px-1"></i></span>Trang chủ
@@ -33,7 +33,7 @@
 					<a href="management"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
-							class="fa-brands fa-wpforms fs-6 px-1"></i></span> Quản lí đơn hàng
+							class="fa-brands fa-wpforms fs-6 px-1"></i></span> Quản lý đơn hàng
 					</a>  </a> <a href="thongke"
 						class="list-group-item list-group-item-action border-0  "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
