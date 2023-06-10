@@ -6,8 +6,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.poly.entities.GioHang;
 import com.poly.entities.HoaDon;
+
 import com.poly.entities.SanPham;
 import com.poly.entities.TaiKhoan;
 import com.poly.reponstory.GioHangDao;
@@ -25,8 +30,10 @@ import com.poly.reponstory.HoaDonDao;
 import com.poly.reponstory.KhuyenMaiDao;
 import com.poly.reponstory.SanPhamDao;
 import com.poly.reponstory.TaiKhoanDao;
+import com.poly.service.SessionService;
 
 import jakarta.servlet.ServletContext;
+import jakarta.websocket.Session;
 
 @Controller
 @RequestMapping("admin")
@@ -48,7 +55,8 @@ public class adminController {
 
 	@Autowired
 	ServletContext app;
-
+	@Autowired
+	SessionService session;
 	public String dk() {
 		return "forward:/checkout";
 	}
@@ -93,24 +101,26 @@ public class adminController {
 	}
 
 	@RequestMapping("management")
-	public String orderManagement(Model model) {
+	public String orderManagement(Model model, @RequestParam("keywords") Optional<String> kw, @RequestParam("m") Optional<Integer> m) {
+//		String kwords = kw.orElse(session.get("keywords"));
+//		session.set("keywords", kwords);
 		HoaDon hd = new HoaDon();
 		model.addAttribute("hd", hd);
 		List<HoaDon> hds = hoadondao.findAll();
 		model.addAttribute("hds", hds);
+		Pageable pageable = PageRequest.of(m.orElse(0), 1);
+		Page<HoaDon> pagehd = hoadondao.findAll(pageable);
+//		Page<HoaDon> pagehd = hoadondao.findByKeywords("%" + kwords + "%", pageable);
+		model.addAttribute("pagehd", pagehd);
 		return "/admin/orderManagement/orderManagement";
 	}
 
 	@RequestMapping("infoManagement")
-	public String infoManagement(Model model) {
+	public String infoManagement(Model model, @RequestParam("f") Optional<Integer> f) {
 		TaiKhoan item = new TaiKhoan();
 		model.addAttribute("item", item);
-		List<TaiKhoan> items = taikhoandao.findAll();
+		List<HoaDon> items = hoadondao.findAll();
 		model.addAttribute("items", items);
-		HoaDon hd = new HoaDon();
-		model.addAttribute("hd", hd);
-		List<HoaDon> hds = hoadondao.findAll();
-		model.addAttribute("hds", hds);
 		return "/admin/infoManagement/infoManagement";
 	}
 
@@ -134,7 +144,7 @@ public class adminController {
 		map.put(true, "Admin");
 		return map;
 	}
-
+		
 	@RequestMapping("create")
 	public String create(TaiKhoan item, @RequestParam("photo_file") MultipartFile img)
 			throws IllegalStateException, IOException {

@@ -20,6 +20,7 @@ import lombok.Data;
 @Entity
 @Table(name = "Taikhoan")
 public class TaiKhoan implements Serializable {
+	
 	@Id
 	@Column(name = "Mataikhoan")
 	private int maTaiKhoan;

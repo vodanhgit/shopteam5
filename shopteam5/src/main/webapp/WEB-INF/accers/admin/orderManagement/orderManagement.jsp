@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%> 
-<%-- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> --%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%-- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <%-- <%@ taglib prefix="sec" --%>
 <%-- 	uri="http://www.springframework.org/security/tags"%> --%>
 <!DOCTYPE html>
@@ -18,13 +18,25 @@
 
 <title>Order</title>
 </head>
+<style>
+.pagehd{
+margin-left: 34%;
+}
+.page-link{
+color: black;
+}
+.page-link:hover{
+background: #0099FF;
+color: #FFFFCC;
+}
+</style>
 <body>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 p-4 shadow"
 				style="background-color: #0a3d62; height: 100vh">
-				
-<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp" %>
+
+				<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp"%>
 			</div>
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
@@ -123,16 +135,10 @@
 							</div>
 						</div>
 						<div class="col-3 offset-6">
-							<a type="button" class="btn btn-primary"> <span><div
-										class="timkiem">
-										<div class="search-bar">
-											<input type="text" class="form-control"
-												placeholder="Tìm kiếm...">
-											<button type="submit" class="btn btn-primary">Tìm
-												kiếm</button>
-										</div>
-									</div></span>
-							</a>
+							<%-- <form action="/admin/orderManagement" method="post">
+		<input name="keywords" value="${keywords}">
+		<button>Search</button>
+	</form> --%>
 						</div>
 						<div class="table-responsive mt-5" style="overflow-x: auto">
 							<table class="table table-bordered">
@@ -142,57 +148,107 @@
 										<th>Tổng tiền</th>
 										<th>Trạng thái</th>
 										<th>Ngày đặt</th>
-										
+
 
 										<th></th>
-										<th></th>
+
 									</tr>
 								</thead>
 								<tbody>
-								<c:forEach var="hd" items="${hds}">								
-									<tr>
-										<td>${hd.maHoaDon}</td>
-										<td>${hd.diaChi}</td>
-										<td>${hd.trangThai}</td>
-										<td>${hd.ngayDatHang}</td>
-										<td>
-											<!-- Example single danger button -->
-											<div class="btn-group">
-												<button type="button"
-													class="btn btn-primary dropdown-toggle"
-													data-bs-toggle="dropdown" aria-expanded="false">
-													Cập nhật trạng thái</button>
-												<ul class="dropdown-menu">
-													<li><a class="dropdown-item" href="#">Xét duyệt</a></li>
-													<li><a class="dropdown-item" href="#">Đã xét duyệt</a></li>
-													<li><a class="dropdown-item" href="#">Đã giao hàng</a></li>
+									<c:forEach var="hd" items="${pagehd.content}">
+										<tr>
+											<td>${hd.maHoaDon}</td>
+											<td>${hd.diaChi}</td>
+											<td>${hd.trangThai}</td>
+											<td>${hd.ngayDatHang}</td>
+											<td>
+												<!-- Example single danger button -->
+												<div class="btn-group">
+													<button type="button"
+														class="btn btn-primary dropdown-toggle"
+														data-bs-toggle="dropdown" aria-expanded="false">
+														Cập nhật trạng thái</button>
+													<ul class="dropdown-menu">
+														<li><a class="dropdown-item" href="#">Xét duyệt</a></li>
+														<li><a class="dropdown-item" href="#">Đã xét
+																duyệt</a></li>
+														<li><a class="dropdown-item" href="#">Đã giao
+																hàng</a></li>
 
-												</ul>
-											</div> <a class="btn btn-primary btn-sm"
-											href="/admin/infoManagement" role="button"><svg
-													xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-													fill="currentColor" class="bi bi-info-circle"
-													viewBox="0 0 16 16">
+													</ul>
+												</div> <a class="btn btn-primary btn-sm"
+												href="/admin/infoManagement" role="button"><svg
+														xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+														fill="currentColor" class="bi bi-info-circle"
+														viewBox="0 0 16 16">
   <path
-														d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+															d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
   <path
-														d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+															d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
 </svg></a>
-										</td>
-									</tr>
-									</c:forEach>		
+											</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
+
+							<nav aria-label="..." class="pagehd">
+								<ul class="pagination">
+									<li class="page-item "><a class="page-link"
+										href="/admin/management?m=0"><svg
+												xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+												fill="currentColor" class="bi bi-chevron-double-left"
+												viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+													d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+  <path fill-rule="evenodd"
+													d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+</svg></a></li>
+									<li><a class="page-link"
+										href="/admin/management?m=${pagehd.number-1}"><svg
+												xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+												fill="currentColor" class="bi bi-chevron-left"
+												viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+													d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+</svg></a></li>
+									<c:forEach var="i" begin="0" end="${pagehd.totalPages - 1}">
+										<li class="page-item"><a class="page-link"
+											href="/admin/management?m=${i}">${i+1}</a></li>
+									</c:forEach>
+									<li><a class="page-link"
+										href="/admin/management?m=${pagehd.number+1}"><svg
+												xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+												fill="currentColor" class="bi bi-chevron-right"
+												viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+													d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg></a></li>
+									<li class="page-item"><a class="page-link"
+										href="/admin/management?m=${pagehd.totalPages-1}"><svg
+												xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+												fill="currentColor" class="bi bi-chevron-double-right"
+												viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+													d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+  <path fill-rule="evenodd"
+													d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg></a></li>
+								</ul>
+							</nav>
+
+
+
 						</div>
 
 
-					
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
