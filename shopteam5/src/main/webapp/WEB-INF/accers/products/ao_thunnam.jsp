@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -178,6 +179,7 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="row">
+							<c:forEach var="aothunnamProductShow" items="${items}">
 								<div class="col-md-4 col-sm-6">
 									<div class="products">
 										<div class="thumbnail">
@@ -186,11 +188,11 @@
 												style="height: 90%;">
 											</a>
 										</div>
-										<div class="productname">Áo thun nam cổ tròn</div>
-										<h4 class="price">158.000 VND</h4>
+										<div class="productname">${aothunnamProductShow.tenSanPham}</div>
+										<h4 class="price">${aothunnamProductShow.gia}VND</h4>
 										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
+											<a class="button add-cart" type="button">Thêm
+												vào giỏ</a>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"> </i>
 											</button>
@@ -200,6 +202,7 @@
 										</div>
 									</div>
 								</div>
+							</c:forEach>
 
 
 

@@ -70,7 +70,7 @@
 									<td style="vertical-align: middle; text-align: center;">
 										<h5>${itemsProductShow.sanPham1.gia}VNĐ</h5>
 									</td>
-									<td style="vertical-align: middle; text-align: center;"><input type="number" style="width: 100%"> <!--                       <select name=""> -->
+									<td style="vertical-align: middle; text-align: center;"><input type="number" style="width: 100%" value="1"> <!--                       <select name=""> -->
 										<!--                         <option selected value="1"> --> <!--                           1 -->
 										<!--                         </option> --> <!--                         <option value="1"> -->
 										<!--                           2 --> <!--                         </option> -->
