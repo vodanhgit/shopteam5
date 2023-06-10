@@ -119,7 +119,7 @@ public class adminController {
 		return "/admin/thongke/thongke";
 	}
 
-	@ModelAttribute("list_yesno")
+	@ModelAttribute("gioitinh")
 	public Map<Boolean, String> getYesno() {
 		Map<Boolean, String> map = new HashMap<>();
 		map.put(false, "Nữ");
@@ -127,7 +127,7 @@ public class adminController {
 		return map;
 	}
 
-	@ModelAttribute("list_role")
+	@ModelAttribute("quyen")
 	public Map<Boolean, String> list_role() {
 		Map<Boolean, String> map = new HashMap<>();
 		map.put(false, "Client");
