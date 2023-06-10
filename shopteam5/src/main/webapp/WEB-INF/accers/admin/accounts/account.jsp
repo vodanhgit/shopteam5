@@ -98,9 +98,15 @@
 													<input type="file" class="form-control" name="photo_file">
 												</div>
 												<div>
+													<label>Giới tính</label> 
+														<form:radiobuttons path="gioiTinh" class="ms-3"
+														items="${gioitinh}" />
+													
+												</div>
+												<div>
 													<label>Quyền</label> 
 														<form:radiobuttons path="quyen" class="ms-3"
-														items="${list_role}" />
+														items="${quyen}" />
 													
 												</div>
 												<button  class="btn btn-primary" formaction="/admin/create"> Thêm </button>
