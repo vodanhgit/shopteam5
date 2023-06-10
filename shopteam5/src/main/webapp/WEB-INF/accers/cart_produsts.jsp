@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <style>
 	.table>th{
 		font-size: 20px ;
@@ -36,6 +36,7 @@
 								</tr>
 							</thead>
 							<tbody>
+							<c:forEach var="itemsProductShow" items="${itemsProduct}">
 								<tr>
 								<td style="vertical-align: middle; text-align: center;"><input type="checkbox" class="check"></td>
 								
@@ -43,7 +44,7 @@
 										alt="" width="80px"></td>
 									<td style="vertical-align: middle;display: flex;justify-content: center;align-items: center;">
 										<div class="shop-details">
-											<div class="productname">Lincoln Corner Unit Products</div>
+											<div class="productname">${itemsProductShow.sanPham1.tenSanPham}</div>
 											<!--                         <p> -->
 											<!--                           <img alt="" src="images/star.png"> -->
 											<!--                           <a class="review_num" href="#"> -->
@@ -53,21 +54,21 @@
 											<div class="color-choser">
 												<span class="text"> Màu sắc : </span>
 												<ul>
-													<li><p > Đen </p></li>
+													<li><p > ${itemsProductShow.mau} </p></li>
 													<p>
-													Kích cỡ : <strong class="pcode"> S </strong>
+													Kích cỡ : <strong class="pcode"> ${itemsProductShow.size} </strong>
 												</p>
 												</ul>
 												
 											</div>
 											
 											<p>
-												Mã sản phẩm : <strong class="pcode"> SP01 </strong>
+												Mã sản phẩm : <strong class="pcode"> ${itemsProductShow.sanPham1.maSanPham} </strong>
 											</p>
 										</div>
 									</td>
 									<td style="vertical-align: middle; text-align: center;">
-										<h5>200.000VNĐ</h5>
+										<h5>${itemsProductShow.sanPham1.gia}VNĐ</h5>
 									</td>
 									<td style="vertical-align: middle; text-align: center;"><input type="number" style="width: 100%"> <!--                       <select name=""> -->
 										<!--                         <option selected value="1"> --> <!--                           1 -->
@@ -84,7 +85,7 @@
 									<td style="vertical-align: middle; text-align: center;"><a href="#"> <img src="images/remove.png" alt="">
 									</a></td>
 								</tr>
-
+						</c:forEach>
 
 								
 

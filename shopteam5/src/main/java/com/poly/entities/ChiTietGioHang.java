@@ -23,11 +23,24 @@ public class ChiTietGioHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int ID_ChiTiet;
-
+	@Column(name="Id_chitiet")
+	private int id_ChiTiet;
+	
 	@Column(name="Soluong")
 	private int soLuong;
+	
+	@Column(name="Gia")
+	private int gia;
 
+	@Column(name="Mau")
+	private String mau;
+
+	@Column(name="Size")
+	private String size;
+	
+	
+	
+	
 	//bi-directional many-to-one association to GioHang
 	@ManyToOne
 	@JoinColumn(name="ID_Gio")
@@ -35,7 +48,12 @@ public class ChiTietGioHang implements Serializable {
 
 	//bi-directional many-to-one association to SanPham
 	@ManyToOne
-	@JoinColumn(name="MaSanPham")
+	@JoinColumn(name="Masanpham")
 	private SanPham sanPham1;
 
+	@Override
+	public String toString() {
+		return "ChiTietGioHang [id_ChiTiet=" + id_ChiTiet + ", soLuong=" + soLuong + ", gia=" + gia + ", mau=" + mau
+				+ ", size=" + size + "]";
+	}
 	}

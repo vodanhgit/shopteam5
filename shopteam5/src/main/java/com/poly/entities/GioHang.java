@@ -3,6 +3,7 @@ package com.poly.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -25,7 +26,8 @@ public class GioHang implements Serializable {
 
 	@Id
 	private int ID_Gio;
-
+	
+	
 	//bi-directional many-to-one association to ChiTietGioHang
 	@OneToMany(mappedBy="gioHang1")
 	private List<ChiTietGioHang> chiTietGioHangs;
@@ -40,5 +42,8 @@ public class GioHang implements Serializable {
 	private List<SanPham> sanPhams;
 
 	
-
+	@Override
+	public String toString() {
+		return "GioHang [ID_Gio=" + ID_Gio + "]";
+	}
 }
