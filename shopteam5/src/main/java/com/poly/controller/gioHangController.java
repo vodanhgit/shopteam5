@@ -26,9 +26,9 @@ public class gioHangController {
 		@GetMapping("cart_products")
 		public String cart_products(Model model) {
 //			ChiTietGioHang itemchitiet = new ChiTietGioHang();
-			List<ChiTietGioHang> itemsProduct = chiTietGioHangDao.findAll();
-			System.out.println(itemsProduct);
-			model.addAttribute("itemsProduct",itemsProduct);
+			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findAll();
+			System.out.println(itemsProducts);
+			model.addAttribute("itemsProduct",itemsProducts);
 //			System.out.println(itemchitiet);
 			model.addAttribute("cart", "WEB-INF/accers/cart_produsts");
 			return "cart";
