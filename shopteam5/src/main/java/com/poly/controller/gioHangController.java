@@ -27,6 +27,12 @@ public class gioHangController {
 		public String cart_products(Model model) {
 //			ChiTietGioHang itemchitiet = new ChiTietGioHang();
 			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findAll();
+				
+			int tong = 0;
+		    for (ChiTietGioHang ctgh : itemsProducts) {
+		        tong += ctgh.getSoLuong() * ctgh.getGia();
+		        model.addAttribute("tongtien",tong);
+		    }
 			System.out.println(itemsProducts);
 			model.addAttribute("itemsProduct",itemsProducts);
 //			System.out.println(itemchitiet);

@@ -41,22 +41,6 @@
 							<!--                     </form> -->
 							<!--                   </div> -->
 							<!--                 </div> -->
-							<div class="col-md-4 col-sm-6">
-								<div class="shippingbox">
-									<!--                     <div class="subtotal"> -->
-									<!--                       <h5> -->
-									<!--                         Sub Total -->
-									<!--                       </h5> -->
-									<!--                       <span> -->
-									<!--                         $1.000.00 -->
-									<!--                       </span> -->
-									<!--                     </div> -->
-									<div class="grandtotal">
-										<h5>Tổng tiền:</h5>
-										<span> 1.000.000 VNĐ </span>
-									</div>
-									<button>Mua hàng</button>
-								</div>
-							</div>
+							
 						</div>
 				

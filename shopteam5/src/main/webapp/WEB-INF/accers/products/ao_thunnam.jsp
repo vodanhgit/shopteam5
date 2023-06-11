@@ -179,6 +179,7 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="row">
+							<form:form action="/category/index" modelAttribute="item">
 							<c:forEach var="aothunnamProductShow" items="${items}">
 								<div class="col-md-4 col-sm-6">
 									<div class="products">
@@ -188,11 +189,12 @@
 												style="height: 90%;">
 											</a>
 										</div>
+										<div class="productname" style="display: none;">${aothunnamProductShow.maSanPham}</div>
 										<div class="productname">${aothunnamProductShow.tenSanPham}</div>
 										<h4 class="price">${aothunnamProductShow.gia}VND</h4>
 										<div class="button_group">
-											<a class="button add-cart" type="button">Thêm
-												vào giỏ</a>
+											<button class="button add-cart" type="button" formaction="/product/create">Thêm
+												vào giỏ</button>
 											<button class="button compare" type="button">
 												<i class="fa fa-exchange"> </i>
 											</button>
@@ -203,7 +205,7 @@
 									</div>
 								</div>
 							</c:forEach>
-
+</form:form>
 
 
 

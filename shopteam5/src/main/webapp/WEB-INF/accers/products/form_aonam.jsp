@@ -182,7 +182,7 @@
 							<div class="row">
 
 								<div class="col-md-4 col-sm-6">
-									<c:forEach items="${items}" var="pro">
+									<c:forEach var="aothunnamProductShow" items="${items}">
 										<div class="products">
 											<div class="thumbnail">
 												<a href="details.html"> <img
@@ -190,8 +190,9 @@
 													style="height: 90%;">
 												</a>
 											</div>
-											<div class="productname">${pro.tenSanPham}</div>
-											<h4 class="price">158.000 VND</h4>
+											<div class="productname" style="display: none;">${aothunnamProductShow.maSanPham}</div>
+											<div class="productname">${aothunnamProductShow.tenSanPham}</div>
+											<h4 class="price">${aothunnamProductShow.gia}VND</h4>
 											<div class="button_group">
 												<button class="button add-cart" type="button">Thêm
 													vào giỏ</button>
