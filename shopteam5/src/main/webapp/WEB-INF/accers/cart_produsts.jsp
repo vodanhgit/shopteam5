@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
 <style> 
   .table>th { 
     font-size: 20px; 
@@ -19,9 +20,13 @@
 
 <div class="container shopping-cart"> 
   <div class="row"> 
+  
+<!--   <form action="/cart_visit" method="post" > -->
+ 
     <div class="col-md-12"> 
       <h3 class="title">Giỏ hàng</h3> 
       <div class="clearfix"></div> 
+      
       <table class="table table-bordered"> 
         <thead> 
           <tr class="table"> 
@@ -36,12 +41,14 @@
         </thead> 
         <tbody> 
           <c:forEach var="itemsProductShow" items="${itemsProduct}"> 
+           <form action="/cart_update/${itemsProductShow.id_ChiTiet}" method="post">
+           
             <tr> 
               <td style="vertical-align: middle; text-align: center;">
-                <input type="checkbox" class="check">
+                <input type="checkbox" class="check" name="productIds">
               </td> 
               <td style="vertical-align: middle; text-align: center;">
-                <img src="images/products/small/products-06.png" alt="" width="80px">
+                <img src="images/products/small/${itemsProductShow.sanPham1.hinhAnh}" alt="" width="80px">
               </td> 
               <td style="vertical-align: middle;display: flex;justify-content: center;align-items: center;"> 
                 <div class="shop-details"> 
@@ -59,23 +66,31 @@
                 </div> 
               </td> 
               <td style="vertical-align: middle; text-align: center;"> 
-                <h5>${itemsProductShow.gia}VNĐ</h5> 
+                <h5>
+                	<fmt:formatNumber value="${itemsProductShow.gia}" currencySymbol="VNĐ" type="currency" />
+                	
+                </h5> 
               </td> 
               <td style="vertical-align: middle; text-align: center;"> 
-                <input type="number" style="width: 100%" value="${itemsProductShow.soLuong}" min="1">
-<%--                 <input type="number" style="width: 100%" class="input-quantity" value="1" min="1" data-price="${itemsProductShow.sanPham1.gia}"> --%>
+                <input name="idgio" value="${itemsProductShow.gioHang1.ID_Gio}" style="display: none;">
+              
+                <input type="number" style="width: 100%"  min="1" name="qty" value="${itemsProductShow.soLuong}" onblur="this.form.submit()">
+             	
               </td> 
               <td style="vertical-align: middle; text-align: center;"> 
               
-                <h5> <strong class="red"> ${itemsProductShow.gia*itemsProductShow.soLuong} VNĐ </strong> </h5> 
+                <h5> <strong class="red">
+                	<fmt:formatNumber value="${itemsProductShow.gia*itemsProductShow.soLuong}" currencySymbol="VNĐ" type="currency" />
+                </strong> </h5> 
               </td> 
               <td style="vertical-align: middle; text-align: center;"> 
-                <a href="#"> 
+                <a href="/cart_detele/${itemsProductShow.id_ChiTiet}"> 
                   <img src="images/remove.png" alt=""> 
                 </a>
               </td> 
             </tr> 
             
+            </form>
           </c:forEach> 
           
         </tbody> 
@@ -83,7 +98,7 @@
           <tr> 
             <td colspan="7"> 
               <button class="pull-left">Tiếp tục mua sắm</button> 
-              <button class="pull-right">Cập nhật giỏ hàng</button> 
+<!--               <button class="pull-right">Cập nhật giỏ hàng</button>  -->
             </td> 
           </tr> 
         </tfoot> 
@@ -98,10 +113,12 @@
 <%--         </c:forEach>  --%>
         <br> 
         <div>
-          <button>Mua hàng</button>
+          <button class="button" type="submit">Mua hàng</button>
         </div> 
       </div> 
       <div class="clearfix"></div> 
+      
+      
     </div> 
   </div> 
   <div class="clearfix"></div> 
