@@ -19,15 +19,17 @@
 <title>Order</title>
 </head>
 <style>
-.pagehd{
-margin-left: 34%;
+.pagehd {
+	margin-left: 34%;
 }
-.page-link{
-color: black;
+
+.page-link {
+	color: black;
 }
-.page-link:hover{
-background: #0099FF;
-color: #FFFFCC;
+
+.page-link:hover {
+	background: #0099FF;
+	color: #FFFFCC;
 }
 </style>
 <body>

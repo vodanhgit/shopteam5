@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -57,6 +59,7 @@ public class adminController {
 	ServletContext app;
 	@Autowired
 	SessionService session;
+
 	public String dk() {
 		return "forward:/checkout";
 	}
@@ -72,12 +75,32 @@ public class adminController {
 	}
 
 	@RequestMapping("account")
-	public String account(Model model, TaiKhoan taikhoan) {
+	public String account(Model model, @RequestParam("m") Optional<Integer> m) {
+		Pageable pageable = PageRequest.of(m.orElse(0), 4);
+		Page<TaiKhoan> itemsPage = taikhoandao.findAll(pageable);
 		TaiKhoan item = new TaiKhoan();
 		model.addAttribute("item", item);
-		List<TaiKhoan> items = taikhoandao.findAll();
+		List<TaiKhoan> items = itemsPage.getContent();
 		model.addAttribute("items", items);
+//		Pageable pageable = PageRequest.of(m.orElse(0), 2);
+//		Page<TaiKhoan> page = taikhoandao.findAll(pageable);
+//		model.addAttribute("page", page);
 		return "/admin/accounts/account";
+	}
+
+
+	@RequestMapping("editAccount/{id}")
+	public String editAccount(@PathVariable("id") String mataikhoan) {
+		Integer idtaikhoan = Integer.parseInt(mataikhoan);
+		TaiKhoan taikhoan = taikhoandao.findById(idtaikhoan).get();
+		if (taikhoan.isQuyen()) {
+			taikhoan.setQuyen(false);
+		} else {
+			taikhoan.setQuyen(true);
+		}
+		taikhoandao.save(taikhoan);
+		
+		return "redirect:/admin/account";
 	}
 
 	@RequestMapping("product")
@@ -101,7 +124,8 @@ public class adminController {
 	}
 
 	@RequestMapping("management")
-	public String orderManagement(Model model, @RequestParam("keywords") Optional<String> kw, @RequestParam("m") Optional<Integer> m) {
+	public String orderManagement(Model model, @RequestParam("keywords") Optional<String> kw,
+			@RequestParam("m") Optional<Integer> m) {
 //		String kwords = kw.orElse(session.get("keywords"));
 //		session.set("keywords", kwords);
 		HoaDon hd = new HoaDon();
@@ -144,7 +168,7 @@ public class adminController {
 		map.put(true, "Admin");
 		return map;
 	}
-		
+
 	@RequestMapping("create")
 	public String create(TaiKhoan item, @RequestParam("photo_file") MultipartFile img)
 			throws IllegalStateException, IOException {
