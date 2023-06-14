@@ -27,19 +27,19 @@
 <body>
 	<div class="wrapper">
 		<div class="header">
-<%@include file="/WEB-INF/accers/menu.jsp"%>
-	
+			<%@include file="/WEB-INF/accers/menu.jsp"%>
+
 		</div>
 		<div class="clearfix"></div>
 		<div class="container_fullwidth">
-		
-		<jsp:include page="/${ cart }.jsp"/>
-		
+
+			<jsp:include page="/${ cart }.jsp" />
+
 		</div>
 		<div class="clearfix"></div>
 		<div class="footer">
 			<div class="footer-info">
-			<div class="container">
+				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
 							<div class="footer-logo">
@@ -80,7 +80,7 @@
 						</div>
 					</div>
 				</div>
-		
+
 			</div>
 			<div class="copyright-info">
 				<div class="container">
@@ -121,6 +121,6 @@
 	<script type="text/javascript" src="js/script.min.js">
 		
 	</script>
-	
+
 </body>
 </html>
