@@ -22,7 +22,6 @@
   <div class="row"> 
   
 <!--   <form action="/cart_visit" method="post" > -->
- 
     <div class="col-md-12"> 
       <h3 class="title">Giỏ hàng</h3> 
       <div class="clearfix"></div> 
@@ -45,7 +44,7 @@
            
             <tr> 
               <td style="vertical-align: middle; text-align: center;">
-                <input type="checkbox" class="check" name="productIds">
+                <input type="checkbox" class="check" name="selectedItems">
               </td> 
               <td style="vertical-align: middle; text-align: center;">
                 <img src="images/products/small/${itemsProductShow.sanPham1.hinhAnh}" alt="" width="80px">
@@ -73,7 +72,7 @@
               </td> 
               <td style="vertical-align: middle; text-align: center;"> 
                 <input name="idgio" value="${itemsProductShow.gioHang1.ID_Gio}" style="display: none;">
-              
+              	
                 <input type="number" style="width: 100%"  min="1" name="qty" value="${itemsProductShow.soLuong}" onblur="this.form.submit()">
              	
               </td> 
@@ -89,7 +88,6 @@
                 </a>
               </td> 
             </tr> 
-            
             </form>
           </c:forEach> 
           
@@ -111,9 +109,19 @@
           </span> 
         </div>
 <%--         </c:forEach>  --%>
-        <br> 
+        <br><br> 
         <div>
-          <button class="button" type="submit">Mua hàng</button>
+        
+
+<!-- <form id="checkoutForm" action="/cart/checkout" method="post"> -->
+<!-- 	<input type="hidden" id="selectedItems" name="selectedItems"> -->
+<!-- 	<input type="hidden" id="totalPrice" name="totalPrice"> -->
+<!-- 	<button type="submit" class="btn btn-success btn-lg" onclick="checkout()">Mua hàng</button>  -->
+                            
+<!-- </form> -->
+
+	<a class="button" href="/cart_visit">Mua hàng</a>
+
         </div> 
       </div> 
       <div class="clearfix"></div> 
@@ -124,3 +132,34 @@
   <div class="clearfix"></div> 
   <%@include file="/WEB-INF/accers/nhanhang.jsp" %> 
 </div>
+<script>
+        function checkout() {
+            var checkboxes = document.getElementsByClassName("check");
+            var selectedItems = [];
+            var totalPrice = 0;
+            var selectedCount = 0; // Biến đếm số sản phẩm được chọn
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    var itemId = checkboxes[i].value;
+                    selectedItems.push(itemId);
+                    selectedCount++; // Tăng biến đếm khi có sản phẩm được chọn
+                    var row = checkboxes[i].parentNode.parentNode;
+                    var price = row.querySelector(".price").innerText;
+                    var quantity = row.querySelector("input[name='qty']").value;
+                    var itemTotalPrice = parseFloat(price) * parseInt(quantity);
+                    totalPrice += itemTotalPrice;
+                }
+            }
+
+            if (selectedCount === 0) {
+                alert("Vui lòng chọn ít nhất một sản phẩm.");
+                return;
+            }
+
+            document.getElementById("selectedItems").value = JSON.stringify(selectedItems);
+            document.getElementById("totalPrice").value = totalPrice.toFixed(2);
+
+            document.getElementById("checkoutForm").submit();
+        }
+    </script>
