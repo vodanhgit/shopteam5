@@ -30,7 +30,7 @@ public class KhuyenMai implements Serializable {
 
 	//bi-directional many-to-one association to SanPham
 	@ManyToOne
-	@JoinColumn(name="MaSanPham")
+	@JoinColumn(name="Masanpham")
 	private SanPham sanPham3;
 
 	

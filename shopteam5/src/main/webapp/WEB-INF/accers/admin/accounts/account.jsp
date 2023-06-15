@@ -27,6 +27,7 @@
 </style>
 </head>
 <body>
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 p-4 shadow"
@@ -65,61 +66,78 @@
 				</nav>
 				<div class="px-4 p-3">
 					<div class="row">
-						<div class="col-3">
-							<button class="btn btn-info text-white" data-bs-toggle="modal"
-								data-bs-target="#modalAdd">Thêm mới tài khoản</button>
-							<!-- Modal add -->
-							<div class="modal fade" id="modalAdd" data-bs-backdrop="static"
-								data-bs-keyboard="false" tabindex="-1"
-								aria-labelledby="staticBackdropLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="staticBackdropLabel">Thêm
-												mới tài khoản</h5>
-											<button type="button" class="btn-close"
-												data-bs-dismiss="modal" aria-label="Close"></button>
-										</div>
-										<div class="modal-body">
+<!-- 						<div class="col-3"> -->
+<!-- 							<button class="btn btn-info text-white" data-bs-toggle="modal" -->
+<!-- 								data-bs-target="#modalAdd">Thêm mới tài khoản</button> -->
+<!-- 							Modal add -->
+<!-- 							<div class="modal fade" id="modalAdd" data-bs-backdrop="static" -->
+<!-- 								data-bs-keyboard="false" tabindex="-1" -->
+<!-- 								aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+<!-- 								<div class="modal-dialog"> -->
+<!-- 									<div class="modal-content"> -->
+<!-- 										<div class="modal-header"> -->
+<!-- 											<h5 class="modal-title" id="staticBackdropLabel">Thêm -->
+<!-- 												mới tài khoản</h5> -->
+<!-- 											<button type="button" class="btn-close" -->
+<!-- 												data-bs-dismiss="modal" aria-label="Close"></button> -->
+<!-- 										</div> -->
+<!-- 										<div class="modal-body"> -->
+											
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+											
 											<form:form action="account" method="post"
 												modelAttribute="item" name="account_form"
-												enctype="multipart/form-data">
-
-												<div>
-													<label for="name">Họ tên</label>
+												enctype="multipart/form-data" >
+											<div class="container" >
+											<div class="row">
+												<div class="col-sm-5">
+												<div class="mb-1">
+													<label>Họ tên</label>
 													<form:input class="form-control" path="hoTenNguoiDung" />
-
+													<form:errors path="hoTenNguoiDung" cssClass="mgs_errors" />
 												</div>
-												<div>
+												<div class="mb-1">
 													<label for="email">Email</label>
 													<form:input class="form-control" path="email" />
+													<form:errors path="email" cssClass="mgs_errors" />
 												</div>
-												<div>
+												</div>
+												<div class="col-sm-5">
+												<div class="mb-1">
 													<label for="username">Tên đăng nhập</label>
 													<form:input class="form-control" path="tenTaiKhoan" />
+													<form:errors path="tenTaiKhoan" cssClass="mgs_errors" />
 												</div>
-												<div>
+												<div class="mb-1">
 													<label for="pass">Mật khẩu</label>
 													<form:input class="form-control" path="matKhau" />
+													<form:errors path="matKhau" cssClass="mgs_errors" />
 												</div>
-												<div>
-													<label for="hinhanh">Hình ảnh</label> <input type="file"
-														class="form-control" name="photo_file">
+												<div class="mb-1">
+													<input type="file" class="form-control" name="photo_file" style="display: none">
 												</div>
-												<div>
+												<div class="mb-1" style="display: none">
 													<label>Giới tính</label>
 													<form:radiobuttons path="gioiTinh" class="ms-3"
-														items="${gioitinh}" />
+  														items="${gioitinh}" />  
 
 												</div>
-												<div>
+												<div class="mb-1">
 													<label>Quyền</label>
 													<form:radiobuttons path="quyen" class="ms-3"
 														items="${quyen}" />
 
 												</div>
+												</div>
+												</div>
 												<button class="btn btn-primary" formaction="/admin/create">
 													Thêm</button>
+											</div>
+												
 												<div class="position-fixed top-0 end-0 p-5"
 													style="z-index: 11">
 													<div style="background-color: #2ecc71" id="liveToast"
@@ -134,15 +152,10 @@
 													</div>
 												</div>
 											</form:form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3">
-						<input name="tentaikhoan" value="tentaikhoan" placeholder="Tên tài khoản">
-						<button>Tìm kiếm</button>
-						</div>
+											
+											
+											
+												
 						<div class="table-responsive mt-5" style="overflow-x: auto">
 							<table class="table table-bordered">
 								<thead>
@@ -177,21 +190,14 @@
 								</tbody>
 							</table>
 							<div style="padding-left: 45%">
-								<nav aria-label="Page navigation example">
-									<ul class="pagination">
-
-										<c:forEach var="i" begin="0" end="${page.totalPage +3}">
-											
-											<a class="page-link" href="/admin/account?m=${i}">${i+1}
-											</a>
-											
-											
-										</c:forEach>
-											
-
-									</ul>
-								</nav>
-
+							<td colspan="7" style="text-align: center;">
+             <div><p>Trang số: ${itemsProductvisit.number+1}</p></div>
+				<div>
+				
+					<c:forEach var="pagetr" begin="0" end="${itemsProductvisit.totalPages}">
+						<a href="/admin/account?m=${pagetr}" style="font-size: 25px; font-weight: lighter; text-decoration: none">${pagetr+1}&nbsp;&nbsp;&nbsp;</a>
+					</c:forEach>
+			</td>
 							</div>
 
 						</div>
@@ -203,7 +209,8 @@
 		</div>
 	</div>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

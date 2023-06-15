@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -179,33 +179,26 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="row">
-							<form:form action="/category/index" modelAttribute="item">
-							<c:forEach var="aothunnamProductShow" items="${items}">
+
 								<div class="col-md-4 col-sm-6">
 									<div class="products">
 										<div class="thumbnail">
 											<a href="details.html"> <img
-												src="images/products/large/BSX750D.png" alt="Product Name"
+												src="images/products/large/${hinhanh}" alt="Product Name"
 												style="height: 90%;">
 											</a>
 										</div>
-										<div class="productname" style="display: none;">${aothunnamProductShow.maSanPham}</div>
-										<div class="productname">${aothunnamProductShow.tenSanPham}</div>
-										<h4 class="price">${aothunnamProductShow.gia}VND</h4>
+										<div class="productname" style="display: none;"></div>
+										<div class="productname">${tensp}</div>
+										<h4 class="price">${gia}VND</h4>
 										<div class="button_group">
-											<button class="button add-cart" type="button" formaction="/product/create">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"> </i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"> </i>
-											</button>
+											<button class="button add-cart" type="button"
+												formaction="/product/create">Thêm vào giỏ</button>
+											
 										</div>
 									</div>
 								</div>
-							</c:forEach>
-</form:form>
+
 
 
 

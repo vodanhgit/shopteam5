@@ -33,9 +33,9 @@ public class TaiKhoan implements Serializable {
 	@Column(name = "Mataikhoan")
 	private Integer maTaiKhoan;
 
+	@NotBlank(message = "{NotBlank.item.email}")
+	@Email(message = "{Email.item.email}")
 	@Column(name = "Email")
-//	@NotBlank(message = "{NotBlank.item.email}")
-//	@Email(message = "{Email.item.email}")
 	private String email;
 
 	@Column(name = "Gioitinh")
@@ -44,20 +44,23 @@ public class TaiKhoan implements Serializable {
 	@Column(name = "Hinhanh")
 	private String hinhAnh;
 
+	@NotBlank(message = "{NotBlank.item.hoTenNguoiDung}")
 	@Column(name = "Hotennguoidung")
-//	@NotBlank(message = "{NotBlank.item.hoTenNguoiDung}")
 	private String hoTenNguoiDung;
 
-//	@NotBlank(message = "NotBlank.item.matKhau")
-//	@Min(value = 8, message = "Min.item.matKhau")
+	@NotBlank(message = "{NotBlank.item.matKhau}")
+	@Min(value = 8, message = "{Min.item.matKhau}")
 	@Column(name = "Matkhau")
 	private String matKhau;
 
 	@Column(name = "Quyen")
 	private boolean quyen;
+	
+	@Column(name="Ngaysinh")
+	private String ngaySinh;
 
+	@NotBlank(message="{NotBlank.item.tenTaiKhoan}")
 	@Column(name = "Tentaikhoan")
-//	@NotBlank(message="NotBlank.item.tenTaiKhoan")
 	private String tenTaiKhoan;
 
 	// bi-directional many-to-one association to GioHang

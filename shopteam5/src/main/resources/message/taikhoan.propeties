@@ -1,0 +1,6 @@
+NotBlank.item.email= *Không để trống mail
+Email.item.email= *sai định dạng mail
+NotBlank.item.hoTenNguoiDung= *Không để trống họ tên
+NotBlank.item.matKhau= *Không bỏ trống mật khẩu
+Min.item.matKhau= *Mật khẩu ít nhất 8 kí tự
+NotBlank.item.tenTaiKhoan= *Không bỏ trống tên đăng nhập
