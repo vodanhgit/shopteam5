@@ -4,8 +4,6 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -24,7 +22,6 @@ public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Mahoadon")
 	private int maHoaDon;
 
@@ -39,9 +36,6 @@ public class HoaDon implements Serializable {
 
 	@Column(name="Trangthai")
 	private String trangThai;
-	
-	@Column(name="Ghichu")
-	private String ghiChu;
 
 	//bi-directional many-to-one association to TaiKhoan
 	@ManyToOne

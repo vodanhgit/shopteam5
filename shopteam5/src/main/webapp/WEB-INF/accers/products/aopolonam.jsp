@@ -269,28 +269,21 @@
                                     <div class="products">
                                         <div class="thumbnail">
                                             <a href="details.html">
-                                                <img src="images/products/large/polo.png" alt="Product Name"
+                                                <img src="images/products/large/${hinhpolo}" 
                                                     style="height: 90%;">
                                             </a>
                                         </div>
                                         <div class="productname">
-                                            Áo Polo form chuẩn
+                                            ${tenpolo}
                                         </div>
                                         <h4 class="price">
-                                            299.000 VND
+                                            ${giapolo} VND
                                         </h4>
                                         <div class="button_group">
                                             <button class="button add-cart" type="button">
                                                 Thêm vào giỏ
                                             </button>
-                                            <button class="button compare" type="button">
-                                                <i class="fa fa-exchange">
-                                                </i>
-                                            </button>
-                                            <button class="button wishlist" type="button">
-                                                <i class="fa fa-heart-o">
-                                                </i>
-                                            </button>
+                                            
                                         </div>
                                     </div>
                                 </div>

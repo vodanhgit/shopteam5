@@ -32,63 +32,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="clearfix"></div>
-						<!-- <div class="branch leftbar">
-                <h3 class="title">
-                  Branch
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#">
-                      New
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Sofa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Salon
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      New Trend
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Living room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bed room
-                    </a>
-                  </li>
-                </ul>
-              </div> -->
-						<div class="clearfix"></div>
-						<!-- <div class="price-filter leftbar">
-                <h3 class="title">
-                  Price
-                </h3>
-                <form class="pricing">
-                  <label>
-                    $ 
-                    <input type="number">
-                  </label>
-                  <span class="separate">
-                    - 
-                  </span>
-                  <label>
-                    $ 
-                    <input type="number">
-                  </label>
-                  <input type="submit" value="Go">
-                </form>
-              </div> -->
+
 						<div class="clearfix"></div>
 						<div class="clolr-filter leftbar">
 							<h3 class="title">Màu</h3>
@@ -170,29 +114,32 @@
 
 								</div>
 								<div class="pager">
-									<a href="#" class="prev-page"> <i class="fa fa-angle-left">
+									<!-- <a href="#" class="prev-page"> <i class="fa fa-angle-left">
 									</i>
 									</a> <a href="#" class="active"> 1 </a> <a href="#"> 2 </a> <a
 										href="#"> 3 </a> <a href="#" class="next-page"> <i
 										class="fa fa-angle-right"> </i>
-									</a>
+									</a> -->
+									<c:forEach var="i" begin="0" end="${page.totalPages + 3}">
+										<a class="page-link" href="/formaonam?m=${i}">${i+1} </a>
+									</c:forEach>
 								</div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="row">
+								
+									<div class="col-md-4 col-sm-6">
 
-								<div class="col-md-4 col-sm-6">
-									<c:forEach var="aothunnamProductShow" items="${items}">
 										<div class="products">
 											<div class="thumbnail">
 												<a href="details.html"> <img
-													src="images/products/large/BSX750D.png" alt="Product Name"
+													src="images/products/large/${anhnam}" alt="Product Name"
 													style="height: 90%;">
 												</a>
 											</div>
-											<div class="productname" style="display: none;">${aothunnamProductShow.maSanPham}</div>
-											<div class="productname">${aothunnamProductShow.tenSanPham}</div>
-											<h4 class="price">${aothunnamProductShow.gia}VND</h4>
+											<div class="productname" style="display: none;"></div>
+											<div class="productname">${tennam}</div>
+											<h4 class="price">${gianam}VND</h4>
 											<div class="button_group">
 												<button class="button add-cart" type="button">Thêm
 													vào giỏ</button>
@@ -204,8 +151,9 @@
 												</button>
 											</div>
 										</div>
-									</c:forEach>
-								</div>
+
+									</div>
+							
 
 								<!-- <div class="col-md-4 col-sm-6">
 									<div class="products">

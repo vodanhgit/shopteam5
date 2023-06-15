@@ -110,6 +110,7 @@
 		<div class="container_fullwidth">
 			<div class="container">
 				<div class="hot-products">
+
 					<h3 class="title">
 						Sản Phẩm <strong>Giảm Giá</strong>
 					</h3>
@@ -122,196 +123,35 @@
 							<div class="row">
 
 								<div class="col-md-3 col-sm-6">
-
-									<div class="products">
-										<div class="offer">- %20</div>
-										<%-- <c:forEach var="item" items="${items}"> --%>
+									
+										<div class="products">
+											<div class="offer">- %20</div>
 											<div class="thumbnail">
 												<a href="/mota"><img
-													src="<!-- images/products/ -->${item.hinhAnh}"
-													style="height: 90%;" alt="Product Name"></a>
+													src=" images/products/large/${imageUrl}" style="height: 90%;"
+													alt="Product Name"></a>
 											</div>
-											<div class="productname">${item.tenSanPham}</div>
-											<h4 class="price">${item.gia}</h4>
+											<div class="productname">${productName}</div>
+											<h4 class="price">${price}</h4>
 											<div class="button_group">
 												<button class="button add-cart" type="button">Thêm
 													vào giỏ</button>
-												<button class="button compare" type="button">
-													<i class="fa fa-exchange"></i>
-												</button>
-												<button class="button wishlist" type="button">
-													<i class="fa fa-heart-o"></i>
-												</button>
+												
 											</div>
-										<%-- </c:forEach> --%>
-									</div>
+
+										</div>
+									
+
 
 								</div>
 
-								<!-- <div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/large/938-9385688_o-s-mi-nam-mu-trng.png"
-												style="height: 90%;" alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo sơ mi Nam</div>
-										<h4 class="price">550.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="offer">New</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/male/1.png" style="height: 90%;"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo thun nữ cổ tròn</div>
-										<h4 class="price">699.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/male/2.png" style="height: 90%;"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo sơ mi nữ</div>
-										<h4 class="price">599.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div> -->
+
+
 							</div>
-						</li>
-						<!-- <li>
-							<div class="row">
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/large/ao len.jpeg" style="height: 90%;"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo len Nam</div>
-										<h4 class="price">999.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/large/938-9385688_o-s-mi-nam-mu-trng.png"
-												style="height: 90%;" alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo sơ mi Nam</div>
-										<h4 class="price">550.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="offer">New</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/male/1.png" style="height: 90%;"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo thun nữ cổ tròn</div>
-										<h4 class="price">699.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="products">
-										<div class="offer">- %20</div>
-										<div class="thumbnail">
-											<a href="details.html"><img
-												src="images/products/male/2.png" style="height: 90%;"
-												alt="Product Name"></a>
-										</div>
-										<div class="productname">Áo sơ mi nữ</div>
-										<h4 class="price">599.000 VND</h4>
-										<div class="button_group">
-											<button class="button add-cart" type="button">Thêm
-												vào giỏ</button>
-											<button class="button compare" type="button">
-												<i class="fa fa-exchange"></i>
-											</button>
-											<button class="button wishlist" type="button">
-												<i class="fa fa-heart-o"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li> -->
 					</ul>
 				</div>
+			
+
 				<div class="clearfix"></div>
 				<div class="clearfix"></div>
 				<%@include file="/WEB-INF/accers/nhanhang.jsp"%>
