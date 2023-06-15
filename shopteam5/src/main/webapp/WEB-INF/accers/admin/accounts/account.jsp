@@ -15,7 +15,16 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <title>Shopteam5</title>
+
+<style>
+.mgs_errors {
+	color: red;
+	font-style: italic;
+}
+</style>
 </head>
 <body>
 	<div class="container-fluid">
@@ -42,9 +51,8 @@
 
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> <!-- 									<sec:authorize access="isAuthenticated()"> -->
-								<span> Xin chào <!--<sec:authentication property="principal.username" /> -->
-							</span> <!-- 									</sec:authorize> --> <i
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<span> Xin chào </span>  <i
 								class="fa-solid fa-user fs-4"></i>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
@@ -74,42 +82,44 @@
 										</div>
 										<div class="modal-body">
 											<form:form action="account" method="post"
-												modelAttribute="item" name="account_form" enctype="multipart/form-data">
-												
+												modelAttribute="item" name="account_form"
+												enctype="multipart/form-data">
+
 												<div>
-													<label for="name">Họ tên</label> 
+													<label for="name">Họ tên</label>
 													<form:input class="form-control" path="hoTenNguoiDung" />
 
 												</div>
 												<div>
-													<label for="email">Email</label> 
-												<form:input class="form-control" path="email" />
+													<label for="email">Email</label>
+													<form:input class="form-control" path="email" />
 												</div>
 												<div>
-													<label for="username">Tên đăng nhập</label> 
+													<label for="username">Tên đăng nhập</label>
 													<form:input class="form-control" path="tenTaiKhoan" />
 												</div>
 												<div>
-													<label for="pass">Mật khẩu</label> 
+													<label for="pass">Mật khẩu</label>
 													<form:input class="form-control" path="matKhau" />
 												</div>
 												<div>
-													<label for="hinhanh">Hình ảnh</label> 
-													<input type="file" class="form-control" name="photo_file">
+													<label for="hinhanh">Hình ảnh</label> <input type="file"
+														class="form-control" name="photo_file">
 												</div>
 												<div>
-													<label>Giới tính</label> 
-														<form:radiobuttons path="gioiTinh" class="ms-3"
+													<label>Giới tính</label>
+													<form:radiobuttons path="gioiTinh" class="ms-3"
 														items="${gioitinh}" />
-													
+
 												</div>
 												<div>
-													<label>Quyền</label> 
-														<form:radiobuttons path="quyen" class="ms-3"
+													<label>Quyền</label>
+													<form:radiobuttons path="quyen" class="ms-3"
 														items="${quyen}" />
-													
+
 												</div>
-												<button  class="btn btn-primary" formaction="/admin/create"> Thêm </button>
+												<button class="btn btn-primary" formaction="/admin/create">
+													Thêm</button>
 												<div class="position-fixed top-0 end-0 p-5"
 													style="z-index: 11">
 													<div style="background-color: #2ecc71" id="liveToast"
@@ -129,6 +139,10 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-lg-3">
+						<input name="tentaikhoan" value="tentaikhoan" placeholder="Tên tài khoản">
+						<button>Tìm kiếm</button>
+						</div>
 						<div class="table-responsive mt-5" style="overflow-x: auto">
 							<table class="table table-bordered">
 								<thead>
@@ -136,7 +150,6 @@
 										<th>Mã tài khoản</th>
 										<th>Họ và Tên</th>
 										<th>Tên tài khoản</th>
-										<th>Mật Khẩu</th>
 										<th>Giới Tính</th>
 										<th>Email</th>
 										<th>Hình ảnh</th>
@@ -146,133 +159,47 @@
 								</thead>
 								<tbody>
 									<c:forEach var="item" items="${items}">
-										<tr>
+									<tr>
 											<td>${item.maTaiKhoan}</td>
 											<td>${item.hoTenNguoiDung}</td>
 											<td>${item.tenTaiKhoan}</td>
-											<td>${item.matKhau}</td>
 											<td>${item.gioiTinh  == true ? "Nam" : "Nữ"}</td>
 											<td>${item.email}</td>
-											<td><img src="/images/${item.hinhAnh}" width=200px /></td>
+											<td style="text-align: center"><img
+												src="/images/${item.hinhAnh}" width=50px /></td>
 											<td>${item.quyen == true ? "Admin" : "Client"}</td>
-
-
-
-
-
-											<!-- Modal update -->
-											<div class="modal fade" id="modalUpdate_${acc.id}"
-												data-bs-backdrop="static" data-bs-keyboard="false"
-												tabindex="-1" aria-labelledby="staticBackdropLabel"
-												aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header bg-info">
-															<h5 class="modal-title text-white"
-																id="staticBackdropLabel">Cập nhập tài khoản</h5>
-															<button type="button" class="btn" data-bs-dismiss="modal"
-																aria-label="Close">
-																<i class="fa-solid fa-xmark fs-5 text-white"></i>
-															</button>
-														</div>
-														<div class="modal-body">
-															<form:form action="/admin/accounts/store" method="post"
-																modelAttribute="account" name="account_form">
-																<div>
-																	<label for="name">Họ tên</label> <input type="text"
-																		class="form-control" id="name" name="name" />
-
-																</div>
-																<div>
-																	<label for="email">Email</label> <input type="email"
-																		class="form-control" id="email" name="email" />
-
-																</div>
-																<div>
-																	<label for="username">Tên đăng nhập</label> <input
-																		type="text" class="form-control" id="username"
-																		name="username" />
-
-																</div>
-																<div>
-																	<label for="pass">Mật khẩu</label> <input type="text"
-																		class="form-control" id="pass" name="password" />
-
-																</div>
-																<div>
-																	<label for="hinhanh">Hình ảnh</label> <input
-																		type="file" class="form-control" id="hinhanh"
-																		name="image" />
-																</div>
-																<div>
-																	<label>Admin</label> <select class="form-control">
-																		<option value="admin">Quản lý</option>
-																		<option value="member">Thành viên</option>
-																	</select>
-																</div>
-																<button class="btn btn-primary w-100 mt-3"
-																	id="liveToastBtn" type="submit">Cập nhập</button>
-																<div class="position-fixed top-0 end-0 p-5"
-																	style="z-index: 11">
-																	<!-- 													thông báo cập nhập -->
-																	<!-- 													<div style="background-color: #2ecc71" id="liveToast" -->
-																	<!-- 														class="toast align-items-center text-white border-0" -->
-																	<!-- 														role="alert" aria-live="assertive" aria-atomic="true"> -->
-																	<!-- 														<div class="d-flex"> -->
-																	<!-- 															<div class="toast-body">Cập nhập thành công !</div> -->
-																	<!-- 															<button type="button" -->
-																	<!-- 																class="btn-close btn-close-white me-2 m-auto" -->
-																	<!-- 																data-bs-dismiss="toast" aria-label="Close"></button> -->
-																	<!-- 														</div> -->
-																	<!-- 													</div> -->
-																</div>
-															</form:form>
-														</div>
-													</div>
-												</div>
-											</div>
-											<td class="text-center">
-												<button class="btn btn-danger" data-bs-toggle="modal"
-													data-bs-target="#modalDelte_${acc.id }">
-													<i class="fa-solid fa-trash-can"></i>
-												</button> <!-- Modal delete -->
-												<div class="modal fade" id="modalDelte_${acc.id}"
-													data-bs-backdrop="static" data-bs-keyboard="false"
-													tabindex="-1" aria-labelledby="staticBackdropLabel"
-													aria-hidden="true">
-													<div class="modal-dialog">
-														<div class="modal-content">
-															<div class="modal-header bg-danger">
-																<h5 class="modal-title text-white"
-																	id="staticBackdropLabel">Xóa tài khoản !</h5>
-																<button type="button" class="btn"
-																	data-bs-dismiss="modal" aria-label="Close">
-																	<i class="fa-solid fa-xmark fs-5 text-white"></i>
-																</button>
-															</div>
-															<div class="modal-body" style="background-color: #fff2df">
-																<p>Cảnh báo: Bạn đang cố gắng xóa tài khoản này, Tài
-																	khoản sau khi xóa không thể khôi phục !</p>
-																<a role="button"
-																	href="/admin/accounts/delete/${ acc.id }"
-																	class="btn btn-danger w-100 "> Xóa </a>
-															</div>
-														</div>
-													</div>
-												</div>
+											<td class="text-center"><a
+												href="/admin/editAccount/${item.maTaiKhoan}">Đổi quyền</a></td>
+											
 										</tr>
 									</c:forEach>
-
-
+									 
 								</tbody>
 							</table>
+							<div style="padding-left: 45%">
+								<nav aria-label="Page navigation example">
+									<ul class="pagination">
+
+										<c:forEach var="i" begin="0" end="${page.totalPage +3}">
+											
+											<a class="page-link" href="/admin/account?m=${i}">${i+1}
+											</a>
+											
+											
+										</c:forEach>
+											
+
+									</ul>
+								</nav>
+
+							</div>
+
 						</div>
-
-
-
 					</div>
 				</div>
+
 			</div>
+
 		</div>
 	</div>
 

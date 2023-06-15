@@ -10,7 +10,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * The persistent class for the TaiKhoan database table.
@@ -19,13 +25,17 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "Taikhoan")
+@AllArgsConstructor
+@NoArgsConstructor
 public class TaiKhoan implements Serializable {
-	
+
 	@Id
 	@Column(name = "Mataikhoan")
-	private int maTaiKhoan;
+	private Integer maTaiKhoan;
 
 	@Column(name = "Email")
+//	@NotBlank(message = "{NotBlank.item.email}")
+//	@Email(message = "{Email.item.email}")
 	private String email;
 
 	@Column(name = "Gioitinh")
@@ -35,8 +45,11 @@ public class TaiKhoan implements Serializable {
 	private String hinhAnh;
 
 	@Column(name = "Hotennguoidung")
+//	@NotBlank(message = "{NotBlank.item.hoTenNguoiDung}")
 	private String hoTenNguoiDung;
 
+//	@NotBlank(message = "NotBlank.item.matKhau")
+//	@Min(value = 8, message = "Min.item.matKhau")
 	@Column(name = "Matkhau")
 	private String matKhau;
 
@@ -44,9 +57,9 @@ public class TaiKhoan implements Serializable {
 	private boolean quyen;
 
 	@Column(name = "Tentaikhoan")
+//	@NotBlank(message="NotBlank.item.tenTaiKhoan")
 	private String tenTaiKhoan;
 
-	
 	// bi-directional many-to-one association to GioHang
 	@OneToMany(mappedBy = "taiKhoan")
 	private List<GioHang> gioHangs;
