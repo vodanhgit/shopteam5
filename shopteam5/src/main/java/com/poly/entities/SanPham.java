@@ -38,6 +38,9 @@ public class SanPham implements Serializable {
 	@Column(name = "Gia")
 	private int gia;
 	
+	@Column(name = "Giagoc")
+	private int giaGoc;
+	
 	
 	@Column(name = "Hinhanh")
 	private String hinhAnh;
@@ -72,7 +75,8 @@ public class SanPham implements Serializable {
 	@Column(name = "Trangthai")
 	private String trangThai;
 
-
+	@Column(name = "Giakhuyenmai")
+	private int giaKhuyenMai;	
 	// bi-directional many-to-one association to ChiTietGioHang
 	@OneToMany(mappedBy = "sanPham1")
 	private List<ChiTietGioHang> chiTietGioHangs;
