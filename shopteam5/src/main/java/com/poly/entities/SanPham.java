@@ -39,7 +39,7 @@ public class SanPham implements Serializable {
 	private int gia;
 	
 	@Column(name = "Giagoc")
-	private int giaGoc;
+	private Integer giaGoc;
 	
 	
 	@Column(name = "Hinhanh")
@@ -76,7 +76,7 @@ public class SanPham implements Serializable {
 	private String trangThai;
 
 	@Column(name = "Giakhuyenmai")
-	private int giaKhuyenMai;	
+	private Integer giaKhuyenMai;	
 	// bi-directional many-to-one association to ChiTietGioHang
 	@OneToMany(mappedBy = "sanPham1")
 	private List<ChiTietGioHang> chiTietGioHangs;
