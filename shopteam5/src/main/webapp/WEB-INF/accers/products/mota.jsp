@@ -39,7 +39,7 @@
 				<div class="row">
 
 				
-						<div class="col-md-9">
+						<div class="col-md-12	">
 							<div class="products-details">
 								<div class="preview_image">
 									<div class="preview-small">
@@ -71,28 +71,35 @@
 
 <!-- 										</div> -->
 										<div class="qty">
-									<form action="/motasize/${showsanpham_tensanpham}" method="post">
+									<form action="/motasize/${showsanpham_masanpham}" method="post">
 										
 											&ensp;&ensp;Size: <select onblur="this.form.submit()" name="size">
+											<option  value="${showsize}">${showsize}</option>
 											  <c:forEach var="showopsize" items="${showop}"> 
 											  
-												<option  value="${showopsize.size}">${showopsize.size}</option>
+												<option  value="${showopsize}">${showopsize}</option>
 												</c:forEach> 
 											</select>
 											</form>
 											
 										</div>
-										<div class="qty">								
-											&ensp;&ensp;Màu: <select>
+										<div class="qty">		
+										<form action="/motamau/${showsanpham_masanpham}" method="post">				
+										<input type="hidden" name="size" value="${showsize}">		
+											&ensp;&ensp;Màu: <select onblur="this.form.submit()" name="mau">
+											<option  value="${showmautren}">${showmautren}</option>
 											<c:forEach var="showopmau" items="${showmau}"> 
 												<option>${showopmau.mau}</option>
 												</c:forEach> 
 											</select>
+											</form>
 										</div>
 
 									</div>
 									<form action="/themvaogiohang/${showsanpham_masanpham}" method="post">
 									<div class="button_group" style="margin-top: 10px">
+									<input type="hidden" name="size" value="${showsize}">
+									<input type="hidden" name="mau" value="${showmautren}">
 										<button class="button" type="submit">Thêm vào giỏ</button>
 
 									</div>
@@ -141,35 +148,16 @@
 						</div>
 
 				
-					<div class="col-md-3">
-						<div class="clearfix"></div>
+<!-- 					<div class="col-md-3"> -->
+<!-- 						<div class="clearfix"></div> -->
 
-						<div class="clearfix"></div>
-						<div class="get-newsletter leftbar">
-							<h3 class="title">
-								Liên hệ <strong> chúng tôi </strong>
-							</h3>
+<!-- 						<div class="clearfix"></div> -->
 
-							<form>
-								<input class="email" type="text" name=""
-									placeholder="Your Email..."> <input class="submit"
-									type="submit" value="Submit">
-							</form>
-						</div>
-						<div class="clearfix"></div>
-						<div class="fbl-box leftbar">
-							<h3 class="title">Facebook</h3>
-							<span class="likebutton"> <a href="#"> <img
-									src="images/fblike.png" alt="">
-							</a>
-							</span>
-							<p>12k like shopteam5.</p>
+<!-- 						<div class="clearfix"></div> -->
+					
+<!-- 						<div class="clearfix"></div> -->
 
-
-						</div>
-						<div class="clearfix"></div>
-
-					</div>
+<!-- 					</div> -->
 
 					<div id="productsDetails" class="hot-products">
 						<h3 class="title">

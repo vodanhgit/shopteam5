@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.poly.entities.ChiTietGioHang;
 import com.poly.entities.GioHang;
+import com.poly.entities.PhanLoai;
 import com.poly.entities.SanPham;
 import com.poly.entities.TaiKhoan;
 import com.poly.reponstory.ChiTietGioHangDao;
 import com.poly.reponstory.GioHangDao;
 import com.poly.reponstory.HoaDonDao;
+import com.poly.reponstory.PhanLoaiDao;
 import com.poly.reponstory.SanPhamDao;
 import com.poly.reponstory.TaiKhoanDao;
 import com.poly.service.SessionService;
@@ -29,34 +31,42 @@ public class trangChinhController {
 	@Autowired
 	SessionService sessionService;
 	@Autowired 
+	PhanLoaiDao phanLoaiDao;
+	@Autowired 
 	TaiKhoanDao taikhoanDao;
 	@Autowired
 	private ChiTietGioHangDao chiTietGioHangDao;
 	
 	@Autowired
 	GioHangDao gioHangDao;
+//	@RequestMapping("index")
+//	public String index(Model model) {
+//		List<Object[]> result = dao.findSanPhamWithKhuyenMai();
+//
+//		for (Object[] row : result) {
+//			String productName = (String) row[0];
+//			Integer price = (Integer) row[1];
+//			String imageUrl = (String) row[2];
+//
+//			// Perform operations with the retrieved data
+////			System.out.println("Product Name: " + productName);
+////			System.out.println("Price: " + price);
+////			System.out.println("Image URL: " + imageUrl);
+////			System.out.println("-----------------------------");
+//
+//			// Add the data to the model for rendering in the view
+//			model.addAttribute("productName", productName);
+//			model.addAttribute("price", price);
+//			model.addAttribute("imageUrl", imageUrl);
+//		}
+//		return "index";
+//	}
 	@RequestMapping("index")
 	public String index(Model model) {
-		List<Object[]> result = dao.findSanPhamWithKhuyenMai();
 
-		for (Object[] row : result) {
-			String productName = (String) row[0];
-			Integer price = (Integer) row[1];
-			String imageUrl = (String) row[2];
-
-			// Perform operations with the retrieved data
-//			System.out.println("Product Name: " + productName);
-//			System.out.println("Price: " + price);
-//			System.out.println("Image URL: " + imageUrl);
-//			System.out.println("-----------------------------");
-
-			// Add the data to the model for rendering in the view
-			model.addAttribute("productName", productName);
-			model.addAttribute("price", price);
-			model.addAttribute("imageUrl", imageUrl);
-		}
 		return "index";
 	}
+	
 	int check;
 	@RequestMapping("mota")
 	public String mota(Model model) {
@@ -86,18 +96,18 @@ public class trangChinhController {
 		model.addAttribute("showsanpham_gia", showtheoma1.getGia());
 		model.addAttribute("showsanpham_mota", showtheoma1.getMoTa());
 		model.addAttribute("showsanpham_hinhanh", showtheoma1.getHinhAnh());
-		
-
+		model.addAttribute("showsize", "Chọn");
 		List<SanPham> showtheoten = dao.findByTenSanPham(showtheoma1.getTenSanPham());
-		model.addAttribute("showop", showtheoten);
-		List<SanPham> timmau = dao.findByMaSanPham(msp);
-		model.addAttribute("showmau", timmau);
+		List<String> showsize = phanLoaiDao.findDistinctSizesByMaSanPham(msp);
+		model.addAttribute("showop", showsize);
+//		List<SanPham> timmau = dao.findByMaSanPham(msp);
+//		model.addAttribute("showmau", timmau);
 		
 		return "/products/mota";
 	}
-	@RequestMapping("motasize/{tensanpham}")
-	public String chitietsanphamsize(Model model,@PathVariable("tensanpham") String tensanpham, @RequestParam("size") String size) {
-		SanPham showtheoma = dao.findByTenSanPhamAndSize(tensanpham,size);
+	@RequestMapping("motasize/{masanpham}")
+	public String chitietsanphamsize(Model model,@PathVariable("masanpham") Integer masanpham, @RequestParam("size") String size) {
+		SanPham showtheoma = dao.findByMaSanPham1(masanpham);
 
 //		List<SanPham> showtheoma = dao.findByMaSanPham(msp);
 //		SanPham showtheoma1 = dao.findByMaSanPham1(msp);
@@ -108,15 +118,40 @@ public class trangChinhController {
 		model.addAttribute("showsanpham_gia", showtheoma.getGia());
 		model.addAttribute("showsanpham_mota", showtheoma.getMoTa());
 		model.addAttribute("showsanpham_hinhanh", showtheoma.getHinhAnh());
-		model.addAttribute("showsanpham_size", size);
-		List<SanPham> showtheoten = dao.findByTenSanPham(showtheoma.getTenSanPham());
-		model.addAttribute("showop", showtheoten);
-		List<SanPham> timmau = dao.findByMaSanPham(showtheoma.getMaSanPham());
+		
+		List<String> showsize = phanLoaiDao.findDistinctSizesByMaSanPham(masanpham);
+		model.addAttribute("showsize", size);
+		model.addAttribute("showop", showsize);
+		model.addAttribute("showmautren", "Chọn");
+		List<PhanLoai> timmau = phanLoaiDao.findByMaSanPhamAndSize(masanpham,size);
 		model.addAttribute("showmau", timmau);
 		return "/products/mota";
 	}
+	@RequestMapping("motamau/{masanpham}")
+	public String chitietsanphammau(Model model,@PathVariable("masanpham") Integer masanpham, @RequestParam("size") String size, @RequestParam("mau") String mau) {
+		SanPham showtheoma = dao.findByMaSanPham1(masanpham);
+
+//		List<SanPham> showtheoma = dao.findByMaSanPham(msp);
+//		SanPham showtheoma1 = dao.findByMaSanPham1(msp);
+//		
+		model.addAttribute("showsanpham_masanpham", showtheoma.getMaSanPham());
+		model.addAttribute("showsanpham_tensanpham", showtheoma.getTenSanPham());
+		model.addAttribute("showsanpham_trangthai", showtheoma.getTrangThai());
+		model.addAttribute("showsanpham_gia", showtheoma.getGia());
+		model.addAttribute("showsanpham_mota", showtheoma.getMoTa());
+		model.addAttribute("showsanpham_hinhanh", showtheoma.getHinhAnh());
+		
+		List<String> showsize = phanLoaiDao.findDistinctSizesByMaSanPham(masanpham);
+		model.addAttribute("showsize", size);
+		model.addAttribute("showop", showsize);
+		List<PhanLoai> timmau = phanLoaiDao.findByMaSanPhamAndSize(masanpham,size);
+		model.addAttribute("showmau", timmau);
+		model.addAttribute("showmautren", mau);
+		PhanLoai timmaphanloai = phanLoaiDao.findByMaSanPhamAndSizeAndMau(masanpham, size, mau);
+		return "/products/mota";
+	}
 	@RequestMapping("themvaogiohang/{masanpham}")
-	public String themvaogiohang(Model model,@PathVariable("masanpham") int masanpham) {
+	public String themvaogiohang(Model model,@PathVariable("masanpham") int masanpham, @RequestParam("size") String size, @RequestParam("mau") String mau) {
 		SanPham timtheoma = dao.findByMaSanPham1(masanpham);
 		String myValue = sessionService.get("username");
 		TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
@@ -131,6 +166,8 @@ public class trangChinhController {
 //	    ctgh.setMau(timtheoma.getMau());
 	    ctgh.setGia(timtheoma.getGia());
 	    ctgh.setSoLuong(1);
+	    ctgh.setMau(mau);
+	    ctgh.setSize(size);
 	    chiTietGioHangDao.save(ctgh);
 		
 //		System.out.println(gioHang);
@@ -138,7 +175,7 @@ public class trangChinhController {
 ////		ctgh.setSanPham1(timtheoma.getMaSanPham());
 //		chiTietGioHangDao.save(ctgh);
 		
-//		List<SanPham> showtheoten = dao.findByTenSanPham(showtheoma.getTenSanPham());
+//		List<SanPham> showtheoten = phanLoaiDao.findByTenSanPham(showtheoma.getTenSanPham());
 //		model.addAttribute("showop", showtheoten);
 //		List<SanPham> timmau = dao.findByMaSanPham(showtheoma.getMaSanPham());
 //		model.addAttribute("showmau", timmau);

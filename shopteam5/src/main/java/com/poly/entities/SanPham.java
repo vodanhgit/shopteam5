@@ -89,8 +89,8 @@ public class SanPham implements Serializable {
 //	@OneToMany(mappedBy = "sanPham3")
 //	private List<KhuyenMai> khuyenMais;
 	
-	@OneToMany(mappedBy = "sanPham4")
-	private List<PhanLoai> phanLoais;
+//	@OneToMany(mappedBy = "sanPham4")
+//	private List<PhanLoai> phanLoais;
 
 	// bi-directional many-to-one association to GioHang
 //	@ManyToOne

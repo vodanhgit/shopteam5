@@ -11,9 +11,9 @@ import com.poly.entities.SanPham;
 public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 
 	// câu lệnh lấy sản phẩm km
-	@Query("SELECT sp.tenSanPham AS ProductName, sp.gia AS Price, sp.hinhAnh AS Image\r\n" + "FROM SanPham sp\r\n"
-			+ "INNER JOIN KhuyenMai km ON sp.maSanPham = km.sanPham3.maSanPham")
-	List<Object[]> findSanPhamWithKhuyenMai();
+//	@Query("SELECT sp.tenSanPham AS ProductName, sp.gia AS Price, sp.hinhAnh AS Image\r\n" + "FROM SanPham sp\r\n"
+//			+ "INNER JOIN KhuyenMai km ON sp.maSanPham = km.sanPham3.maSanPham")
+//	List<Object[]> findSanPhamWithKhuyenMai();
 	
 	// áo thun nam
 	@Query("SELECT s FROM SanPham s WHERE s.loai = 'áo thun nam'")
@@ -86,10 +86,10 @@ public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 	 @Query("SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham")
 	    SanPham findByTenSanPham1(String tenSanPham);
 	
-	 @Query("SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham AND sp.size = :size")
-	    SanPham findByTenSanPhamAndSize(@Param("tenSanPham") String tenSanPham, @Param("size") String size);
-	 @Query("SELECT sp.mau FROM SanPham sp WHERE sp.maSanPham = :maSanPham AND sp.size = :size")
-	 SanPham findMauByMaSanPhamAndSize(@Param("maSanPham") Integer maSanPham, @Param("size") String size);
+//	 @Query("SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham AND sp.size = :size")
+//	    SanPham findByTenSanPhamAndSize(@Param("tenSanPham") String tenSanPham, @Param("size") String size);
+//	 @Query("SELECT sp.mau FROM SanPham sp WHERE sp.maSanPham = :maSanPham AND sp.size = :size")
+//	 SanPham findMauByMaSanPhamAndSize(@Param("maSanPham") Integer maSanPham, @Param("size") String size);
 	 
 	 @Query("SELECT s.loai AS category, s.maSanPham AS productId, s.tenSanPham AS productName, " +
 	            "COUNT(hdt) AS totalSales, SUM(hdt.thanhTien) AS totalRevenue " +
