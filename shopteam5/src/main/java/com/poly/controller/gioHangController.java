@@ -94,42 +94,41 @@ public class gioHangController {
 			return "cart";
 		}
 //		
-//		@RequestMapping("cart_visit")
-//		public String cart_visit(Model model, @RequestParam("p")Optional<Integer> p) throws IllegalStateException, IOException{
-//			String myValue = sessionService.get("username");
-//			TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
-//			int mataikhoan = tk.getMaTaiKhoan(); 
-//			GioHang taikhoangiohang = gioHangDao.findByMataikhoan(mataikhoan);
-//			int idgiohangtheotaikhoan = taikhoangiohang.getID_Gio();
-//			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findByGioHang1_ID_Gio(idgiohangtheotaikhoan);
-////			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findAll();
-//			System.out.println(itemsProducts);
-//			int ma=0;
-//			int tong = 0;
-//		    for (ChiTietGioHang ctgh : itemsProducts) {
-//		    	ma = ctgh.getId_ChiTiet();
-//		        tong += ctgh.getSoLuong() * ctgh.getGia();
-//		        model.addAttribute("tongtien",tong);
-//		    }
-//		    
-//		    if (ma==0) {
-//		    	return "redirect:/cart_products";
-//			}
-//		    else {
-//		    	Pageable pageable = PageRequest.of(p.orElse(0), 2);
-//				Page<ChiTietGioHang> page = chiTietGioHangDao.findByGioHangpageID(idgiohangtheotaikhoan, pageable);
-//				model.addAttribute("itemsProductvisit", page);
-////		    	model.addAttribute("itemsProductvisit",itemsProducts);
-//		    	model.addAttribute("cart", "WEB-INF/accers/cart_visit");
-//		    }
-//			return "cart";
-//		}
-//		@RequestMapping("cart_thongbaotrong")
-//		public String cart_visit(Model model){
-//
-//		    	model.addAttribute("cart", "WEB-INF/accers/cart_thongbaotrong");
-//			return "cart";
-//		}
+		@RequestMapping("cart_visit")
+		public String cart_visit(Model model, @RequestParam("p")Optional<Integer> p) throws IllegalStateException, IOException{
+			String myValue = sessionService.get("username");
+			TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
+			int mataikhoan = tk.getMaTaiKhoan(); 
+			GioHang taikhoangiohang = gioHangDao.findByMataikhoan(mataikhoan);
+			int idgiohangtheotaikhoan = taikhoangiohang.getID_Gio();
+			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findByGioHang1_ID_Gio(idgiohangtheotaikhoan);
+//			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findAll();
+			int ma=0;
+			int tong = 0;
+		    for (ChiTietGioHang ctgh : itemsProducts) {
+		    	ma = ctgh.getId_ChiTiet();
+		        tong += ctgh.getSoLuong() * ctgh.getGia();
+		        model.addAttribute("tongtien",tong);
+		    }
+		    
+		    if (ma==0) {
+		    	return "redirect:/cart_products";
+			}
+		    else {
+		    	Pageable pageable = PageRequest.of(p.orElse(0), 2);
+				Page<ChiTietGioHang> page = chiTietGioHangDao.findByGioHangpageID(idgiohangtheotaikhoan, pageable);
+				model.addAttribute("itemsProductvisit", page);
+//		    	model.addAttribute("itemsProductvisit",itemsProducts);
+		    	model.addAttribute("cart", "WEB-INF/accers/cart_visit");
+		    }
+			return "cart";
+		}
+		@RequestMapping("cart_thongbaotrong")
+		public String cart_visit(Model model){
+
+		    	model.addAttribute("cart", "WEB-INF/accers/cart_thongbaotrong");
+			return "cart";
+		}
 		@RequestMapping("cart_update/{id}")
 		public String update(Model model, @PathVariable("id") Integer id, @RequestParam("qty") Integer soLuong,@RequestParam("idgio") Integer gioHangId)
 				throws IllegalStateException, IOException {
@@ -161,16 +160,16 @@ public class gioHangController {
 			return "redirect:/cart_products";
 		}
 		
-//		@RequestMapping("hd_them/{id}")
-//		public String themHD(@PathVariable("id") Integer id)
-//				throws IllegalStateException, IOException {
-////			cart.update(id, soLuong);
-//			ChiTietGioHang item = chiTietGioHangDao.findById(id).get();
-//			
-//			item.setId_ChiTiet(id);
-//			chiTietGioHangDao.deleteById(id);
-//			return "redirect:/cart_products";
-//		}
+		@RequestMapping("hd_them/{id}")
+		public String themHD(@PathVariable("id") Integer id)
+				throws IllegalStateException, IOException {
+//			cart.update(id, soLuong);
+			ChiTietGioHang item = chiTietGioHangDao.findById(id).get();
+			
+			item.setId_ChiTiet(id);
+			chiTietGioHangDao.deleteById(id);
+			return "redirect:/cart_products";
+		}
 //
 //	
 ////		@PostMapping("/cart/checkout")
@@ -189,55 +188,71 @@ public class gioHangController {
 ////		  return "redirect:/cart_visit";
 ////		}	
 //
-//		@PostMapping("thanhtoan")
-//		public String thanhtoan(HoaDon themhd,@RequestParam("tinh_diachi") String tinh,
-//		                         @RequestParam("huyen_diachi") String huyen,
-//		                          @RequestParam("xa_diachi") String xa,
-//		                          @RequestParam("apsonha_diachi") String apsonha,
-//		                           @RequestParam("ghichu") String ghichu) throws IllegalStateException, IOException{
-//			String myValue = sessionService.get("username");
-//			TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
-//			int mataikhoan = tk.getMaTaiKhoan();
-//			GioHang taikhoangiohang = gioHangDao.findByMataikhoan(mataikhoan);
-//			int idgiohangtheotaikhoan = taikhoangiohang.getID_Gio();
-//			
-//			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findByGioHang1_ID_Gio(idgiohangtheotaikhoan);
-//			LocalDate currentDate = LocalDate.now();
-//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//	        String formattedDate = currentDate.format(formatter);
-//	        String diachi = apsonha+", "+xa+", "+huyen+", "+tinh;
-//	        String trangthai = "Chờ xét duyệt";
-//	        int tong = 0; 
-//	        int ma;
-//	        TaiKhoan taiKhoan= taikhoanDao.findById(1).get();
-//	        sessionservice.set("taikhoan", taiKhoan); 	        	
-//				List<ChiTietGioHang> chitietgiohangs = chiTietGioHangDao.findByGioHang1_ID_Gio(idgiohangtheotaikhoan);
-//				
-//	        	themhd.setDiaChi(diachi);
-//				themhd.setNgayDatHang(formattedDate);
-//				themhd.setTrangThai(trangthai);
-//				themhd.setTaiKhoan(taiKhoan);
-//				 for (ChiTietGioHang ctgh : chitietgiohangs) {
-//				    	ma = ctgh.getId_ChiTiet();
-//				        tong += ctgh.getSoLuong() * ctgh.getGia();
-//				        themhd.setTongTien(tong);
-//				    }
-//				
-//				themhd.setGhiChu(ghichu);	
-//				hoaDonDao.save(themhd);
-//				
-//				for (ChiTietGioHang ctgh: chitietgiohangs) {
-//					HoaDonChiTiet themhdct = new HoaDonChiTiet();
-//			        themhdct.setHoaDon(themhd);
-//			        themhdct.setSanPham2(ctgh.getSanPham1());
-//					themhdct.setDonGia(ctgh.getGia());
-//					themhdct.setSoLuong(ctgh.getSoLuong());
-//					themhdct.setThanhTien(ctgh.getSoLuong()*ctgh.getGia());																																																																																					
-//					hoaDonChiTietDao.save(themhdct);
-//					chiTietGioHangDao.deleteById(ctgh.getId_ChiTiet());
-//				}
-//
-//			return "redirect:/admin/management";
-//		}
-//		
+		@PostMapping("thanhtoan")
+		public String thanhtoan(HoaDon themhd,@RequestParam("tinh_diachi") String tinh,
+		                         @RequestParam("huyen_diachi") String huyen,
+		                          @RequestParam("xa_diachi") String xa,
+		                          @RequestParam("apsonha_diachi") String apsonha,
+		                          @RequestParam("ten_nguoimua") String ten_nguoimua,
+		                          @RequestParam("sdt_nguoimua") String sdt_nguoimua,
+		                           @RequestParam("ghichu") String ghichu)
+		                        		   
+		                        		   throws IllegalStateException, IOException{
+			String myValue = sessionService.get("username");
+			TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
+			int mataikhoan = tk.getMaTaiKhoan();
+			GioHang taikhoangiohang = gioHangDao.findByMataikhoan(mataikhoan);
+			int idgiohangtheotaikhoan = taikhoangiohang.getID_Gio();
+			
+			List<ChiTietGioHang> itemsProducts = chiTietGioHangDao.findByGioHang1_ID_Gio(idgiohangtheotaikhoan);
+			LocalDate currentDate = LocalDate.now();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	        String formattedDate = currentDate.format(formatter);
+	        String diachi = apsonha+", "+xa+", "+huyen+", "+tinh;
+	        String trangthai = "Chờ xét duyệt";
+	        int tong = 0; 
+	        int ma;
+	        TaiKhoan taiKhoan= taikhoanDao.findById(1).get();
+	        sessionservice.set("taikhoan", taiKhoan); 	        	
+				List<ChiTietGioHang> chitietgiohangs = chiTietGioHangDao.findByGioHang1_ID_Gio(idgiohangtheotaikhoan);
+				
+	        	themhd.setDiaChi(diachi);
+				themhd.setNgayDatHang(formattedDate);
+				themhd.setTrangThai(trangthai);
+				themhd.setTaiKhoan(taiKhoan);
+				themhd.setTenNguoiMua(ten_nguoimua);
+				themhd.setSDT(sdt_nguoimua);
+				 for (ChiTietGioHang ctgh : chitietgiohangs) {
+				    	ma = ctgh.getId_ChiTiet();
+				        tong += ctgh.getSoLuong() * ctgh.getGia();
+				        themhd.setTongTien(tong);
+				    }
+				
+				themhd.setGhiChu(ghichu);	
+				hoaDonDao.save(themhd);
+				
+				for (ChiTietGioHang ctgh: chitietgiohangs) {
+					HoaDonChiTiet themhdct = new HoaDonChiTiet();
+			        themhdct.setHoaDon(themhd);
+			        themhdct.setSanPham2(ctgh.getSanPham1());
+					themhdct.setDonGia(ctgh.getGia());
+					themhdct.setSoLuong(ctgh.getSoLuong());
+					themhdct.setThanhTien(ctgh.getSoLuong()*ctgh.getGia());	
+					themhdct.setMau(ctgh.getMau());
+					themhdct.setSize(ctgh.getSize());
+					hoaDonChiTietDao.save(themhdct);
+					chiTietGioHangDao.deleteById(ctgh.getId_ChiTiet());
+				}
+
+			return "redirect:/admin/management";
+		}
+		
+		
+		@PostMapping("kiemtrakhuyenmai")
+		public String kiemtrakhuyenmai(HoaDon themhd,@RequestParam("makhuyenmai") String makhuyenmai)
+		                        		   throws IllegalStateException, IOException{
+			System.out.println(makhuyenmai);
+			
+			return "redirect:/cart_visit";
+		}
 }

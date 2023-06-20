@@ -31,7 +31,13 @@ public class HoaDonChiTiet implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Mahoadonchitiet")
 	private int maHoaDonChiTiet;
-
+	
+	@Column(name="Mau")
+	private String mau;
+	
+	@Column(name="Size")
+	private String size;
+	
 	@Column(name="Dongia")
 	private int donGia;
 

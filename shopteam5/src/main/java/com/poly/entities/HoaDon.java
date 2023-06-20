@@ -31,6 +31,12 @@ public class HoaDon implements Serializable {
 	@Column(name="Diachi")
 	private String diaChi;
 
+	@Column(name="Tennguoimua")
+	private String tenNguoiMua;
+	
+	@Column(name="Sdt")
+	private String sDT;
+	
 	@Column(name="Ngaydathang")
 	private String ngayDatHang;
 

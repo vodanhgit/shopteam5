@@ -1,22 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
 <head>
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="images/shopteam5_logo.png">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/images/shopteam5_logo.png">
 <title>Chi tiết sản phẩm - ShopTeam5</title>
-<link href="css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
 	rel='stylesheet' type='text/css'>
-<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css"
 	media="screen" />
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
 </script>
@@ -28,148 +31,121 @@
 <body>
 	<div class="wrapper">
 		<div class="header">
-			  <%@include file="/WEB-INF/accers/menu.jsp" %>
+			<%@include file="/WEB-INF/accers/menu.jsp"%>
 		</div>
 		<div class="clearfix"></div>
 		<div class="container_fullwidth">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-9">
-						<div class="products-details">
-							<div class="preview_image">
-								<div class="preview-small">
-									<img id="zoom_03" src="images/products/male/1.png"
-										data-zoom-image="images/products/male/1.png" alt="">
-								</div>
-								<!-- <div class="thum-image">
-                  <ul id="gallery_01" class="prev-thum">
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-01.jpg"
-                        data-zoom-image="images/products/Large/products-01.jpg">
-                        <img src="images/products/thum/products-01.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-02.jpg"
-                        data-zoom-image="images/products/Large/products-02.jpg">
-                        <img src="images/products/thum/products-02.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-03.jpg"
-                        data-zoom-image="images/products/Large/products-03.jpg">
-                        <img src="images/products/thum/products-03.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-04.jpg"
-                        data-zoom-image="images/products/Large/products-04.jpg">
-                        <img src="images/products/thum/products-04.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-05.jpg"
-                        data-zoom-image="images/products/Large/products-05.jpg">
-                        <img src="images/products/thum/products-05.png" alt="">
-                      </a>
-                    </li>
-                  </ul>
-                  <a class="control-left" id="thum-prev" href="javascript:void(0);">
-                    <i class="fa fa-chevron-left">
-                    </i>
-                  </a>
-                  <a class="control-right" id="thum-next" href="javascript:void(0);">
-                    <i class="fa fa-chevron-right">
-                    </i>
-                  </a>
-                </div> -->
-							</div>
-							<div class="products-description">
-								<h5 class="name">Áo thun</h5>
 
-								<p>
-									Trạng thái: <span class=" light-red"> còn hàng </span>
-								</p>
-								<p>Chiếc áo được làm bằng vải coton. Cổ áo co giãn tiện lợi.
-								</p>
-								<hr class="border">
-								<div class="price">
-									Giá : <span class="new_price"> 450.000 <sup> VND </sup>
-									</span> <span class="old_price"> 500.000 <sup> VND </sup>
-									</span>
-								</div>
-								<hr class="border">
-								<div class="wided">
-									<div class="qty">
-										Số lượng &ensp;&ensp;: <input type="number" size="4"
-											title="Qty" value="1" name="quantity" min="1" max="10"
-											step="1">
-
-
+				
+						<div class="col-md-9">
+							<div class="products-details">
+								<div class="preview_image">
+									<div class="preview-small">
+										<img id="zoom_03" src="${pageContext.request.contextPath}/images/products/large/${showsanpham_hinhanh}"
+											data-zoom-image="images/products/large/${showsanpham_hinhanh}" alt="">
 									</div>
-									<div class="qty">
-										&ensp;&ensp;Size: <select>
-											<option>S</option>
-											<option>M</option>
-											<option>L</option>
-											<option>XL</option>
-											<option>XXL</option>
-										</select>
+					
+								</div>
+								<div class="products-description">
+									<h5 class="name">${showsanpham_tensanpham}</h5>
+
+									<p>
+										Trạng thái: <span class=" light-red">${showsanpham_trangthai}</span>
+									</p>
+									<p>${showsanpham_mota}</p>
+									<hr class="border">
+									<div class="price">
+										Giá : <span class="new_price"><fmt:formatNumber value="${showsanpham_gia}" currencySymbol="VNĐ" type="currency" />
+<!-- </span> <span class="old_price"> 500.000 <sup> VND </sup> -->
+										</span>
 									</div>
-									<div class="qty">
-										&ensp;&ensp;Màu: <select>
-											<option>Đen</option>
-											<option>Đỏ</option>
-											<option>Trắng</option>
-										</select>
-									</div>
-
-								</div>
-								<div class="button_group" style="margin-top: 10px">
-									<button class="button">Thêm vào giỏ</button>
-
-								</div>
-								<div class="clearfix"></div>
+									<hr class="border">
+									<div class="wided">
+<!-- 										<div class="qty"> -->
+<!-- 											Số lượng &ensp;&ensp;: <input type="number" size="4" -->
+<!-- 												title="Qty" value="1" name="quantity" min="1" max="10" -->
+<!-- 												step="1"> -->
 
 
-							</div>
-							<div class="tab-box">
-								<div id="tabnav">
-									<ul>
-										<li><a href=""> Mô Tả </a></li>
+<!-- 										</div> -->
 
-									</ul>
-								</div>
-								<div class="tab-content-wrap">
-									<div class="tab-content" id="Descraption">
-										<p>
-										<div style="font-size: 14px;">
-											<div>
-												<strong>Chất liệu:&nbsp;</strong>vải tổng hợp&nbsp;cao cấp
-											</div>
-											<div>
-												<strong>Kiểu dáng:&nbsp;</strong>áo vest thiết kế chiết eo,
-												cài khuy bọc phía trước, tone màu hồng trơn<br>
-												<strong>Sản phẩm thuộc dòng sản phẩm :&nbsp;</strong>NEM NEW
-											</div>
-											<div>
-												<strong>Thông tin người mẫu:&nbsp;</strong>mặc sản phẩm size
-												2
-											</div>
-											<div>
-												<strong>Sản phẩm kết hợp:</strong>chân váy Z16862
-											</div>
+
+										<div class="qty">
+									<form action="/motasize/${showsanpham_tensanpham}" method="post">
+										
+											&ensp;&ensp;Size: <select onblur="this.form.submit()" name="size">
+<%-- 											  <c:forEach var="showopsize" items="${showop}">  --%>
+											  
+<%-- 												<option  value="${showopsize.size}">${showopsize.size}</option> --%>
+<%-- 												</c:forEach>  --%>
+												<c:forEach var="showopsize" items="${showop}">
+													<option value="${showopsize}">${showopsize}</option>
+												</c:forEach>
+											</select>
+											</form>
+											
 										</div>
-										</p>
+										<div class="qty">								
+											&ensp;&ensp;Màu: <select>
+<%-- 											<c:forEach var="showopmau" items="${showmau}">  --%>
+<%-- 												<option>${showopmau.mau}</option> --%>
+<%-- 												</c:forEach>  --%>
+<!-- 											</select> -->
+										</div>
+
+									</div>
+									<form action="/themvaogiohang/${showsanpham_masanpham}" method="post">
+									<div class="button_group" style="margin-top: 10px">
+										<button class="button" type="submit">Thêm vào giỏ</button>
+
+									</div>
+									</form>
+									<div class="clearfix"></div>
+
+
+								</div>
+								<div class="tab-box">
+									<div id="tabnav">
+										<ul>
+											<li><a href=""> Mô Tả </a></li>
+
+										</ul>
+									</div>
+									<div class="tab-content-wrap">
+										<div class="tab-content" id="Descraption">
+											<p>
+											<div style="font-size: 14px;">
+											${showsanpham_mota}
+<!-- 												<div> -->
+<!-- 													<strong>Chất liệu:&nbsp;</strong>vải tổng hợp&nbsp;cao cấp -->
+<!-- 												</div> -->
+<!-- 												<div> -->
+<!-- 													<strong>Kiểu dáng:&nbsp;</strong>áo vest thiết kế chiết eo, -->
+<!-- 													cài khuy bọc phía trước, tone màu hồng trơn<br> <strong>Sản -->
+<!-- 														phẩm thuộc dòng sản phẩm :&nbsp;</strong>NEM NEW -->
+<!-- 												</div> -->
+<!-- 												<div> -->
+<!-- 													<strong>Thông tin người mẫu:&nbsp;</strong>mặc sản phẩm -->
+<!-- 													size 2 -->
+<!-- 												</div> -->
+<!-- 												<div> -->
+<!-- 													<strong>Sản phẩm kết hợp:</strong>chân váy Z16862 -->
+<!-- 												</div> -->
+											</div>
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="clearfix"></div>
-						<div class="clearfix"></div>
+							<div class="clearfix"></div>
+							<div class="clearfix"></div>
 
-						<div class="clearfix"></div>
-					</div>
+							<div class="clearfix"></div>
+						</div>
+
+				
 					<div class="col-md-3">
 						<div class="clearfix"></div>
 
@@ -433,7 +409,7 @@
 				</div>
 
 				<div class="clearfix"></div>
-					 <%@include file="/WEB-INF/accers/nhanhang.jsp" %>
+				<%@include file="/WEB-INF/accers/nhanhang.jsp"%>
 			</div>
 		</div>
 		<div class="clearfix"></div>
