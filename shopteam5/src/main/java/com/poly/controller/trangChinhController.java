@@ -24,6 +24,8 @@ import com.poly.reponstory.SanPhamDao;
 import com.poly.reponstory.TaiKhoanDao;
 import com.poly.service.SessionService;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 public class trangChinhController {
 	@Autowired
@@ -35,6 +37,7 @@ public class trangChinhController {
 	@Autowired 
 	TaiKhoanDao taikhoanDao;
 	@Autowired
+	SessionService session;
 	private ChiTietGioHangDao chiTietGioHangDao;
 	
 	@Autowired
@@ -289,6 +292,42 @@ public class trangChinhController {
 		model.addAttribute("sanPham", sanPham);
 		
 		return "/products/mota";
+	}
+	
+//	@RequestMapping("info")
+//	public String info() {
+//		return "/info";
+//	}
+	
+	@RequestMapping("info")
+	public String index(Model model, TaiKhoan taikhoan, HttpServletRequest req) {
+		try {
+			String check = session.get("username");
+			System.out.println(check);
+			TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(check);
+			model.addAttribute("thongtintaikhoan", tk);
+			
+			TaiKhoan item = new TaiKhoan();
+			model.addAttribute("item", item);
+			List<TaiKhoan> items = taikhoanDao.findAll();
+			model.addAttribute("items", items);
+			
+			
+			if (tk.isQuyen()==true) {
+				req.getSession().setAttribute("username", "");
+//				sessionService.set("username", untk);
+				
+			}
+			else if (tk.isQuyen()==false) {
+				
+					
+//				sessionService.set("username", "");
+			}
+		} catch (Exception e) {
+			return "redirect:/trangDangNhap";
+		}
+		
+		return "/info";
 	}
 
 }
