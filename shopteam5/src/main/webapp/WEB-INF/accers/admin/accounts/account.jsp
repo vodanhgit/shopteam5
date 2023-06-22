@@ -159,7 +159,7 @@
 												src="/images/${item.hinhAnh}" width=50px /></td>
 											<td>${item.quyen == true ? "Admin" : "Client"}</td>
 											<td class="text-center"><a
-												href="/admin/editAccount/${item.maTaiKhoan}">Đổi quyền</a></td>
+												href="/admin/doiquyen/${item.maTaiKhoan}">Đổi quyền</a></td>
 											
 										</tr>
 									</c:forEach>

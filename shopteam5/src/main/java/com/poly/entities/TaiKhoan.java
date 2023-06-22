@@ -34,8 +34,8 @@ public class TaiKhoan implements Serializable {
 	private Integer maTaiKhoan;
 
 	@Column(name = "Email")
-//	@NotBlank(message = "{NotBlank.item.email}")
-//	@Email(message = "{Email.item.email}")
+	@NotBlank(message = "Không Để Trống")
+	@Email(message = "Sai Định Dạng")
 	private String email;
 
 	@Column(name = "Gioitinh")
@@ -45,11 +45,11 @@ public class TaiKhoan implements Serializable {
 	private String hinhAnh;
 
 	@Column(name = "Hotennguoidung")
-//	@NotBlank(message = "{NotBlank.item.hoTenNguoiDung}")
+	@NotBlank(message = "Không Để Trống")
 	private String hoTenNguoiDung;
 
-//	@NotBlank(message = "NotBlank.item.matKhau")
-//	@Min(value = 8, message = "Min.item.matKhau")
+	@NotBlank(message = "Không Để Trống")
+	@Min(value = 8, message = "Độ dài ít nhất 8 ký tự")
 	@Column(name = "Matkhau")
 	private String matKhau;
 
@@ -62,6 +62,8 @@ public class TaiKhoan implements Serializable {
 	
 	@Column(name="Ngaysinh")
 	private String ngaySinh;
+	
+	@NotBlank(message = "Không Để Trống")
 	@Column(name = "Tentaikhoan")
 //	@NotBlank(message="NotBlank.item.tenTaiKhoan")
 	private String tenTaiKhoan;
