@@ -19,17 +19,22 @@
 	<hr width="1500px">
 	<div class="box">
 		<div class="container">
-		<form action="/kiemtraemail" method="post">
+		<form action="/xacnhanma/${email}" method="post">
 			<div class="top">
-				<a href="/trangDangNhap" class="dangky">Đăng nhập</a>
 				<header>Quên mật khẩu</header>
 			</div>
 			<br>
-
+			<div class="input-field" style="background-color: #DDDDDD;">
+				<label>Mã email đã được gửi qua ${email} , Bạn không nhận được mã? </label>
+				<input value="${email}" type="hidden">
+				<a href="/sendemail/${email}">Gửi lại</a>
+			</div>
+			<br>
+			<br>
 			<div class="input-field">
-				<input type="email" class="input" placeholder="Email" id="" name="email" value="${param.email}"/> <i
+				<input type="text" class="input" placeholder="Nhập mã xác nhận" id="" name="maxacnhan"  value="${param.maxacnhan}"/> <i
 					class="bx bxl-gmail"></i><br>
-					<center><label style="color: red; font-size: 10px">${kiemtramail}</label></center>
+					<center><label style="color: red; font-size: 10px">${kiemtramaxacnhan}</label></center>
 			</div>
 			<br>
 			<div class="input-field">

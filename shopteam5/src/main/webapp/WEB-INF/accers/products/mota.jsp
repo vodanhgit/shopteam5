@@ -57,7 +57,7 @@
 									<p>${showsanpham_mota}</p>
 									<hr class="border">
 									<div class="price">
-										Giá : <span class="new_price"><fmt:formatNumber value="${showsanpham_gia}" currencySymbol="VNĐ" type="currency" />
+										&ensp;&ensp;Giá : <span class="new_price"><fmt:formatNumber value="${showsanpham_gia}" currencySymbol="VNĐ" type="currency" />
 <!-- </span> <span class="old_price"> 500.000 <sup> VND </sup> -->
 										</span>
 									</div>
@@ -73,7 +73,7 @@
 										<div class="qty">
 									<form action="/motasize/${showsanpham_masanpham}" method="post">
 										
-											&ensp;&ensp;Size: <select onblur="this.form.submit()" name="size">
+											&ensp;&ensp;Kích cỡ: <select onblur="this.form.submit()" name="size">
 											<option  value="${showsize}">${showsize}</option>
 											  <c:forEach var="showopsize" items="${showop}"> 
 											  
@@ -94,8 +94,10 @@
 											</select>
 											</form>
 										</div>
-
+										
 									</div>
+									<br><br><br><br>
+									&ensp;&ensp;<label style=" margin-top: 1%; color: red;">${thongbaochitietsanpham}</label>
 									<form action="/themvaogiohang/${showsanpham_masanpham}" method="post">
 									<div class="button_group" style="margin-top: 10px">
 									<input type="hidden" name="size" value="${showsize}">

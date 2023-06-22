@@ -53,30 +53,35 @@
 			<center><h3 class="title">Thông tin đơn hàng</h3></center>
 			
 		
-			<div class="clearfix">	<form action="/kiemtrakhuyenmai" method="post">
+			<div class="clearfix">	
+			<form action="/kiemtrakhuyenmai" method="post">
 					<h5 style="margin-top: 2%;">Nhập mã khuyến mãi:</h5>
-						<input style="height: 30px; margin-top: 2%; color: blue; "name="makhuyenmai"  id="inputField7" value="">
-						<button type="submit">Kiểm tra</button>
-
-				<form>
+					<label style=" margin-top: 1%; color: red;">${thongbaokhuyenmai}</label>
+					<br>
+						<input style="height: 30px; "name="makhuyenmai" value="${makhuyenmai}" placeholder="MKM(Không bắt buộc)">
+						<button type="submit" onclick="showNotification()">Kiểm tra</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hình thức thanh toán: Thanh toán khi nhận hàng
+				</form>
 <%-- 				<center> --%>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hình thức thanh toán: Thanh toán khi nhận hàng
+				
 <%-- 				</center> --%>
 				</div>
+				
 			<div class="row">
 			<form action="/thanhtoan" method="post">
 			<div class="col-md-3 col-sm-4">
 					<div class="shippingbox">
+					<input type="hidden" value="${makhuyenmai}"name="makhuyenmai">
 						<h5>Thông tin người mua</h5>
 						
 							<label> Tên * </label>
 <!-- 							<select class="" name="tinh_diachi" style="margin-top: 2%;"> -->
 <!-- 								<option value="tỉnh Sóc Trăng">Sóc Trăng</option> -->
 	
-							<input style="height: 30px; margin-top: 2%; color: red; "name="ten_nguoimua"  required id="inputField5">
+							<input style="height: 30px; margin-top: 2%; "name="ten_nguoimua"  required id="inputField5">
 							 <label>Số điện thoại * </label > 
 	
-							<input style="height: 30px; margin-top: 2%; color: red; "name="sdt_nguoimua" pattern="[0-9]{10}" title="Vui lòng nhập số điện thoại 10 số" required id="inputField6">
+							<input style="height: 30px; margin-top: 2%; "name="sdt_nguoimua" pattern="[0-9]{10}" title="Vui lòng nhập số điện thoại 10 số" required id="inputField6">
 							
 						
 					</div>
@@ -150,10 +155,10 @@
                       <li>
                         <p> ${itemsProductShow.mau} </p>
                       </li> 
-                      <p> Kích cỡ : <strong class="pcode"> ${itemsProductShow.size} </strong> </p> 
+                      <p> Kích cỡ : <span class="pcode" style="color: black"> ${itemsProductShow.size} </span> </p> 
                     </ul> 
                   </div> 
-                  <p> Mã sản phẩm : <strong class="pcode"> ${itemsProductShow.sanPham1.maSanPham} </strong> </p> 
+                  <p> Mã sản phẩm : <span class="pcode" style="color: black"> ${itemsProductShow.sanPham1.maSanPham} </span> </p> 
                 </div> 
               </td> 
               <td style="vertical-align: middle; text-align: center;"> 
@@ -230,7 +235,6 @@ window.addEventListener('DOMContentLoaded', function() {
     var inputElement4 = document.getElementById("inputField4");
     var inputElement5 = document.getElementById("inputField5");
     var inputElement6 = document.getElementById("inputField6");
-    var inputElement7 = document.getElementById("inputField7");
     
     inputElement1.value = sessionStorage.getItem("paramValue1") || "";
     inputElement2.value = sessionStorage.getItem("paramValue2") || "";
@@ -238,7 +242,6 @@ window.addEventListener('DOMContentLoaded', function() {
     inputElement4.value = sessionStorage.getItem("paramValue4") || "";
     inputElement5.value = sessionStorage.getItem("paramValue5") || "";
     inputElement6.value = sessionStorage.getItem("paramValue6") || "";
-    inputElement7.value = sessionStorage.getItem("paramValue7") || "";
 
     inputElement1.addEventListener('input', function() {
       sessionStorage.setItem("paramValue1", inputElement1.value);
@@ -264,9 +267,6 @@ window.addEventListener('DOMContentLoaded', function() {
       sessionStorage.setItem("paramValue6", inputElement6.value);
     });
     
-    inputElement7.addEventListener('input', function() {
-      sessionStorage.setItem("paramValue7", inputElement7.value);
-    });
   });
 //     window.addEventListener('DOMContentLoaded', function() {
 //         var modal = document.getElementById("myModal");
@@ -278,4 +278,10 @@ window.addEventListener('DOMContentLoaded', function() {
 //           modal.style.display = "none"; // Ẩn modal khi nút tắt được click
 //         });
 //       });
+// function showNotification() {
+//       alert("${thongbaokhuyenmai}");
+//     }
+// 	document.addEventListener('DOMContentLoaded', function() {
+//     alert("${thongbaokhuyenmai}");
+//   });
   </script>

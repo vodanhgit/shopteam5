@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.poly.entities.ChiTietGioHang;
 
@@ -23,4 +24,8 @@ public interface ChiTietGioHangDao extends JpaRepository<ChiTietGioHang, Integer
 	
 	@Query("SELECT ct FROM ChiTietGioHang ct WHERE ct.gioHang1.ID_Gio = ?1")
     Page<ChiTietGioHang> findByGioHangpageID(int ID_Gio, Pageable pageable);
+	
+	@Query("SELECT c FROM ChiTietGioHang c WHERE c.id_ChiTiet = :idChiTiet")
+    ChiTietGioHang findByIdChiTiet(@Param("idChiTiet") int idChiTiet);
+
 }

@@ -233,25 +233,25 @@ public class adminController {
 		return map;
 	}
 
-	@ModelAttribute("list_mau")
-	public Map<String, String> getSanPhams() {
-		Map<String, String> map = new HashMap<>();
-		List<SanPham> sanphamitems = spdao.findAll();
-		for (SanPham item : sanphamitems) {
-			map.put(item.getMau(), item.getMau());
-		}
-		return map;
-	}
+//	@ModelAttribute("list_mau")
+//	public Map<String, String> getSanPhams() {
+//		Map<String, String> map = new HashMap<>();
+//		List<SanPham> sanphamitems = spdao.findAll();
+//		for (SanPham item : sanphamitems) {
+//			map.put(item.getMau(), item.getMau());
+//		}
+//		return map;
+//	}
 
-	@ModelAttribute("list_size")
-	public Map<String, String> getSanPhamSize() {
-		Map<String, String> map = new HashMap<>();
-		List<SanPham> sanphamitems = spdao.findAll();
-		for (SanPham item : sanphamitems) {
-			map.put(item.getSize(), item.getSize());
-		}
-		return map;
-	}
+//	@ModelAttribute("list_size")
+//	public Map<String, String> getSanPhamSize() {
+//		Map<String, String> map = new HashMap<>();
+//		List<SanPham> sanphamitems = spdao.findAll();
+//		for (SanPham item : sanphamitems) {
+//			map.put(item.getSize(), item.getSize());
+//		}
+//		return map;
+//	}
 
 	@RequestMapping("createsp")
 	public String createsp(@Validated @ModelAttribute("item") SanPham item, BindingResult result, @RequestParam("file") MultipartFile img,

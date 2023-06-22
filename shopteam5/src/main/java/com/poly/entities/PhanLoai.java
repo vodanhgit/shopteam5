@@ -32,7 +32,7 @@ public class PhanLoai implements Serializable{
 	private Integer maPhanLoai;
 	
 	@Column(name = "Soluong")
-	private String soLuong;
+	private Integer soLuong;
 	
 	@Column(name = "Mau")
 	private String mau;

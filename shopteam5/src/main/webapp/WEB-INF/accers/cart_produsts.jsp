@@ -46,7 +46,7 @@
 <!--               <td style="vertical-align: middle; text-align: center;"> -->
 <!--                 <input type="checkbox" class="check" name="selectedItems"> -->
 <!--               </td>  -->
-              <td style="vertical-align: middle; text-align: center;">
+              <td style="vertical-align: middle ; text-align: center;">
                 <img src="images/products/large/${itemsProductShow.sanPham1.hinhAnh}" alt="" width="80px">
               </td> 
               <td style="vertical-align: middle;display: flex;justify-content: center;align-items: center;"> 
@@ -110,6 +110,7 @@
           </tr> 
         </tfoot> 
       </table> 
+      <center style="color: red">${thongbaosoluong}</center>
       <div class="shippingbox" style="vertical-align: middle; text-align: center;"> 
         <div> 
           <h5>Tổng tiền:</h5> 

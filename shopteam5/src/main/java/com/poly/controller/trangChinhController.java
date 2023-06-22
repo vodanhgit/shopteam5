@@ -85,7 +85,8 @@ public class trangChinhController {
 		
 		return "/products/mota";
 	}
-	@RequestMapping(value = "/chitietsanpham/{maSanPham}", method = RequestMethod.POST)
+	String thongbaochitietsanpham;
+	@RequestMapping("chitietsanpham/{maSanPham}")
 	public String chitietsanpham(Model model,@PathVariable("maSanPham") int msp) {
 		List<SanPham> showtheoma = dao.findByMaSanPham(msp);
 		SanPham showtheoma1 = dao.findByMaSanPham1(msp);
@@ -97,6 +98,7 @@ public class trangChinhController {
 		model.addAttribute("showsanpham_mota", showtheoma1.getMoTa());
 		model.addAttribute("showsanpham_hinhanh", showtheoma1.getHinhAnh());
 		model.addAttribute("showsize", "Chọn");
+		model.addAttribute("thongbaochitietsanpham",thongbaochitietsanpham);
 		List<SanPham> showtheoten = dao.findByTenSanPham(showtheoma1.getTenSanPham());
 		List<String> showsize = phanLoaiDao.findDistinctSizesByMaSanPham(msp);
 		model.addAttribute("showop", showsize);
@@ -152,33 +154,42 @@ public class trangChinhController {
 	}
 	@RequestMapping("themvaogiohang/{masanpham}")
 	public String themvaogiohang(Model model,@PathVariable("masanpham") int masanpham, @RequestParam("size") String size, @RequestParam("mau") String mau) {
-		SanPham timtheoma = dao.findByMaSanPham1(masanpham);
-		String myValue = sessionService.get("username");
-		TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
-		GioHang gioHang = tk.getGioHangs().get(0);
+		if (size.equals("")||mau.equals("")) {
+			
+			thongbaochitietsanpham = "<<<  Vui lòng chọn đầy đủ size và màu!  >>>";
+			return "redirect:/chitietsanpham/"+masanpham;
+		}
+		else {
+			thongbaochitietsanpham = "";
+			SanPham timtheoma = dao.findByMaSanPham1(masanpham);
+			String myValue = sessionService.get("username");
+			TaiKhoan tk = taikhoanDao.findByTenTaiKhoanThongThuong(myValue);
+			GioHang gioHang = tk.getGioHangs().get(0);
+			
+			ChiTietGioHang ctgh = new ChiTietGioHang();
+			
+			
+		    ctgh.setGioHang1(gioHang);
+		    ctgh.setSanPham1(timtheoma);
+//		    ctgh.setSize(timtheoma.getSize());
+//		    ctgh.setMau(timtheoma.getMau());
+		    ctgh.setGia(timtheoma.getGia());
+		    ctgh.setSoLuong(1);
+		    ctgh.setMau(mau);
+		    ctgh.setSize(size);
+		    chiTietGioHangDao.save(ctgh);
+			
+//			System.out.println(gioHang);
+//			ctgh.setGioHang1(gioHang);
+////			ctgh.setSanPham1(timtheoma.getMaSanPham());
+//			chiTietGioHangDao.save(ctgh);
+			
+//			List<SanPham> showtheoten = phanLoaiDao.findByTenSanPham(showtheoma.getTenSanPham());
+//			model.addAttribute("showop", showtheoten);
+//			List<SanPham> timmau = dao.findByMaSanPham(showtheoma.getMaSanPham());
+//			model.addAttribute("showmau", timmau);
+		}
 		
-		ChiTietGioHang ctgh = new ChiTietGioHang();
-		
-		
-	    ctgh.setGioHang1(gioHang);
-	    ctgh.setSanPham1(timtheoma);
-//	    ctgh.setSize(timtheoma.getSize());
-//	    ctgh.setMau(timtheoma.getMau());
-	    ctgh.setGia(timtheoma.getGia());
-	    ctgh.setSoLuong(1);
-	    ctgh.setMau(mau);
-	    ctgh.setSize(size);
-	    chiTietGioHangDao.save(ctgh);
-		
-//		System.out.println(gioHang);
-//		ctgh.setGioHang1(gioHang);
-////		ctgh.setSanPham1(timtheoma.getMaSanPham());
-//		chiTietGioHangDao.save(ctgh);
-		
-//		List<SanPham> showtheoten = phanLoaiDao.findByTenSanPham(showtheoma.getTenSanPham());
-//		model.addAttribute("showop", showtheoten);
-//		List<SanPham> timmau = dao.findByMaSanPham(showtheoma.getMaSanPham());
-//		model.addAttribute("showmau", timmau);
 	    return "redirect:/cart_products";	
 	 }
 	
