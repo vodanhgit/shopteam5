@@ -1,41 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/shopteam5_logo.png">
-    <title>
-       Áo Hoodie Nam - ShopTeam5
-    </title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link
-        href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
-        rel='stylesheet' type='text/css'>
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-    <link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="images/shopteam5_logo.png">
+<title>Áo Hoodie Nam - ShopTeam5</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
+	rel='stylesheet' type='text/css'>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css"
+	media="screen" />
+<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="header">
-              <%@include file="/WEB-INF/accers/menu.jsp" %>
-        </div>
+	<div class="wrapper">
+		<div class="header">
+			<%@include file="/WEB-INF/accers/menu.jsp"%>
+		</div>
 
-        <div class="clearfix">
-        </div>
-        <div class="container_fullwidth">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="clearfix">
-                        </div>
-                        <!-- <div class="branch leftbar">
+		<div class="clearfix"></div>
+		<div class="container_fullwidth">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="clearfix"></div>
+						<!-- <div class="branch leftbar">
                 <h3 class="title">
                   Branch
                 </h3>
@@ -72,9 +70,8 @@
                   </li>
                 </ul>
               </div> -->
-                        <div class="clearfix">
-                        </div>
-                        <!-- <div class="price-filter leftbar">
+						<div class="clearfix"></div>
+						<!-- <div class="price-filter leftbar">
                 <h3 class="title">
                   Price
                 </h3>
@@ -93,221 +90,85 @@
                   <input type="submit" value="Go">
                 </form>
               </div> -->
-                        <div class="clearfix">
-                        </div>
-                        <div class="clolr-filter leftbar">
-                            <h3 class="title">
-                                Màu
-                            </h3>
-                            <ul>
-                                <li>
-                                    <a href="#" class="red-bg">
-                                        light red
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class=" yellow-bg">
-                                        yellow"
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="black-bg ">
-                                        black
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pink-bg">
-                                        pink
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dkpink-bg">
-                                        dkpink
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="chocolate-bg">
-                                        chocolate
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="orange-bg">
-                                        orange-bg
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="off-white-bg">
-                                        off-white
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="extra-lightgreen-bg">
-                                        extra-lightgreen
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="lightgreen-bg">
-                                        lightgreen
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="biscuit-bg">
-                                        biscuit
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="chocolatelight-bg">
-                                        chocolatelight
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clearfix">
-                        </div>
+						<div class="clearfix"></div>
 
-                        <div class="clearfix">
-                        </div>
+						<div class="clearfix"></div>
 
-                        <div class="clearfix">
-                        </div>
+						<div class="clearfix"></div>
+
+						<div class="clearfix"></div>
 
 
-                        <div class="fbl-box leftbar">
-                            <h3 class="title">
-                                Facebook
-                            </h3>
-                            <span class="likebutton">
-                                <a href="#">
-                                    <img src="images/fblike.png" alt="">
-                                </a>
-                            </span>
-                            <p>
-                                12k like shopteam5.
-                            </p>
 
-                            <div class="fbplug">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/fbicon.png" alt="">
-                                    </span>
-                                    Facebook
-                                </a>
-                            </div>
-                        </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="leftbanner">
-                            <img src="images/banner-small-01.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                       <div class="banner">
-							<div class="bannerslide" id="bannerslide" >
+						<div class="clearfix"></div>
+						<div class="leftbanner">
+							<img src="images/banner-small-01.png" alt="">
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="banner">
+							<div class="bannerslide" id="bannerslide">
 								<ul class="slides">
-									<li><a href="#"> <img src="images/banner-thoi-trang-nu.jpg"
-											alt="" style="height: 100%" width="100%"/>
+									<li><a href="#"> <img
+											src="images/banner-thoi-trang-nu.jpg" alt=""
+											style="height: 100%" width="100%" />
 									</a></li>
-									<li><a href="#"> <img src="images/3cde53d8619069b98772edffe8c5dad1.jpg"
-											alt="" style="width: 100%" height="100%"/>
+									<li><a href="#"> <img
+											src="images/3cde53d8619069b98772edffe8c5dad1.jpg" alt=""
+											style="width: 100%" height="100%" />
 									</a></li>
 								</ul>
 							</div>
 						</div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="products-grid">
-                            <div class="toolbar">
-                                <div class="sorter">
-                                    <div class="view-mode">
-                                        <a href="" class="list">
-                                            List
-                                        </a>
-                                        <a href="#" class="grid active">
-                                            Grid
-                                        </a>
-                                    </div>
-                                    <div class="sort-by">
-                                        Lọc:
-                                        <select name="">
-                                            <option value="Default" selected>
-                                                Tất cả
-                                            </option>
-                                            <option value="Name">
-                                                Tên
-                                            </option>
-                                            <option value="Price">
-                                                Giá
-                                            </option>
-                                        </select>
-                                    </div>
+						<div class="clearfix"></div>
+						<div class="products-grid">
 
-                                </div>
-                                <div class="pager">
-                                    <a href="#" class="prev-page">
-                                        <i class="fa fa-angle-left">
-                                        </i>
-                                    </a>
-                                    <a href="#" class="active">
-                                        1
-                                    </a>
-                                    <a href="#">
-                                        2
-                                    </a>
-                                    <a href="#">
-                                        3
-                                    </a>
-                                    <a href="#" class="next-page">
-                                        <i class="fa fa-angle-right">
-                                        </i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                            <div class="row">
+							<div class="clearfix"></div>
+							<div class="row">
 
-                                <c:forEach var="aohoodienam" items="${aohoodienam}">
+								<c:forEach var="formaonamshow" items="${aohoodienam}">
+									<form action="/chitietsanpham/${formaonamshow.maSanPham}" method="post">
+									<input type="hidden" value="${formaonamshow.maSanPham}" name="msp">
 									<div class="col-md-4 col-sm-6">
 										<div class="products">
 											<div class="thumbnail">
 												<a href="details.html"> <img
-													src="images/products/large/${aohoodienam.hinhAnh}" alt="Product Name"
+													src="images/products/large/${formaonamshow.hinhAnh}" alt="Product Name"
 													style="height: 90%;">
 												</a>
 											</div>
 											<div class="productname" style="display: none;"></div>
-											<div class="productname">${aohoodienam.tenSanPham}</div>
-											<h4 class="price">${aohoodienam.gia}VND</h4>
+											<div class="productname">${formaonamshow.tenSanPham}</div>
+											<h4 class="price"><fmt:formatNumber value="${formaonamshow.gia}"
+													currencySymbol="VNĐ" type="currency" /></h4>
 											<div class="button_group">
-												<button class="button add-cart" type="button"
-													formaction="/product/create">Thêm vào giỏ</button>
+<!-- 												<button class="button add-cart" type="button" -->
+<!-- 													formaction="/product/create">Thêm vào giỏ</button> -->
+
+											<button class="button add-cart" type="submit">Chi tiết sản phẩm</button>
 
 											</div>
 										</div>
 									</div>
-
+									</form>
 								</c:forEach>
 
 
 
 
-                            </div>
-                            <div class="clearfix">
-                            </div>
+							</div>
+							<div class="clearfix"></div>
 
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix">
-                </div>
-                	 <%@include file="/WEB-INF/accers/nhanhang.jsp" %>
-            </div>
-        </div>
-        <div class="clearfix">
-        </div>
-        <div class="footer">
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<%@include file="/WEB-INF/accers/nhanhang.jsp"%>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="footer">
 			<div class="footer-info">
 				<div class="container">
 					<div class="row">
@@ -371,21 +232,29 @@
 				</div>
 			</div>
 		</div>
-    </div>
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js">
-    </script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js">
-    </script>
-    <script type="text/javascript" src="js/bootstrap.min.js">
-    </script>
-    <script defer src="js/jquery.flexslider.js">
-    </script>
-    <script type="text/javascript" src="js/jquery.sequence-min.js">
-    </script>
-    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js">
-    </script>
-    <script type="text/javascript" src="js/script.min.js">
-    </script>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js">
+		
+	</script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js">
+		
+	</script>
+	<script type="text/javascript" src="js/bootstrap.min.js">
+		
+	</script>
+	<script defer src="js/jquery.flexslider.js">
+		
+	</script>
+	<script type="text/javascript" src="js/jquery.sequence-min.js">
+		
+	</script>
+	<script type="text/javascript"
+		src="js/jquery.carouFredSel-6.2.1-packed.js">
+		
+	</script>
+	<script type="text/javascript" src="js/script.min.js">
+		
+	</script>
 </body>
 
 </html>

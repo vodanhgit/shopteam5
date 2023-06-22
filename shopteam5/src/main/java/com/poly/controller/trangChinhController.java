@@ -36,8 +36,9 @@ public class trangChinhController {
 	PhanLoaiDao phanLoaiDao;
 	@Autowired 
 	TaiKhoanDao taikhoanDao;
-	@Autowired
+	
 	SessionService session;
+	@Autowired
 	private ChiTietGioHangDao chiTietGioHangDao;
 	
 	@Autowired
@@ -66,8 +67,10 @@ public class trangChinhController {
 //	}
 	@RequestMapping("index")
 	public String index(Model model) {
-
+		List<SanPham> formaonam = dao.findSanPhamByLoaiNam();
+		model.addAttribute("formaonam", formaonam);
 		return "index";
+		
 	}
 	
 	int check;
@@ -200,14 +203,6 @@ public class trangChinhController {
 	
 	@GetMapping("formaonam")
 	public String formaonam(Model model) {
-//		Pageable pageable = PageRequest.of(m.orElse(0), 5);
-//		Page<SanPham> itemsPage = dao.findSanPhamAoNam(pageable);
-//		
-//		SanPham item = new SanPham();
-//		model.addAttribute("item", item);
-//
-//		List<SanPham> items = itemsPage.getContent();
-//		model.addAttribute("items", items);
 
 		List<SanPham> formaonam = dao.findSanPhamByLoaiNam();
 		model.addAttribute("formaonam", formaonam);
@@ -232,8 +227,8 @@ public class trangChinhController {
 
 	@GetMapping("aosominam")
 	public String aosominam(Model model) {
-//		List<SanPham> aosominam = dao.findSanPhamByLoaiAoSoMiNam();
-//		model.addAttribute("aosominam", aosominam);
+		List<SanPham> aosominam = dao.findSanPhamByLoaiAoSoMiNam();
+		model.addAttribute("aosominam", aosominam);
 		return "/products/aosominam";
 	}
 
@@ -254,24 +249,19 @@ public class trangChinhController {
 
 //	form nữ
 	@GetMapping("formaonu")
-	public String formaonu() {
+	public String formaonu(Model model) {
+		List<SanPham> formaonu = dao.findSanPhamByLoaiNu();
+		model.addAttribute("formaonu", formaonu);
 		return "/products/form_aonu";
 	}
 
 	@RequestMapping("aothunu")
 	public String aothunu(Model model) {
-
-		return "/products/ao_thunnu";
-	}
-
-	@RequestMapping("aothunu/{sanpham}")
-	public String aothunu(Model model, @PathVariable("sanpham") String loai) {
-		List<SanPham> aothunnu = dao.findByLoai(loai);
-
+		List<SanPham> aothunnu = dao.findSanPhamAoThunNu();
 		model.addAttribute("aothunnu", aothunnu);
-		System.out.println(loai);
 		return "/products/ao_thunnu";
 	}
+
 
 	@GetMapping("aosominu")
 	public String aosominu() {
@@ -281,8 +271,8 @@ public class trangChinhController {
 
 	@GetMapping("aobra")
 	public String aobra(Model model) {
-//		List<SanPham> aobra = dao.finSanPhamNuBra();
-//		model.addAttribute("aobra", aobra);
+		List<SanPham> aobra = dao.finSanPhamNuBra();
+		model.addAttribute("aobra", aobra);
 		return "/products/aobranu";
 	}
 

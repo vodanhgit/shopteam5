@@ -279,16 +279,9 @@
                     </h4>
                     <div class="button_group">
                       <button class="button add-cart" type="button">
-                      Thêm vào giỏ
+                      Chi tiết sản phẩm
                       </button>
-                      <button class="button compare" type="button">
-                        <i class="fa fa-exchange">
-                        </i>
-                      </button>
-                      <button class="button wishlist" type="button">
-                        <i class="fa fa-heart-o">
-                        </i>
-                      </button>
+                     
                     </div>
                   </div>
                 </div>

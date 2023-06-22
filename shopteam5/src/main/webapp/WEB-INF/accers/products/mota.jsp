@@ -161,7 +161,7 @@
 
 <!-- 					</div> -->
 
-					<div id="productsDetails" class="hot-products">
+					<!-- <div id="productsDetails" class="hot-products">
 						<h3 class="title">
 							<strong> Sản phẩm </strong> Liên quan
 						</h3>
@@ -220,7 +220,7 @@
 									<div class="col-md-4 col-sm-4">
 										<div class="products">
 											<div class="offer">- %20</div>
-											<!-- <div class="offer">New</div> -->
+											<div class="offer">New</div>
 											<div class="thumbnail">
 												<a href="details.html"><img
 													src="images/products/small/products-03.png"
@@ -293,7 +293,7 @@
 									<div class="col-md-4 col-sm-4">
 										<div class="products">
 											<div class="offer">- %20</div>
-											<!-- <div class="offer">New</div> -->
+											<div class="offer">New</div>
 											<div class="thumbnail">
 												<a href="details.html"><img
 													src="images/products/small/products-03.png"
@@ -366,7 +366,7 @@
 									<div class="col-md-4 col-sm-4">
 										<div class="products">
 											<div class="offer">- %20</div>
-											<!-- <div class="offer">New</div> -->
+											<div class="offer">New</div>
 											<div class="thumbnail">
 												<a href="details.html"><img
 													src="images/products/small/products-03.png"
@@ -390,7 +390,7 @@
 								</div>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 
 				<div class="clearfix"></div>

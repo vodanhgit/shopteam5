@@ -3,7 +3,7 @@
 	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <body>
 	<div class="d-flex justify-content-center">
-		<a class="navbar-brand" href="/index"> <img alt="logo" s
+		<a class="navbar-brand" href="/index"> <img alt="logo" 
 			src="/images/shopteam5_logo.png" width="100" height="100">
 		</a>
 	</div>
@@ -26,6 +26,11 @@
 						class="list-group-item list-group-item-action border-0 "
 						style="background-color: #0a3d62; color: #dcdde1"> <span><i
 							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý sản phẩm
+							</a>
+					<a href="phanloai"
+						class="list-group-item list-group-item-action border-0 "
+						style="background-color: #0a3d62; color: #dcdde1"> <span><i
+							class="fa-solid fa-cart-shopping fs-6 px-1"></i></span> Quản lý phân loại
 							</a>
 							<a href="thongke"
 						class="list-group-item list-group-item-action border-0  "

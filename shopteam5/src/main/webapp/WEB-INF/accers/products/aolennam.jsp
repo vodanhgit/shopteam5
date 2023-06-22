@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+	<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -90,25 +92,7 @@
                 </form>
               </div> -->
 						<div class="clearfix"></div>
-						<div class="clolr-filter leftbar">
-							<h3 class="title">Màu</h3>
-							<ul>
-								<li><a href="#" class="red-bg"> light red </a></li>
-								<li><a href="#" class=" yellow-bg"> yellow" </a></li>
-								<li><a href="#" class="black-bg "> black </a></li>
-								<li><a href="#" class="pink-bg"> pink </a></li>
-								<li><a href="#" class="dkpink-bg"> dkpink </a></li>
-								<li><a href="#" class="chocolate-bg"> chocolate </a></li>
-								<li><a href="#" class="orange-bg"> orange-bg </a></li>
-								<li><a href="#" class="off-white-bg"> off-white </a></li>
-								<li><a href="#" class="extra-lightgreen-bg">
-										extra-lightgreen </a></li>
-								<li><a href="#" class="lightgreen-bg"> lightgreen </a></li>
-								<li><a href="#" class="biscuit-bg"> biscuit </a></li>
-								<li><a href="#" class="chocolatelight-bg">
-										chocolatelight </a></li>
-							</ul>
-						</div>
+						
 						<div class="clearfix"></div>
 
 						<div class="clearfix"></div>
@@ -116,21 +100,7 @@
 						<div class="clearfix"></div>
 
 
-						<div class="fbl-box leftbar">
-							<h3 class="title">Facebook</h3>
-							<span class="likebutton"> <a href="#"> <img
-									src="images/fblike.png" alt="">
-							</a>
-							</span>
-							<p>12k like shopteam5.</p>
-
-							<div class="fbplug">
-								<a href="#"> <span> <img src="images/fbicon.png"
-										alt="">
-								</span> Facebook
-								</a>
-							</div>
-						</div>
+						
 						<div class="clearfix"></div>
 						<div class="leftbanner">
 							<img src="images/banner-small-01.png" alt="">
@@ -153,53 +123,35 @@
 						</div>
 						<div class="clearfix"></div>
 						<div class="products-grid">
-							<div class="toolbar">
-								<div class="sorter">
-									<div class="view-mode">
-										<a href="" class="list"> List </a> <a href="#"
-											class="grid active"> Grid </a>
-									</div>
-									<div class="sort-by">
-										Lọc: <select name="">
-											<option value="Default" selected>Tất cả</option>
-											<option value="Name">Tên</option>
-											<option value="Price">Giá</option>
-										</select>
-									</div>
-
-								</div>
-								<div class="pager">
-									<a href="#" class="prev-page"> <i class="fa fa-angle-left">
-									</i>
-									</a> <a href="#" class="active"> 1 </a> <a href="#"> 2 </a> <a
-										href="#"> 3 </a> <a href="#" class="next-page"> <i
-										class="fa fa-angle-right"> </i>
-									</a>
-								</div>
-							</div>
+							
 							<div class="clearfix"></div>
 							<div class="row">
 
-								<c:forEach var="aolennam" items="${aolennam}">
+								<c:forEach var="formaonamshow" items="${aolennam}">
+									<form action="/chitietsanpham/${formaonamshow.maSanPham}" method="post">
+									<input type="hidden" value="${formaonamshow.maSanPham}" name="msp">
 									<div class="col-md-4 col-sm-6">
 										<div class="products">
 											<div class="thumbnail">
 												<a href="details.html"> <img
-													src="images/products/large/${aolennam.hinhAnh}" alt="Product Name"
+													src="images/products/large/${formaonamshow.hinhAnh}" alt="Product Name"
 													style="height: 90%;">
 												</a>
 											</div>
 											<div class="productname" style="display: none;"></div>
-											<div class="productname">${aolennam.tenSanPham}</div>
-											<h4 class="price">${aolennam.gia}VND</h4>
+											<div class="productname">${formaonamshow.tenSanPham}</div>
+											<h4 class="price"><fmt:formatNumber value="${formaonamshow.gia}"
+													currencySymbol="VNĐ" type="currency" /></h4>
 											<div class="button_group">
-												<button class="button add-cart" type="button"
-													formaction="/product/create">Thêm vào giỏ</button>
+<!-- 												<button class="button add-cart" type="button" -->
+<!-- 													formaction="/product/create">Thêm vào giỏ</button> -->
+
+											<button class="button add-cart" type="submit">Chi tiết sản phẩm</button>
 
 											</div>
 										</div>
 									</div>
-
+									</form>
 								</c:forEach>
 
 

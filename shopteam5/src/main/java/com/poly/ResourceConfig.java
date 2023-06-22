@@ -12,6 +12,7 @@ public class ResourceConfig {
 		ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
 		ms.setBasenames("classpath:message/taikhoan");
 		ms.setBasenames("classpath:messages/sanpham");
+		ms.setBasenames("classpath:messages/phanloai");
 		ms.setDefaultEncoding("utf-8");
 		return ms;
 	}

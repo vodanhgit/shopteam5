@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 
@@ -112,7 +113,7 @@
 				<div class="hot-products">
 
 					<h3 class="title">
-						Sản Phẩm <strong>Giảm Giá</strong>
+						Sản Phẩm <strong>Nam & Nữ</strong>
 					</h3>
 					<div class="control">
 						<a id="prev_hot" class="prev" href="#">&lt;</a><a id="next_hot"
@@ -121,36 +122,69 @@
 					<ul id="hot">
 						<li>
 							<div class="row">
-
-								<div class="col-md-3 col-sm-6">
-									
+								<c:forEach var="formaonamshow" items="${formaonam}">
+									<form action="/chitietsanpham/${formaonamshow.maSanPham}" method="post">
+									<input type="hidden" value="${formaonamshow.maSanPham}" name="msp">
+									<div class="col-md-4 col-sm-6">
 										<div class="products">
-											<div class="offer">- %20</div>
 											<div class="thumbnail">
-												<a href="/mota"><img
-													src=" images/products/large/${imageUrl}" style="height: 90%;"
-													alt="Product Name"></a>
+												<a href="details.html"> <img
+													src="images/products/large/${formaonamshow.hinhAnh}" alt="Product Name"
+													style="height: 90%;">
+												</a>
 											</div>
-											<div class="productname">${productName}</div>
-											<h4 class="price">${price}</h4>
+											<div class="productname" style="display: none;"></div>
+											<div class="productname">${formaonamshow.tenSanPham}</div>
+											<h4 class="price"><fmt:formatNumber value="${formaonamshow.gia}"
+													currencySymbol="VNĐ" type="currency" /></h4>
 											<div class="button_group">
-												<button class="button add-cart" type="button">Thêm
-													vào giỏ</button>
-												
+<!-- 												<button class="button add-cart" type="button" -->
+<!-- 													formaction="/product/create">Thêm vào giỏ</button> -->
+
+											<button class="button add-cart" type="submit">Chi tiết sản phẩm</button>
+
 											</div>
-
 										</div>
-									
-
-
-								</div>
-
-
-
+									</div>
+									</form>
+								</c:forEach>
 							</div>
+						</li>
+						<li>
+							<div class="row">
+								<c:forEach var="formaonamshow" items="${formaonam}">
+									<form action="/chitietsanpham/${formaonamshow.maSanPham}" method="post">
+									<input type="hidden" value="${formaonamshow.maSanPham}" name="msp">
+									<div class="col-md-4 col-sm-6">
+										<div class="products">
+											<div class="thumbnail">
+												<a href="details.html"> <img
+													src="images/products/large/${formaonamshow.hinhAnh}" alt="Product Name"
+													style="height: 90%;">
+												</a>
+											</div>
+											<div class="productname" style="display: none;"></div>
+											<div class="productname">${formaonamshow.tenSanPham}</div>
+											<h4 class="price"><fmt:formatNumber value="${formaonamshow.gia}"
+													currencySymbol="VNĐ" type="currency" /></h4>
+											<div class="button_group">
+<!-- 												<button class="button add-cart" type="button" -->
+<!-- 													formaction="/product/create">Thêm vào giỏ</button> -->
+
+											<button class="button add-cart" type="submit">Chi tiết sản phẩm</button>
+
+											</div>
+										</div>
+									</div>
+									</form>
+								</c:forEach>
+							</div>
+						</li>
+
+
 					</ul>
 				</div>
-			
+
 
 				<div class="clearfix"></div>
 				<div class="clearfix"></div>

@@ -24,8 +24,8 @@ public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 	List<SanPham> findSanPhamAoPoloNam();
 
 	// áo sơ mi nam
-//	@Query("SELECT sp FROM SanPham sp WHERE sp.loai LIKE N'%Áo sơ mi nam'")
-//	List<SanPham> findSanPhamByLoaiAoSoMiNam();
+	@Query("SELECT s FROM SanPham s WHERE s.loai = 'áo sơ mi nam'")
+	List<SanPham> findSanPhamByLoaiAoSoMiNam();
 
 	// áo len nam
 	@Query("SELECT s FROM SanPham s WHERE s.loai = 'Áo len nam'")
@@ -35,6 +35,9 @@ public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 	@Query("SELECT s FROM SanPham s WHERE s.loai = 'Áo hoodie nam'")
 	List<SanPham> findSanPhamAoHoodieNam();
 	
+	
+	
+	
 	@Query("SELECT sp FROM SanPham sp WHERE sp.loai = :loai")
 	List<SanPham> findByLoai(@Param("loai") String loai);
 	
@@ -42,8 +45,17 @@ public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 	
 	@Query("SELECT sp FROM SanPham sp WHERE sp.loai LIKE '%nam'")
 	List<SanPham> findSanPhamByLoaiNam();
-	 @Query("SELECT DISTINCT sp.tenSanPham FROM SanPham sp WHERE sp.loai LIKE '%nam'")
-	    List<String> findDistinctTenSanPhamByLoaiNam();
+	
+	@Query("SELECT sp FROM SanPham sp WHERE sp.loai LIKE '%nữ'")
+	List<SanPham> findSanPhamByLoaiNu();
+	
+	
+	
+	
+	
+	
+//	 @Query("SELECT DISTINCT sp.tenSanPham FROM SanPham sp WHERE sp.loai LIKE '%nam'")
+//	    List<String> findDistinctTenSanPhamByLoaiNam();
 	 
 //	 @Query("SELECT DISTINCT sp.tenSanPham FROM SanPham sp WHERE sp.loai LIKE '%nam'")
 //	    List<String> findSanPhamByLoaiNam();
@@ -70,13 +82,14 @@ public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 	
 	////////////////
 	
-//	// áo thun nam
-//		@Query("SELECT s FROM SanPham s WHERE s.loai = 'Áo thun nữ'")
-//		List<SanPham> findSanPhamAoThunNu();
+//	// áo thun nữ
+		@Query("SELECT s FROM SanPham s WHERE s.loai = 'Áo thun nữ'")
+		List<SanPham> findSanPhamAoThunNu();
 //		
 //	//áo bra
-//		@Query("SELECT s FROM SanPham s WHERE s.loai = 'Áo Bra nữ'")
-//		List<SanPham> finSanPhamNuBra();
+		@Query("SELECT s FROM SanPham s WHERE s.loai = 'Áo Bra nữ'")
+		List<SanPham> finSanPhamNuBra();
+		
 	 @Query("SELECT sp FROM SanPham sp WHERE sp.maSanPham = :maSanPham")
 	    List<SanPham> findByMaSanPham(Integer maSanPham);
 	 @Query("SELECT sp FROM SanPham sp WHERE sp.maSanPham = :maSanPham")
