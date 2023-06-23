@@ -57,6 +57,11 @@ public class HoaDonChiTiet implements Serializable {
 	@JoinColumn(name="Masanpham")
 	private SanPham sanPham2;
 
+	@Override
+	public String toString() {
+		return "Hoadonchitiet [Mahoadonchitiet=" + maHoaDonChiTiet + ", Mau=" + mau + ", Size=" + size + ", Dongia=" + donGia
+				+ ", Soluong=" + soLuong + ", Thanhtien=" + thanhTien + "]";
+	}
 
 
 	
