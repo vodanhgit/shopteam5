@@ -426,8 +426,7 @@ public class adminController {
 
 	@RequestMapping("management")
 	public String orderManagement(Model model, @RequestParam("field") Optional<String> field, HttpServletRequest req,
-			@RequestParam("m") Optional<Integer> m, @RequestParam("trangThai") Optional<String> tt,
-			@RequestParam("ngayDatHang") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> ngay) {
+			@RequestParam("m") Optional<Integer> m, @RequestParam("trangThai") Optional<String> tt) {
 
 		String trangthai = tt.orElse(session.get("trangThai"));
 		session.set("trangThai", trangthai);
@@ -436,16 +435,9 @@ public class adminController {
 		HoaDon hd = new HoaDon();
 		model.addAttribute("hd", hd);
 
-		Pageable pageable = PageRequest.of(m.orElse(0), 4);
+		Pageable pageable = PageRequest.of(m.orElse(0), 2, sort);
 		Page<HoaDon> pagehds = hoadondao.findAllByTrangThai("%" + trangthai + "%", pageable);
-		Page<HoaDon> pagehd;
-		if (ngay.isPresent()) {
-			pagehd = hoadondao.findAllByNgay(ngay.get().toString(), pageable);
-			model.addAttribute("ngayDatHang", ngay.get());
-		} else {
-			pagehd = hoadondao.findAll(pageable);
-			model.addAttribute("ngayDatHang", ngay.orElse(null));
-		}
+		Page<HoaDon> pagehd = hoadondao.findAll(pageable);
 
 		List<HoaDon> hds = pagehd.getContent();
 		List<HoaDon> hdss = pagehds.getContent();
@@ -453,7 +445,7 @@ public class adminController {
 		model.addAttribute("hds", hdss);
 		model.addAttribute("pagehd", pagehd);
 		model.addAttribute("pagehds", pagehds);
-		model.addAttribute("ngayDatHang", ngay.orElse(null));
+
 //	    try {
 		String check = session.get("username");
 		System.out.println(check);
@@ -464,63 +456,41 @@ public class adminController {
 		model.addAttribute("item", item);
 		List<TaiKhoan> items = taikhoandao.findAll();
 		model.addAttribute("items", items);
-
-		if (tk.isQuyen() == true) {
-			req.getSession().setAttribute("username", "");
-//				sessionService.set("username", untk);
-
-		} else if (tk.isQuyen() == false) {
-
-//				sessionService.set("username", "");
-		}
-//		} catch (Exception e) {
-//			return "redirect:/trangDangNhap";
+//
+//		if (tk.isQuyen() == true) {
+//			req.getSession().setAttribute("username", "");
+////				sessionService.set("username", untk);
+//
+//		} else if (tk.isQuyen() == false) {
+//
+////				sessionService.set("username", "");
 //		}
-		return "/admin/Management/Management";
+//	}catch(Exception e)
+//	{
+//			return "redirect:/trangDangNhap";
+//			
+//		}
+	return"/admin/Management/Management";
 	}
 
 	@RequestMapping("/edithd/{maHoaDon}")
 	public String edit(Model model, @PathVariable("maHoaDon") Integer maHoaDon) {
-		HoaDon hd = hoadondao.findById(maHoaDon).orElse(null);
-		List<HoaDon> hds = hoadondao.findAll();
+	    HoaDon hd = hoadondao.findById(maHoaDon).orElse(null);
+	    List<HoaDon> hds = hoadondao.findAll();
 
-		model.addAttribute("hd", hd);
-		model.addAttribute("hds", hds);
-		return "/admin/Management/Management";
+	    model.addAttribute("hd", hd);
+	    model.addAttribute("hds", hds);
+	    return "/admin/Management/Management";
 	}
 
 	@PostMapping("/updatehd")
 	public String updateHd(@ModelAttribute("hd") HoaDon hoadon, @RequestParam("trangThai") String trangThai) {
-		hoadon.setTrangThai(trangThai); // Cập nhật trạng thái của hóa đơn
-		hoadondao.save(hoadon); // Lưu hóa đơn đã cập nhật vào cơ sở dữ liệu
-		return "redirect:/admin/management?field=maHoaDon&keywords=&ngayDatHang=&m=0";
+	    hoadon.setTrangThai(trangThai); // Cập nhật trạng thái của hóa đơn
+	    hoadondao.save(hoadon); // Lưu hóa đơn đã cập nhật vào cơ sở dữ liệu
+	    return "redirect:/admin/management?field=maHoaDon&keywords=&ngayDatHang=&m=0";
 	}
 
-	@RequestMapping("infoMan")
-	public String infoManagement(Model model, @RequestParam("f") Optional<Integer> f,
-			@RequestParam("diaChi") Optional<String> dc) {
-		String diachi = dc.orElse(session.get("diaChi"));
-		session.set("diaChi", diachi);
-
-		Pageable pageable = PageRequest.of(f.orElse(0), 2);
-		Page<HoaDon> pagehd = hoadondao.findAll(pageable);
-		Page<HoaDonChiTiet> pagehdct = hoadonchitietdao.findAll(pageable);
-		Page<HoaDon> pagehds = hoadondao.findAllByDiaChi("%" + diachi + "%", pageable);
-
-		List<HoaDonChiTiet> items = pagehdct.getContent(); // Get content from Page object
-		List<HoaDon> hds = pagehd.getContent();
-		List<HoaDon> hdss = pagehds.getContent();
-
-		model.addAttribute("hds", items); // Assign the items list to the "items" attribute
-		model.addAttribute("hds", hds); // Assign the hds list to the "hds" attribute
-		model.addAttribute("hds", hdss); // Assign the hdss list to the "hdss" attribute
-
-		model.addAttribute("pagehd", pagehd);
-		model.addAttribute("pagehds", pagehds);
-
-		return "/admin/infoMan/infoMan";
-	}
-
+	
 	@RequestMapping("thongke")
 	public String thongke(Model model) {
 		List<Object[]> topProducts = spdao.findTop5BestSellingProductsByCategory();
