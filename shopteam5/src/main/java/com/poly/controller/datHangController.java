@@ -46,12 +46,7 @@ public class datHangController {
 		@RequestParam("diaChi") Optional<String> dc) {
 		String diachi = dc.orElse(session.get("diaChi"));
 		session.set("diaChi", diachi);
-		String myValue = sessionService.get("username");
-		TaiKhoan tk = taiKhoanDao.findByTenTaiKhoanThongThuong(myValue);
-		int mtk = tk.getMaTaiKhoan();
-		HoaDon hd = hoadondao.findByMaHoaDon(mtk);
-		int mtkhd = hd.getMaHoaDon();
-		List<HoaDon> hdd = hoadondao.deleteAllById(mtkhd);
+	
 		Pageable pageable = PageRequest.of(f.orElse(0), 2);
 		Page<HoaDon> pagehd = hoadondao.findAll(pageable);
 		Page<HoaDonChiTiet> pagehdct = hoadonchitietdao.findAll(pageable);
