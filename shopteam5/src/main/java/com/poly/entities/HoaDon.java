@@ -35,7 +35,7 @@ public class HoaDon implements Serializable {
 	private String tenNguoiMua;
 	
 	@Column(name="Sdt")
-	private String sDT;
+	private String sdt;
 	
 	@Column(name="Ngaydathang")
 	private String ngayDatHang;
@@ -61,6 +61,10 @@ public class HoaDon implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="Makhuyenmai")
 	private KhuyenMai khuyenMai;
-
+	@Override
+	public String toString() {
+		return "HoaDon [Mahoadon=" + maHoaDon + ", Diachi=" + diaChi + ",Tennguoimua=" + tenNguoiMua + ",Sdt=" + sdt + ", Ngaydathang=" + ngayDatHang + ", Tongtien=" + tongTien
+				+ ", Trangthai=" + trangThai + ", Ghichu=" + ghiChu + "]";
+	}
 	
 }
