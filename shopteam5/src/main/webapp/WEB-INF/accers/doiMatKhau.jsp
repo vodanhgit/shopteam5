@@ -22,27 +22,37 @@
 			<div class="top">
 
 				<header>Đổi mật khẩu</header>
+				
+			</div>
+			<div style="background-color: green;opacity: 0.25; text-align: center; border-radius: 5px 5px;" class="input-field">
+				<label style="color: white;">${message}</label>
 			</div>
 			<br>
+			<form action="/dmk" method="post">
 			<div class="input-field">
-				<input type="password" class="input" placeholder="Mật khẩu cũ" id="" />
+				<input type="text" class="input" name="username" placeholder="Tài khoản" id="" />
 				<i class="bx bx-lock-alt"></i>
 			</div>
 			<div class="input-field">
-				<input type="Password" class="input" placeholder="Mật khẩu mới"
+				<input type="password" name="password" class="input" placeholder="Mật khẩu cũ" id="" />
+				<i class="bx bx-lock-alt"></i>
+			</div>
+			<div class="input-field">
+				<input type="Password" name="passwordm" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" title="Ít nhất một chữ in hoa, có cả số và đồng thời đảm bảo ít nhất mật khẩu có 8 ký tự" class="input" placeholder="Mật khẩu mới"
 					id="" /> <i class="bx bx-lock-alt"></i>
 			</div>
 			<div class="input-field">
-				<input type="Password" class="input"
+				<input type="Password" name="passwordm1" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" title="Ít nhất một chữ in hoa, có cả số và đồng thời đảm bảo ít nhất mật khẩu có 8 ký tự" class="input"
 					placeholder="Xác nhận mật khẩu mới" id="" /> <i
 					class="bx bx-lock-alt"></i>
 			</div>
 
 			<div class="input-field">
-				<input type="submit" class="submit" value="Đăng ký" id="" />
+				<input type="submit" class="submit" value="Đổi mật khẩu" id="" />
 			</div>
 			<div class="two-col"></div>
 		</div>
+		</form>
 	</div>
 </body>
 </html>
