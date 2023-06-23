@@ -24,8 +24,9 @@
 	color: red;
 	font-style: italic;
 }
-.mataikhoan{
-display: none;
+
+.mataikhoan {
+	display: none;
 }
 </style>
 <body>
@@ -72,138 +73,74 @@ display: none;
 					<div class="row">
 						<h4>Hồ sơ của tôi</h4>
 						<hr>
-						<div class="col-lg-6">
-							<!-- 							<div class="px-5 p-5"> -->
-							<!-- 								<div class="form-group"> -->
-							<%-- 									<label style="width: 15%">Tên đăng nhập: </label> <label>${thongtintaikhoan.tenTaiKhoan}</label> --%>
-							<!-- 								</div> -->
-							<!-- 								<div class=" mt-3"> -->
-							<!-- 									<div class="form-group mt-3"> -->
-							<%-- 										<label style="width: 15%">Họ và Tên:</label> <label>${thongtintaikhoan.hoTenNguoiDung}</label> --%>
+						<form action="/admin/capnhap" method="post"
+							enctype="multipart/form-data">
+							<div class="col-lg-9">
+								<div class="border border-black border border-4">
 
-							<!-- 									</div> -->
-							<!-- 								</div> -->
-							<!-- 								<div class="form-group mt-3"> -->
-							<%-- 									<label style="width: 15%">Email:</label> <label>${thongtintaikhoan.email}</label> --%>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Tên đăng
+											nhập: </label> <input readonly="readonly" name="tenTaiKhoan"
+											value="${thongtintaikhoan.tenTaiKhoan}" />
 
-							<!-- 								</div> -->
-							<!-- 								<div class="form-group mt-3"> -->
-							<%-- 									<label style="width: 15%">Số điện thoại:</label> <label>${thongtintaikhoan.soDienThoai}</label> --%>
+									</div>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Họ Tên:
+										</label> <input name="hoTenNguoiDung" ${ten}
+											value="${thongtintaikhoan.hoTenNguoiDung}" />
 
-							<!-- 								</div> -->
+									</div>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Email: </label>
+										<input name="email" value="${thongtintaikhoan.email}" ${ten} />
+									</div>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Số Điện
+											Thoại: </label> <input name="soDienThoai"
+											value="0${thongtintaikhoan.soDienThoai}" ${ten} />
+									</div>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Giới
+											Tính </label> <input type="radio" ${ten}
+											${thongtintaikhoan.gioiTinh? 'checked':''}
+											value="${thongtintaikhoan.gioiTinh?' true':'false' }"
+											id="contactChoice1" name="gioiTinh"
+											value="${thongtintaikhoan.gioiTinh}" /> <label
+											for="contactChoice1" class="me-3">Nam</label> <input
+											${thongtintaikhoan.gioiTinh? 'checked':''} type="radio"
+											id="contactChoice2" name="gioiTinh"
+											value="${thongtintaikhoan.gioiTinh?' true':'false' }" /> <label
+											for="contactChoice2" class="me-3">Nữ</label>
+									</div>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Hình
+											Ảnh: </label> <img alt="" src="/images/${thongtintaikhoan.hinhAnh}"
+											width="80px"> <input type="file" name="photo_file"
+											${ten}>
+									</div>
+									<div class="form-group mt-3">
+										<label style="width: 15%; font-weight: bold;">Ngày
+											Sinh: </label> <input name="ngaySinh" type="date" ${ten}
+											value="${thongtintaikhoan.ngaySinh}" />
+									</div>
+									
+									<div class="form-group mt-3">
+										 <button type="submit" class="btn btn-primary">
+											Lưu</button>
+										 <a href="/admin/sua" class="btn btn-primary" type="button">Sửa</a>
+									     <a href="/admin/huy"class="btn btn-primary" type="button">Hủy</a>
+									</div>
 
+								</div>
+							</div>
 
-							<!-- 								<div class="form-group mt-3"> -->
-							<%-- 						<input type="radio" ${thongtintaikhoan.gioiTinh? 'checked':''} value="${thongtintaikhoan.gioiTinh?' true':'false' }"  --%>
-							<%-- 										id="contactChoice1" name="contact" value="${thongtintaikhoan.gioiTinh}" /> <label --%>
-							<!-- 										for="contactChoice1" class="me-3">Nam</label>  -->
-							<%-- 										<input ${thongtintaikhoan.gioiTinh? 'checked':''}  --%>
-							<%-- 										type="radio" id="contactChoice2" name="contact" value="${thongtintaikhoan.gioiTinh?' true':'false' }" /> --%>
-							<!-- 									<label for="contactChoice2" class="me-3">Nữ</label>  -->
-
-							<!-- 								</div> -->
-							<!-- 								<div class="form-group mt-3"> -->
-							<!-- 									<label style="width: 15%">Ngày sinh:</label>  -->
-							<%-- 									<input type="date" value="${thongtintaikhoan.ngaySinh}"> --%>
-							<!-- 								</div> -->
-							<!-- 								<div class="form-group mt-3"> -->
-							<!-- 									<label style="width: 15%">Hình Ảnh</label> <img -->
-							<%-- 							src="/images/${thongtintaikhoan.hinhAnh}" width="50px"> --%>
-							<!-- 								</div> -->
-
-							<!-- 								<div class="form-group mt-3"> -->
-
-							<%-- 									<a class="btn btn-danger" href="/chinhsua/${thongtintaikhoan.maTaiKhoan}" role="button">Lưu</a> --%>
-							<!-- 								</div> -->
-							<!-- 							</div> -->
-
-							<table class="table">
-								<tr>
-									<th>Tên Tài Khoản:</th>
-									<td>${thongtintaikhoan.tenTaiKhoan}</td>
-								</tr>
-								<tr>
-									<th>Họ Tên:</th>
-									<td>${thongtintaikhoan.hoTenNguoiDung}</td>
-								</tr>
-								<tr>
-									<th>Email:</th>
-									<td>${thongtintaikhoan.email}</td>
-								</tr>
-								<tr>
-									<th>Số ĐT:</th>
-									<td>0${thongtintaikhoan.soDienThoai}</td>
-								</tr>
-								<tr>
-									<th>Giới Tính:</th>
-									<td>${thongtintaikhoan.gioiTinh ? "Nam" : "Nữ"}</td>
-								</tr>
-								<tr>
-									<th>Ngày Sinh:</th>
-									<td>${thongtintaikhoan.ngaySinh}</td>
-								</tr>
-								<tr>
-									<th>Hình Ảnh:</th>
-									<td><img alt="" src="/images/${thongtintaikhoan.hinhAnh}"
-										width="50px"></td>
-								</tr>
-								<tr>
-<%-- 									<th><a href="/admin/chinhsua/${thongtintaikhoan.maTaiKhoan}" type="button" class="btn btn-primary"/> Chỉnh sửa</th> --%>
-									<th><a type="button" class="btn btn-primary"/> Chỉnh sửa</th>
-									<td></td>
-								</tr>
-							</table>
-						</div>
-<!-- 						<div class="col-lg-6 "> -->
-<%-- 							<form:form action="/index" method="post" modelAttribute="item" --%>
-<%-- 								name="account_form" enctype="multipart/form-data"> --%>
-<%-- 								<form:input path="maTaiKhoan" placeholder="Id" hidden="hidden"/><br> --%>
-<!-- 								<div class="container"> -->
-<!-- 									<div class="row"> -->
-<!-- 										<div class="col-sm-5"> -->
-<!-- 											<div class="mb-1"> -->
-<!-- 												<label>Họ tên</label> -->
-<%-- 												<form:input class="form-control" path="hoTenNguoiDung" /> --%>
-<%-- 												<form:errors path="hoTenNguoiDung" cssClass="mgs_errors" /> --%>
-<!-- 											</div> -->
-<!-- 											<div class="mb-1"> -->
-<!-- 												<label for="email">Email</label> -->
-<%-- 												<form:input class="form-control" path="email" /> --%>
-<%-- 												<form:errors path="email" cssClass="mgs_errors" /> --%>
-<!-- 											</div> -->
-<!-- 										</div> -->
-<!-- 										<div class="col-sm-5"> -->
-<!-- 											<div class="mb-1"> -->
-<!-- 												<label for="username">Số Điện Thoại</label> -->
-<%-- 												<form:input class="form-control" path="soDienThoai" /> --%>
-<%-- 												<form:errors path="soDienThoai" cssClass="mgs_errors" /> --%>
-<!-- 											</div> -->
-<!-- 											<div class="mb-1"> -->
-<!-- 												<label for="pass">Mật khẩu</label> -->
-<%-- 												<form:input class="form-control" path="matKhau" /> --%>
-<%-- 												<form:errors path="matKhau" cssClass="mgs_errors" /> --%>
-<!-- 											</div> -->
-<!-- 											<div class="mb-1"> -->
-<!-- 												<input type="file" class="form-control" name="photo_file" -->
-<!-- 													style="display: none"> -->
-<!-- 											</div> -->
-<!-- 											<div class="mb-1" style="display: none"> -->
-<!-- 												<label>Giới tính</label> -->
-<%-- 												<form:radiobuttons path="gioiTinh" class="ms-3" --%>
-<%-- 													items="${gioitinh}" /> --%>
-
-<!-- 											</div> -->
-
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<a type="button" class="btn btn-primary" href="capnhap"> Cập Nhập</a> -->
-<!-- 								</div> -->
-<%-- 							</form:form> --%>
-<!-- 						</div> -->
+							<div class="col-lg-3">
+								 
+								 
+							</div>
+						</form>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 

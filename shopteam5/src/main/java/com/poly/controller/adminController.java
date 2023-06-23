@@ -67,13 +67,17 @@ public class adminController {
 	@Autowired
 	SessionService session;
 
-	public String dk() {
-		return "forward:/checkout";
-	}
-
+int ma =0;
 	@RequestMapping("trangchuadmin")
 	public String index(Model model, TaiKhoan taikhoan, HttpServletRequest req) {
-		try {
+//		try {
+		if(ma==1) {
+			model.addAttribute("huy", "Hủy");
+			model.addAttribute("ten", null);
+		}else {
+			model.addAttribute("huy", null);
+			model.addAttribute("ten","readonly");
+		}
 			String check = session.get("username");
 			System.out.println(check);
 			TaiKhoan tk = taikhoandao.findByTenTaiKhoanThongThuong(check);
@@ -84,20 +88,21 @@ public class adminController {
 			List<TaiKhoan> items = taikhoandao.findAll();
 			model.addAttribute("items", items);
 
-			if (tk.isQuyen() == true) {
-				req.getSession().setAttribute("username", "");
-//				sessionService.set("username", untk);
-
-			} else if (tk.isQuyen() == false) {
-
-//				sessionService.set("username", "");
-			}
-		} catch (Exception e) {
-			return "redirect:/trangDangNhap";
-		}
+//			if (tk.isQuyen() == true) {
+//				req.getSession().setAttribute("username", "");
+////				sessionService.set("username", untk);
+//
+//			} else if (tk.isQuyen() == false) {
+//
+////				sessionService.set("username", "");
+//			}
+//		} catch (Exception e) {
+//			return "redirect:/trangDangNhap";
+//		}
 
 		return "/admin/index";
 	}
+	
 
 //	@RequestMapping("account")
 //	public String account(Model model, @RequestParam("m") Optional<Integer> m) {
@@ -273,6 +278,52 @@ public class adminController {
 		taikhoandao.save(taikhoan);
 
 		return "redirect:/admin/account";
+	}
+	
+
+@RequestMapping("capnhap")
+	public String capnhap(@RequestParam("hoTenNguoiDung") String hoTenNguoiDung,
+			@RequestParam("email") String email, @RequestParam("soDienThoai") String soDienThoai,
+			@RequestParam("gioiTinh") Boolean gioiTinh, @RequestParam("ngaySinh") String ngaysinh,
+			@RequestParam("photo_file") MultipartFile img )  throws IllegalStateException, IOException{
+		String filename = img.getOriginalFilename();
+		String check = session.get("username");
+		System.out.println(check);
+		TaiKhoan tk = taikhoandao.findByTenTaiKhoanThongThuong(check);
+		
+		TaiKhoan taikhoan = new TaiKhoan();
+		taikhoan.setHoTenNguoiDung(hoTenNguoiDung);
+		taikhoan.setMaTaiKhoan(tk.getMaTaiKhoan());
+		taikhoan.setTenTaiKhoan(tk.getTenTaiKhoan());
+		taikhoan.setMatKhau(tk.getMatKhau());
+		taikhoan.setEmail(email);
+		taikhoan.setSoDienThoai(soDienThoai);
+		taikhoan.setNgaySinh(ngaysinh);
+		taikhoan.setGioiTinh(gioiTinh);
+		
+		if(filename.isEmpty()) {
+			taikhoan.setHinhAnh("user.png");
+		}else {
+		
+		File file = new File(app.getRealPath("/images/" + filename));
+		img.transferTo(file);
+		taikhoan.setHinhAnh(filename);
+		}
+		taikhoandao.save(taikhoan);
+		ma=0;
+		
+		return "redirect:/admin/trangchuadmin";
+	}
+	
+	@RequestMapping("/sua")
+	public String sua() {
+	ma=1;
+		return "redirect:/admin/trangchuadmin";
+	}
+	@RequestMapping("/huy")
+	public String huy() {
+		ma=0;
+		return "redirect:/admin/trangchuadmin";
 	}
 
 	/* Sản phẩm */
