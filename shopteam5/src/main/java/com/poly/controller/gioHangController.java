@@ -256,7 +256,7 @@ public class gioHangController {
 					themhd.setTrangThai(trangthai);
 					themhd.setTaiKhoan(taiKhoan);
 					themhd.setTenNguoiMua(ten_nguoimua);
-					themhd.setSDT(sdt_nguoimua);
+					themhd.setSdt(sdt_nguoimua);
 					themhd.setKhuyenMai(khuyenMai);
 					 for (ChiTietGioHang ctgh : chitietgiohangs) {
 					    	ma = ctgh.getId_ChiTiet();
@@ -306,7 +306,7 @@ public class gioHangController {
 					themhd.setTrangThai(trangthai);
 					themhd.setTaiKhoan(taiKhoan);
 					themhd.setTenNguoiMua(ten_nguoimua);
-					themhd.setSDT(sdt_nguoimua);
+					themhd.setSdt(sdt_nguoimua);
 					themhd.setKhuyenMai(khuyenMai);
 					 for (ChiTietGioHang ctgh : chitietgiohangs) {
 					    	ma = ctgh.getId_ChiTiet();
