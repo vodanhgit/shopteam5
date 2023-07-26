@@ -27,7 +27,6 @@
 </style>
 </head>
 <body>
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 p-4 shadow"
@@ -35,7 +34,6 @@
 
 				<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp"%>
 			</div>
-
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
 					style="background-color: #ffffff">
@@ -52,88 +50,82 @@
 
 							</ul>
 							<span class="navbar-text" id="dropAccount" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false">
-								<span> Xin chào </span>  <i
-								class="fa-solid fa-user fs-4"></i>
+								data-bs-toggle="dropdown" aria-expanded="false"> <span>
+									Xin chào </span> <i class="fa-solid fa-user fs-4"></i>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
 								<li><a class="dropdown-item" href="/home">Trang chính</a></li>
-										<li><a class="dropdown-item" href="/doimatkhau">Đổi mật khẩu</a></li>
-										<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+								<li><a class="dropdown-item" href="/doimatkhau">Đổi mật
+										khẩu</a></li>
+								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
 							</ul>
 						</div>
 					</div>
 				</nav>
 				<div class="px-4 p-3">
 					<div class="row">
-											<form:form action="account" method="post"
-												modelAttribute="item" name="account_form"
-												enctype="multipart/form-data" >
-											<div class="container" >
-											<div class="row">
-												<div class="col-sm-5">
-												<div class="mb-1">
-													<label>Họ tên</label>
-													<form:input class="form-control" path="hoTenNguoiDung" />
-													<form:errors path="hoTenNguoiDung" cssClass="mgs_errors" />
-												</div>
-												<div class="mb-1">
-													<label for="email">Email</label>
-													<form:input class="form-control" path="email" />
-													<form:errors path="email" cssClass="mgs_errors" />
-												</div>
-												</div>
-												<div class="col-sm-5">
-												<div class="mb-1">
-													<label for="username">Tên đăng nhập</label>
-													<form:input class="form-control" path="tenTaiKhoan" />
-													<form:errors path="tenTaiKhoan" cssClass="mgs_errors" />
-												</div>
-												<div class="mb-1">
-													<label for="pass">Mật khẩu</label>
-													<form:input class="form-control" path="matKhau" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" title="Ít nhất một chữ in hoa, có cả số và đồng thời đảm bảo ít nhất mật khẩu có 8 ký tự"/>
-													<form:errors path="matKhau" cssClass="mgs_errors" />
-												</div>
-												<div class="mb-1">
-													<input type="file" class="form-control" name="photo_file" style="display: none">
-												</div>
-<!-- 												<div class="mb-1" style="display: none"> -->
-<!-- 													<label>Giới tính</label> -->
-<%-- 													<form:radiobuttons path="gioiTinh" class="ms-3" --%>
-<%--   														items="${gioitinh}" />   --%>
+						<form:form action="account" method="post" modelAttribute="item"
+							name="account_form" enctype="multipart/form-data">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-5">
+										<div class="mb-1">
+											<label>Họ tên</label>
+											<form:input class="form-control" path="hoTenNguoiDung" />
+											<form:errors path="hoTenNguoiDung" cssClass="mgs_errors" />
+										</div>
+										<div class="mb-1">
+											<label for="email">Email</label>
+											<form:input class="form-control" path="email" />
+											<form:errors path="email" cssClass="mgs_errors" />
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="mb-1">
+											<label for="username">Tên đăng nhập</label>
+											<form:input class="form-control" path="tenTaiKhoan" />
+											<form:errors path="tenTaiKhoan" cssClass="mgs_errors" />
+										</div>
+										<div class="mb-1">
+											<label for="pass">Mật khẩu</label>
+											<form:input class="form-control" path="matKhau"
+												pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
+												title="Ít nhất một chữ in hoa, có cả số và đồng thời đảm bảo ít nhất mật khẩu có 8 ký tự" />
+											<form:errors path="matKhau" cssClass="mgs_errors" />
+										</div>
+										<div class="mb-1">
+											<input type="file" class="form-control" name="photo_file"
+												style="display: none">
+										</div>
+										<div class="mb-1">
+											<label>Quyền</label>
+											<form:radiobuttons path="quyen" class="ms-3" items="${quyen}" />
 
-<!-- 												</div> -->
-												<div class="mb-1">
-													<label>Quyền</label>
-													<form:radiobuttons path="quyen" class="ms-3"
-														items="${quyen}" />
+										</div>
+									</div>
+								</div>
+								<button class="btn btn-primary" formaction="/admin/create">
+									Thêm</button>
+							</div>
 
-												</div>
-												</div>
-												</div>
-												<button class="btn btn-primary" formaction="/admin/create">
-													Thêm</button>
-											</div>
-												
-												<div class="position-fixed top-0 end-0 p-5"
-													style="z-index: 11">
-													<div style="background-color: #2ecc71" id="liveToast"
-														class="toast align-items-center text-white border-0"
-														role="alert" aria-live="assertive" aria-atomic="true">
-														<div class="d-flex">
-															<div class="toast-body">Thêm thành công !</div>
-															<button type="button"
-																class="btn-close btn-close-white me-2 m-auto"
-																data-bs-dismiss="toast" aria-label="Close"></button>
-														</div>
-													</div>
-												</div>
-											</form:form>
-											
-											
-											
-												
+							<div class="position-fixed top-0 end-0 p-5" style="z-index: 11">
+								<div style="background-color: #2ecc71" id="liveToast"
+									class="toast align-items-center text-white border-0"
+									role="alert" aria-live="assertive" aria-atomic="true">
+									<div class="d-flex">
+										<div class="toast-body">Thêm thành công !</div>
+										<button type="button"
+											class="btn-close btn-close-white me-2 m-auto"
+											data-bs-dismiss="toast" aria-label="Close"></button>
+									</div>
+								</div>
+							</div>
+						</form:form>
+
+
+
+
 						<div class="table-responsive mt-5" style="overflow-x: auto">
 							<table class="table table-bordered">
 								<thead>
@@ -150,7 +142,7 @@
 								</thead>
 								<tbody>
 									<c:forEach var="item" items="${items}">
-									<tr>
+										<tr>
 											<td>${item.maTaiKhoan}</td>
 											<td>${item.hoTenNguoiDung}</td>
 											<td>${item.tenTaiKhoan}</td>
@@ -161,21 +153,25 @@
 											<td>${item.quyen == true ? "Admin" : "Client"}</td>
 											<td class="text-center"><a
 												href="/admin/editAccount/${item.maTaiKhoan}">Đổi quyền</a></td>
-											
+
 										</tr>
 									</c:forEach>
-									 
+
 								</tbody>
 							</table>
 							<div style="padding-left: 45%">
-							<td colspan="7" style="text-align: center;">
-             <div><p>Trang số: ${itemTaiKhoan.number+1}</p></div>
-				<div>
-				
-					<c:forEach var="pagetr" begin="0" end="${itemTaiKhoan.totalPages}">
-						<a href="/admin/account?m=${pagetr}" style="font-size: 25px; font-weight: lighter; text-decoration: none">${pagetr+1}&nbsp;&nbsp;&nbsp;</a>
-					</c:forEach>
-			</td>
+								<td colspan="7" style="text-align: center;">
+									<div>
+										<p>Trang số: ${itemTaiKhoan.number+1}</p>
+									</div>
+									<div>
+
+										<c:forEach var="pagetr" begin="0"
+											end="${itemTaiKhoan.totalPages}">
+											<a href="/admin/account?m=${pagetr}"
+												style="font-size: 25px; font-weight: lighter; text-decoration: none">${pagetr+1}&nbsp;&nbsp;&nbsp;</a>
+										</c:forEach>
+								</td>
 							</div>
 
 						</div>
@@ -187,8 +183,10 @@
 		</div>
 	</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
