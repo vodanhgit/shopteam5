@@ -11,10 +11,5 @@ public class HomeController {
 		return "home/index";
 	}
 	
-	@GetMapping("/home/about")
-	public String about(Model model) {
-		return "home/about";
-	}
-	
 	
 }
