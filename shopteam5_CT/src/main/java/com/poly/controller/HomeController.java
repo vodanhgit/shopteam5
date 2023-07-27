@@ -10,6 +10,8 @@ public class HomeController {
 	public String index(Model model) {
 		return "home/index";
 	}
-	
-	
+	@GetMapping("/home/mota")
+	public String mota(Model model) {
+		return "home/mota";
+	}
 }
