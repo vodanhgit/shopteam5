@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" th:href="@{/images/shopteam5_logo.png}">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+	rel="stylesheet" />
+<link th:href="@{/css/css-style.css}" rel="stylesheet" />
+<title>Đăng Nhập</title>
+</head>
+<body>
+	<div class="de">
+		<a href="/home/index"> <img class="logo"
+			th:src="@{/images/logoShopTeam5.png}" alt=""></a>
+	</div>
+	<hr width="1500px">
+	<div class="box">
+		<div class="container">
+			<div class="top">
+				<div
+					style="background-color: green; opacity: 0.25; text-align: center; border-radius: 5px 5px;"
+					class="input-field">
+					<label style="color: white;" th:text="${message}"></label>
+				</div>
+
+				<a href="/home/register" class="dangky">Bạn chưa có tài khoản?</a>
+				<header>Đăng nhập</header>
+			</div>
+			<br>
+			<form action="/login" method="post" enctype="multipart/form-data">
+
+				<div class="input-field">
+					<input type="text" name="username" class="input"
+						placeholder="Tên đăng nhập" /> <i class="bx bx-user"></i>
+				</div>
+				<div class="input-field">
+					<input type="Password" name="password" class="input"
+						placeholder="Mật khẩu" /> <i class="bx bx-lock-alt"></i>
+				</div>
+				<div class="input-field">
+					<input type="submit" class="submit" value="Đăng nhập" />
+				</div>
+				<div class="two-col">
+					<div class="one">
+						<input type="checkbox" name="remember" value="true" /> <label
+							for="check"> Nhớ tài khoản</label>
+					</div>
+					<div class="two">
+						<label><a href="/home/forgot-password">Quên mật khẩu?</a></label>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>
