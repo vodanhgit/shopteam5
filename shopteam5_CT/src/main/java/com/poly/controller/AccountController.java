@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,15 +18,14 @@ import com.poly.entities.TaiKhoan;
 import com.poly.reponstory.GioHangDao;
 import com.poly.reponstory.TaiKhoanDao;
 import com.poly.service.CookieService;
-import com.poly.service.MailerServiceImpl;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
 import com.poly.service.SessionService_quenMatKhau;
 
 @Controller
 public class AccountController {
-	@Autowired
-	MailerServiceImpl mailer;
+//	@Autowired
+//	MailerServiceImpl mailer;
 
 	@Autowired
 	SessionService sessionService;
@@ -147,13 +145,14 @@ public class AccountController {
 	}
 
 	@GetMapping("/home/check-mail")
-	public String check_mail(Model model, @PathVariable("email") String email) {
-		sessionService_quenmatkhau.set("maxacnhan_email", randomString);
-		String styledIcon1 = icon1.replace("\n", "<br>").replace(" ", "&nbsp;")
-				.replace("<h>", "<h3 style=\"color: blue; text-decoration: underline;\">").replace("</h>", "</h3>");
-		model.addAttribute("email", email);
-		String content = "<html><body>" + styledIcon1 + "</body></html>";
-		mailer.send(email, Subject, content);
+//	Model model, @PathVariable("email") String email
+	public String check_mail() {
+//		sessionService_quenmatkhau.set("maxacnhan_email", randomString);
+//		String styledIcon1 = icon1.replace("\n", "<br>").replace(" ", "&nbsp;")
+//				.replace("<h>", "<h3 style=\"color: blue; text-decoration: underline;\">").replace("</h>", "</h3>");
+//		model.addAttribute("email", email);
+//		String content = "<html><body>" + styledIcon1 + "</body></html>";
+//		mailer.send(email, Subject, content);
 		return "home/check-mail";
 	}
 
