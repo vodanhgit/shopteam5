@@ -34,6 +34,8 @@ public class UserController {
 	@Autowired
 	ServletContext app;
 
+	
+	//Đổ dữ liệu từ database lên bảng
 	@GetMapping("/admin/account")
 	public String account(Model model, @RequestParam("m") Optional<Integer> m) {
 		Pageable pageable = PageRequest.of(m.orElse(0), 4);
@@ -46,6 +48,7 @@ public class UserController {
 		return "admin/accounts/account";
 	}
 
+	//Tạo người dùng mới
 	@RequestMapping("/admin/create-user")
 	public String create(@Validated @ModelAttribute("item") TaiKhoan item, BindingResult result,
 			@RequestParam("photo_file") MultipartFile img, Model model) throws IllegalStateException, IOException {
@@ -72,8 +75,6 @@ public class UserController {
 
 			}
 		}
-		
-		
 		return "redirect:/admin/account";
 	}
 	
