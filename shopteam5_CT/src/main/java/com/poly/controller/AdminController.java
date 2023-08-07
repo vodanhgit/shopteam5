@@ -120,11 +120,6 @@ public class AdminController {
 		return "redirect:/admin/index";
 	}
 
-	@GetMapping("/admin/account")
-	public String account(Model model) {
-		return "admin/accounts/account";
-	}
-
 	@GetMapping("/admin/thongke")
 	public String thongKe(Model model) {
 		return "admin/thongke";
@@ -132,16 +127,19 @@ public class AdminController {
 
 	@RequestMapping("thongke")
 	public String thongke(Model model) {
-		model.addAttribute("chontrangthai", "Chọn trạng thái");
-		model.addAttribute("chontrangthai_sosanh", "Chọn trạng thái");
-		return "/admin/thongke/thongke";
+	    model.addAttribute("chontrangthai", "Chọn trạng thái");
+	    model.addAttribute("chontrangthai_sosanh", "Chọn trạng thái");
+	    return "/admin/thongke/thongke";
 	}
 
 	@RequestMapping("/admin/thongkedoanhthu")
-	public String thongkedoanhthu(Model model, @RequestParam("tungay") String tungay,
-			@RequestParam("denngay") String denngay, @RequestParam("trangthai") String trangthai,
-			@RequestParam("tungay_sosanh") String tungay_sosanh, @RequestParam("denngay_sosanh") String denngay_sosanh,
-			@RequestParam("trangthai_sosanh") String trangthai_sosanh) {
+	public String thongkedoanhthu(Model model,
+	        @RequestParam("tungay") String tungay, @RequestParam("denngay") String denngay,
+	        @RequestParam("trangthai") String trangthai, @RequestParam("tungay_sosanh") String tungay_sosanh,
+	        @RequestParam("denngay_sosanh") String denngay_sosanh, @RequestParam("trangthai_sosanh") String trangthai_sosanh) {
+
+	    // Các phần code xử lý doanh thu và các thuộc tính khác tôi giữ nguyên
+
 		int sohoadon = 0;
 		int tongsoluongsanpham = 0;
 		int tongtien = 0;
@@ -202,59 +200,76 @@ public class AdminController {
 			}
 
 		}
-		/*
-		 * chontrangthai = trangthai; chontrangthai_sosanh=trangthai_sosanh;
-		 */
 
-		model.addAttribute("tongtien", tongtien);
-		model.addAttribute("ngaydoanhthucaonhat", ngaydoanhthucaonhat);
-		model.addAttribute("tongtiendoanhthucaonhat", tongdoanhthucaonhat);
-		model.addAttribute("sohoadon", sohoadon);
-		model.addAttribute("tongsoluongsanpham", tongsoluongsanpham);
-		model.addAttribute("hoaDonDTOList", hoaDonDTOList);
-		model.addAttribute("tongtien_sosanh", tongtien_sosanh);
-		model.addAttribute("ngaydoanhthucaonhat_sosanh", ngaydoanhthucaonhat_sosanh);
-		model.addAttribute("tongtiendoanhthucaonhat_sosanh", tongdoanhthucaonhat_sosanh);
-		model.addAttribute("sohoadon_sosanh", sohoadon_sosanh);
-		model.addAttribute("tongsoluongsanpham_sosanh", tongsoluongsanpham_sosanh);
-		model.addAttribute("hoaDonDTOList_sosanh", hoaDonDTOList_sosanh);
-		model.addAttribute("chontrangthai", trangthai);
-		model.addAttribute("chontrangthai_sosanh", trangthai_sosanh);
+	    // Thêm những thuộc tính cần thiết vào Model
+	    model.addAttribute("tongtien", tongtien);
+	    model.addAttribute("ngaydoanhthucaonhat", ngaydoanhthucaonhat);
+	    model.addAttribute("tongtiendoanhthucaonhat", tongdoanhthucaonhat);
+	    model.addAttribute("sohoadon", sohoadon);
+	    model.addAttribute("tongsoluongsanpham", tongsoluongsanpham);
+	    model.addAttribute("hoaDonDTOList", hoaDonDTOList);
+	    model.addAttribute("tongtien_sosanh", tongtien_sosanh);
+	    model.addAttribute("ngaydoanhthucaonhat_sosanh", ngaydoanhthucaonhat_sosanh);
+	    model.addAttribute("tongtiendoanhthucaonhat_sosanh", tongdoanhthucaonhat_sosanh);
+	    model.addAttribute("sohoadon_sosanh", sohoadon_sosanh);
+	    model.addAttribute("tongsoluongsanpham_sosanh", tongsoluongsanpham_sosanh);
+	    model.addAttribute("hoaDonDTOList_sosanh", hoaDonDTOList_sosanh);
+	    model.addAttribute("chontrangthai", trangthai);
+	    model.addAttribute("chontrangthai_sosanh", trangthai_sosanh);
 
-		if (tongsoluongsanpham > tongsoluongsanpham_sosanh) {
-			int tanggiamsanpham = tongsoluongsanpham - tongsoluongsanpham_sosanh;
-			model.addAttribute("tanggiamsanpham", "Tăng " + tanggiamsanpham);
-		}
+	    if (tongsoluongsanpham > tongsoluongsanpham_sosanh) {
+	        int tanggiamsanpham = tongsoluongsanpham - tongsoluongsanpham_sosanh;
+	        model.addAttribute("tanggiamsanpham", "Tăng " + tanggiamsanpham);
+	    } else if (tongsoluongsanpham < tongsoluongsanpham_sosanh) {
+	        int tanggiamsanpham = tongsoluongsanpham_sosanh - tongsoluongsanpham;
+	        model.addAttribute("tanggiamsanpham", "Giảm " + tanggiamsanpham);
+	    }
 
-		else if (tongsoluongsanpham < tongsoluongsanpham_sosanh) {
-			int tanggiamsanpham = tongsoluongsanpham_sosanh - tongsoluongsanpham;
-			model.addAttribute("tanggiamsanpham", "Giảm " + tanggiamsanpham);
-		}
-
-//		}
-
-		return "/admin/thongke/thongke";
+	    return "/admin/thongke/thongke";
 	}
-
+	
 	@ModelAttribute("trangthai_sosanh")
 	public Map<String, String> getTrangThaiSoSanh() {
-		Map<String, String> map = new HashMap<>();
-		map.put("wait", "Chờ xét duyệt");
-		map.put("approved", "Đã xét duyệt");
-		map.put("cancel", "Xét duyệt thất bại");
-		map.put("delivery", "Đang giao hàng");
-		map.put("delivered", "Đã giao hàng");
-		return map;
+	    Map<String, String> map = new HashMap<>();
+	    map.put("wait", "Chờ xét duyệt");
+	    map.put("approved", "Đã xét duyệt");
+	    map.put("cancel", "Xét duyệt thất bại");
+	    map.put("delivery", "Đang giao hàng");
+	    map.put("delivered", "Đã giao hàng");
+	    return map;
 	}
 
 	@ModelAttribute("trangthai")
 	public Map<String, String> getTrangThai() {
-		Map<String, String> map = new HashMap<>();
-		map.put("wait", "Chờ xét duyệt");
-		map.put("approved", "Đã xét duyệt");
-		map.put("cancel", "Xét duyệt thất bại");
-		map.put("delivery", "Đang giao hàng");
-		map.put("delivered", "Đã giao hàng");
-		return map;
+	    Map<String, String> map = new HashMap<>();
+	    map.put("wait", "Chờ xét duyệt");
+	    map.put("approved", "Đã xét duyệt");
+	    map.put("cancel", "Xét duyệt thất bại");
+	    map.put("delivery", "Đang giao hàng");
+	    map.put("delivered", "Đã giao hàng");
+	    return map;
 	}
+
+//	@ModelAttribute("trangthai_sosanh")
+//	public List<String> getTrangThaiSoSanh() {
+//		List<String> trangthai_sosanh = new ArrayList<>();
+//	    trangthai_sosanh.add("Chờ xét duyệt");
+//	    trangthai_sosanh.add("Đã xét duyệt");
+//	    trangthai_sosanh.add("Xét duyệt thất bại");
+//	    trangthai_sosanh.add("Đang giao hàng");
+//	    trangthai_sosanh.add("Đã giao hàng");
+//	    return trangthai_sosanh;
+//	}
+//
+//	@ModelAttribute("trangthai")
+//	public List<String> getTrangThai() {
+//		List<String> trangthai = new ArrayList<>();
+//	    trangthai.add("Chờ xét duyệt");
+//	    trangthai.add("Đã xét duyệt");
+//	    trangthai.add("Xét duyệt thất bại");
+//	    trangthai.add("Đang giao hàng");
+//	    trangthai.add("Đã giao hàng");
+//	    return trangthai;
+//	}
+
 }
