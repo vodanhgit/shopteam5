@@ -76,9 +76,11 @@ public class AccountController {
 					if (tk.isQuyen()) {
 						req.getSession().setAttribute("quanly", untk);
 						req.getSession().setAttribute("user", null);
+						System.out.println(1);
 					} else {
 						req.getSession().setAttribute("quanly", null);
 						req.getSession().setAttribute("user", untk);
+						System.out.println(2);
 					}
 					return "redirect:/home/index";
 				} else {

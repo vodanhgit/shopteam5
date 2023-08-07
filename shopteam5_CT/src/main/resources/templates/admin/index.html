@@ -26,10 +26,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 p-4 shadow"
-				style="background-color: #0a3d62; height: 100vh" th:insert="~{/admin/menuTaiKhoan.html::menutaikhoan}">
-
-				
-			</div>
+				style="background-color: #0a3d62; height: 100vh"
+				th:insert="~{/admin/menuTaiKhoan.html::menutaikhoan}"></div>
 
 			<div class="col-10 px-0">
 				<nav class="navbar navbar-expand-lg shadow-sm"
@@ -49,15 +47,16 @@
 							<span class="navbar-text" id="dropAccount" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize
 									access="isAuthenticated()">
-									<span> Xin chào </span>
-								</sec:authorize> <i class="fa-solid fa-user fs-4">
-									${sessionScope.tenTaiKhoan}</i>
+									<span> Xin chào <i class="fa-solid fa-user fs-4" th:text="${thongtintaikhoan.tenTaiKhoan}"></i>
+									</span>
+								</sec:authorize>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
 								<li><a class="dropdown-item" href="/home">Trang chính</a></li>
-										<li><a class="dropdown-item" href="/doimatkhau">Đổi mật khẩu</a></li>
-										<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+								<li><a class="dropdown-item" href="/doimatkhau">Đổi mật
+										khẩu</a></li>
+								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
 							</ul>
 						</div>
 					</div>
@@ -75,63 +74,63 @@
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Tên đăng
 											nhập: </label> <input readonly="readonly" name="tenTaiKhoan"
-											value="${thongtintaikhoan.tenTaiKhoan}" />
+											th:value="${thongtintaikhoan.tenTaiKhoan}" />
 
 									</div>
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Họ Tên:
-										</label> <input name="hoTenNguoiDung" ${ten}
-											value="${thongtintaikhoan.hoTenNguoiDung}" />
+										</label> <input name="hoTenNguoiDung"
+											${ten}
+											th:value="${thongtintaikhoan.hoTenNguoiDung}" />
 
 									</div>
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Email: </label>
-										<input name="email" value="${thongtintaikhoan.email}" ${ten} />
+										<input name="email" th:value="${thongtintaikhoan.email}" ${ten} />
 									</div>
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Số Điện
 											Thoại: </label> <input name="soDienThoai"
-											value="0${thongtintaikhoan.soDienThoai}" ${ten} />
+											th:value=" '0' + ${thongtintaikhoan.soDienThoai}" ${ten} />
 									</div>
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Giới
-											Tính </label> <input type="radio" ${ten}
+											Tính </label> <input type="radio"
+											${ten}
 											${thongtintaikhoan.gioiTinh? 'checked':''}
 											value="${thongtintaikhoan.gioiTinh?' true':'false' }"
 											id="contactChoice1" name="gioiTinh"
-											value="${thongtintaikhoan.gioiTinh}" /> <label
+											th:value="${thongtintaikhoan.gioiTinh}" /> <label
 											for="contactChoice1" class="me-3">Nam</label> <input
 											${thongtintaikhoan.gioiTinh? 'checked':''} type="radio"
 											id="contactChoice2" name="gioiTinh"
-											value="${thongtintaikhoan.gioiTinh?' true':'false' }" /> <label
-											for="contactChoice2" class="me-3">Nữ</label>
+											th:value="${thongtintaikhoan.gioiTinh?' true':'false' }" />
+										<label for="contactChoice2" class="me-3">Nữ</label>
 									</div>
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Hình
-											Ảnh: </label> <img alt="" th:src="@{/images/${thongtintaikhoan.hinhAnh}}"
-											width="80px"> <input type="file" name="photo_file"
+											Ảnh: </label> <img alt=""
+											th:src="@{/images/${thongtintaikhoan.hinhAnh}}" width="80px">
+										<input type="file" name="photo_file"
 											${ten} value="${thongtintaikhoan.hinhAnh}">
 									</div>
 									<div class="form-group mt-3">
 										<label style="width: 15%; font-weight: bold;">Ngày
-											Sinh: </label> <input name="ngaySinh" type="date" ${ten}
-											value="${thongtintaikhoan.ngaySinh}" />
+											Sinh: </label> <input name="ngaySinh" type="date"
+											${ten}
+											th:value="${thongtintaikhoan.ngaySinh}" />
 									</div>
-									
+
 									<div class="form-group mt-3">
-										 <button type="submit" class="btn btn-primary">
-											Lưu</button>
-										 <a href="/admin/sua" class="btn btn-primary" type="button">Sửa</a>
-									     <a href="/admin/huy"class="btn btn-primary" type="button">Hủy</a>
+										<button type="submit" class="btn btn-primary">Lưu</button>
+										<a href="/admin/sua" class="btn btn-primary" type="button">Sửa</a>
+										<a href="/admin/huy" class="btn btn-primary" type="button">Hủy</a>
 									</div>
 
 								</div>
 							</div>
 
-							<div class="col-lg-3">
-								 
-								 
-							</div>
+							<div class="col-lg-3"></div>
 						</form>
 					</div>
 				</div>
