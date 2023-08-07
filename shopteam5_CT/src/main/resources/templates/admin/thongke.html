@@ -65,7 +65,7 @@
 								&nbsp; Trạng thái: <select id="colorSelect"
 									onchange="handleColorChange()" name="trangthai">
 									<!-- Giá trị mặc định là "wait" nếu không có giá trị từ model -->
-									<option value="wait" th:selected="${trangthai == null}">Chờ
+									<option value="wait" th:selected="${trangthai == 'wait'}">Chờ
 										xét duyệt</option>
 									<option value="approved"
 										th:selected="${trangthai == 'approved'}">Đã xét duyệt</option>
@@ -92,7 +92,7 @@
 													<tr>
 														<th>Mã hóa đơn</th>
 														<th>Số lượng sản phẩm</th>
-														<th>Ngày</th>
+														<th>Ngày đặt hàng</th>
 														<th>Tổng tiền</th>
 														<th>Trạng thái</th>
 
@@ -100,11 +100,20 @@
 												</thead>
 												<tbody>
 													<tr th:each="item: ${hoaDonDTOList}">
-														<td th:text="${hoaDonDTO.hoaDon.maHoaDon}"></td>
-														<td th:text="${hoaDonDTO.soLuong}"></td>
-														<td th:text="${hoaDonDTO.hoaDon.ngayDatHang}"></td>
-														<td th:text="${hoaDonDTO.hoaDon.tongTien}"></td>
-														<td th:text="${hoaDonDTO.hoaDon.trangThai}"></td>
+														<td th:text="${item.hoaDon.maHoaDon}"></td>
+														<td th:text="${item.soLuong}"></td>
+														<td th:text="${item.hoaDon.ngayDatHang}"></td>
+														<td th:text="${item.hoaDon.tongTien}"></td>
+														<td><span th:if="${item.hoaDon.trangThai == 'wait'}">Chờ
+																xét duyệt</span> <span
+															th:if="${item.hoaDon.trangThai == 'approved'}">Đã
+																xét duyệt</span> <span
+															th:if="${item.hoaDon.trangThai == 'cancel'}">Xét
+																duyệt thất bại</span> <span
+															th:if="${item.hoaDon.trangThai == 'delivery'}">Đang
+																giao hàng</span> <span
+															th:if="${item.hoaDon.trangThai == 'delivered'}">Đã
+																giao hàng</span></td>
 													</tr>
 												</tbody>
 											</table>
@@ -154,20 +163,21 @@
 												<br> Trạng thái: <select id="colorSelect"
 													onchange="handleColorChange()" name="trangthai_sosanh">
 													<!-- Giá trị mặc định là "wait" nếu không có giá trị từ model -->
-													<option value="wait" th:selected="${trangthai_sosanh == null}">Chờ
+													<option value="wait"
+														th:selected="${trangthai_sosanh == 'wait'}">Chờ
 														xét duyệt</option>
 													<option value="approved"
-														th:selected="${trangthai_sosanh == 'approved'}">Đã xét
-														duyệt</option>
+														th:selected="${trangthai_sosanh == 'approved'}">Đã
+														xét duyệt</option>
 													<option value="cancel"
-														th:selected="${trangthai_sosanh == 'cancel'}">Xét duyệt
-														thất bại</option>
+														th:selected="${trangthai_sosanh == 'cancel'}">Xét
+														duyệt thất bại</option>
 													<option value="delivery"
 														th:selected="${trangthai_sosanh == 'delivery'}">Đang
 														giao hàng</option>
 													<option value="delivered"
-														th:selected="${trangthai_sosanh == 'delivered'}">Đã giao
-														hàng</option>
+														th:selected="${trangthai_sosanh == 'delivered'}">Đã
+														giao hàng</option>
 												</select>
 											</center>
 										</div>

@@ -129,7 +129,7 @@ public class AdminController {
 	public String thongke(Model model) {
 	    model.addAttribute("chontrangthai", "Chọn trạng thái");
 	    model.addAttribute("chontrangthai_sosanh", "Chọn trạng thái");
-	    return "/admin/thongke/thongke";
+	    return "admin/thongke";
 	}
 
 	@RequestMapping("/admin/thongkedoanhthu")
@@ -225,51 +225,51 @@ public class AdminController {
 	        model.addAttribute("tanggiamsanpham", "Giảm " + tanggiamsanpham);
 	    }
 
-	    return "/admin/thongke/thongke";
+	    return "admin/thongke";
 	}
 	
-	@ModelAttribute("trangthai_sosanh")
-	public Map<String, String> getTrangThaiSoSanh() {
-	    Map<String, String> map = new HashMap<>();
-	    map.put("wait", "Chờ xét duyệt");
-	    map.put("approved", "Đã xét duyệt");
-	    map.put("cancel", "Xét duyệt thất bại");
-	    map.put("delivery", "Đang giao hàng");
-	    map.put("delivered", "Đã giao hàng");
-	    return map;
-	}
-
-	@ModelAttribute("trangthai")
-	public Map<String, String> getTrangThai() {
-	    Map<String, String> map = new HashMap<>();
-	    map.put("wait", "Chờ xét duyệt");
-	    map.put("approved", "Đã xét duyệt");
-	    map.put("cancel", "Xét duyệt thất bại");
-	    map.put("delivery", "Đang giao hàng");
-	    map.put("delivered", "Đã giao hàng");
-	    return map;
-	}
-
 //	@ModelAttribute("trangthai_sosanh")
-//	public List<String> getTrangThaiSoSanh() {
-//		List<String> trangthai_sosanh = new ArrayList<>();
-//	    trangthai_sosanh.add("Chờ xét duyệt");
-//	    trangthai_sosanh.add("Đã xét duyệt");
-//	    trangthai_sosanh.add("Xét duyệt thất bại");
-//	    trangthai_sosanh.add("Đang giao hàng");
-//	    trangthai_sosanh.add("Đã giao hàng");
-//	    return trangthai_sosanh;
+//	public Map<String, String> getTrangThaiSoSanh() {
+//	    Map<String, String> map = new HashMap<>();
+//	    map.put("wait", "Chờ xét duyệt");
+//	    map.put("approved", "Đã xét duyệt");
+//	    map.put("cancel", "Xét duyệt thất bại");
+//	    map.put("delivery", "Đang giao hàng");
+//	    map.put("delivered", "Đã giao hàng");
+//	    return map;
 //	}
 //
 //	@ModelAttribute("trangthai")
-//	public List<String> getTrangThai() {
-//		List<String> trangthai = new ArrayList<>();
-//	    trangthai.add("Chờ xét duyệt");
-//	    trangthai.add("Đã xét duyệt");
-//	    trangthai.add("Xét duyệt thất bại");
-//	    trangthai.add("Đang giao hàng");
-//	    trangthai.add("Đã giao hàng");
-//	    return trangthai;
+//	public Map<String, String> getTrangThai() {
+//	    Map<String, String> map = new HashMap<>();
+//	    map.put("wait", "Chờ xét duyệt");
+//	    map.put("approved", "Đã xét duyệt");
+//	    map.put("cancel", "Xét duyệt thất bại");
+//	    map.put("delivery", "Đang giao hàng");
+//	    map.put("delivered", "Đã giao hàng");
+//	    return map;
 //	}
+
+	@ModelAttribute("trangthai_sosanh")
+	public List<String> getTrangThaiSoSanh() {
+		List<String> trangthai_sosanh = new ArrayList<>();
+	    trangthai_sosanh.add("Chờ xét duyệt");
+	    trangthai_sosanh.add("Đã xét duyệt");
+	    trangthai_sosanh.add("Xét duyệt thất bại");
+	    trangthai_sosanh.add("Đang giao hàng");
+	    trangthai_sosanh.add("Đã giao hàng");
+	    return trangthai_sosanh;
+	}
+
+	@ModelAttribute("trangthai")
+	public List<String> getTrangThai() {
+		List<String> trangthai = new ArrayList<>();
+	    trangthai.add("Chờ xét duyệt");
+	    trangthai.add("Đã xét duyệt");
+	    trangthai.add("Xét duyệt thất bại");
+	    trangthai.add("Đang giao hàng");
+	    trangthai.add("Đã giao hàng");
+	    return trangthai;
+	}
 
 }

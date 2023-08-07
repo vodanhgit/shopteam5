@@ -29,15 +29,15 @@ public class HoaDon implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Mahoadon")
 	private int maHoaDon;
+	
+	@Column(name="Tennguoimua")
+	private String tenNguoiMua;
+	
+	@Column(name="SDT")
+	private String sdt;
 
 	@Column(name = "Diachi")
 	private String diaChi;
-
-	@Column(name = "Tennguoimua")
-	private String tenNguoiMua;
-
-	@Column(name = "Sdt")
-	private String sdt;
 
 	@Column(name = "Ngaydathang")
 	private String ngayDatHang;
@@ -66,9 +66,8 @@ public class HoaDon implements Serializable {
 
 	@Override
 	public String toString() {
-		return "HoaDon [Mahoadon=" + maHoaDon + ", Diachi=" + diaChi + ",Tennguoimua=" + tenNguoiMua + ",Sdt=" + sdt
-				+ ", Ngaydathang=" + ngayDatHang + ", Tongtien=" + tongTien + ", Trangthai=" + trangThai + ", Ghichu="
-				+ ghiChu + "]";
+		return "HoaDon [Mahoadon=" + maHoaDon + ", Diachi=" + diaChi  + ", Ngaydathang="
+				+ ngayDatHang + ", Tongtien=" + tongTien + ", Trangthai=" + trangThai + ", Ghichu=" + ghiChu + "]";
 	}
 
 }
