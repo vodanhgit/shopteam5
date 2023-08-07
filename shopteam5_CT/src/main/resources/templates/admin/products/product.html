@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" th:href="@{/images/shopteam5_logo.png}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<title>Trang Chủ - Sản Phẩm</title>
+</head>
+<style>
+.mgs_errors {
+	color: red;
+	font-style: italic;
+}
+</style>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-2 p-4 shadow"
+				style="background-color: #0a3d62; height: 100vh"
+				th:insert="~{/admin/menuTaiKhoan.html::menutaikhoan}"></div>
+			<div class="col-10 px-0">
+				<nav class="navbar navbar-expand-lg shadow-sm"
+					style="background-color: #ffffff">
+					<div class="container-fluid">
+
+
+						<div class="collapse navbar-collapse" id="navbarText">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+							</ul>
+							<span class="navbar-text" id="dropAccount" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> <span>
+									Xin chào </span> <!-- <sec:authentication property="principal.username" /> -->
+								<i class="fa-solid fa-user fs-4"></i>
+							</span>
+							<ul class="dropdown-menu" aria-labelledby="dropAccount"
+								style="left: auto; right: 10px">
+								<li><a class="dropdown-item" href="/home">Trang chính</a></li>
+								<li><a class="dropdown-item" href="/doimatkhau">Đổi mật
+										khẩu</a></li>
+								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<br>
+
+				<div class="container">
+
+
+					<form action="/admin/product" modelAttribute="item"
+						enctype="multipart/form-data" method="post">
+						<input type="hidden" th:field="*{maSanPham}" /> <br>
+						<div class="row">
+							<div class="col-sm-4">
+
+
+								<div class="mb-1">
+									<label for="product-name" class="form-label">Tên sản
+										phẩm:</label> <input class="form-control" th:field="*{tenSanPham}" />
+									<div class="mgs_errors"
+										th:if="${#fields.hasErrors('tenSanPham')}"
+										th:errors="*{tenSanPham}"></div>
+								</div>
+
+								<div class="mb-1">
+									<label for="product-name" class="form-label">Loại:</label> <input
+										class="form-control" th:field="*{loai}" />
+									<div class="mgs_errors" th:if="${#fields.hasErrors('loai')}"
+										th:errors="*{loai}"></div>
+								</div>
+
+								<div class="mb-1">
+									<label for="product-name" class="form-label">Giá:</label> <input
+										class="form-control" th:field="*{gia}" data-type="currency"
+										data-symbol="VNĐ" data-decimal="," data-thousands="." />
+									<div class="mgs_errors" th:if="${#fields.hasErrors('gia')}"
+										th:errors="*{gia}"></div>
+								</div>
+								<div class="mb-1">
+									<label for="product-name" class="form-label">Giá Gốc:</label> <input
+										class="form-control" th:field="*{giaGoc}" id="giaGoc" />
+									<div class="mgs_errors" th:if="${#fields.hasErrors('giaGoc')}"
+										th:errors="*{giaGoc}"></div>
+								</div>
+								<div class="mb-1">
+									<label for="product-name" class="form-label">Giá Khuyến
+										Mãi (%):</label> <input class="form-control"
+										th:field="*{giaKhuyenMai}" id="giakm" />
+									<div class="mgs_errors"
+										th:if="${#fields.hasErrors('giaKhuyenMai')}"
+										th:errors="*{giaKhuyenMai}"></div>
+								</div>
+
+							</div>
+							<div class="col-sm-5">
+
+								<br> <label for="product-name" class="form-label">Trạng
+									thái:</label> &nbsp;&nbsp; <select class="form-control"
+									th:field="*{trangThai}">
+									<option value="">hết hàng</option>
+									<option th:each="trangthai : ${list_trangthai}"
+										th:value="${trangthai}" th:text="${trangthai}"></option>
+								</select>
+								<div class="mgs_errors"
+									th:if="${#fields.hasErrors('trangThai')}"
+									th:errors="*{trangThai}"></div>
+								<div class="mb-1">
+									<label for="description" class="form-label">Mô tả:</label>
+									<textarea class="form-control" rows="4" th:field="*{moTa}"></textarea>
+									<div class="mgs_errors" th:if="${#fields.hasErrors('moTa')}"
+										th:errors="*{moTa}"></div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="panel-heading">Hình ảnh:</div>
+								<img style="height: 250px" class="img-thumbnail" id='img' alt=""
+									th:src="@{/images/products/large/{item.hinhAnh}}"
+									th:if="${item.hinhAnh}" /> <img style="height: 250px"
+									class="img-thumbnail" id='img' alt=""
+									src="/images/products/large/default.jpg"
+									th:unless="${item.hinhAnh}" /> <input type="file"
+									accept=".jpg, .png" name="file" id="imgInput"
+									onchange="getImg(event)" value="${item.hinhAnh}" />
+								<div class="mgs_errors" th:text="${messages_img}"></div>
+							</div>
+
+						</div>
+						<br>
+						<button formaction="/admin/createsp" class="btn btn-primary">Thêm</button>
+						&nbsp;&nbsp;
+						<button formaction="/admin/updatesp" class="btn btn-primary">Sửa</button>
+						&nbsp;&nbsp; <a href="/admin/product">
+							<button type="button" class="btn btn-primary">Làm mới</button>
+						</a>
+
+						<div class="mgs_errors" th:text="${messages}"></div>
+
+					</form>
+					<br>
+				</div>
+				<!-- 	table -->
+				<div class="table-responsive mt-3" style="overflow-x: auto">
+
+
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>MaSanPham</th>
+								<th>TenSanPham</th>
+								<th>Loai</th>
+								<th>Gia</th>
+								<th>GiaGoc</th>
+								<th>HinhAnh</th>
+								<th>MoTa</th>
+								<th>TrangThai</th>
+								<th>GiaKhuyenMai</th>
+
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="sanPham : ${items}">
+								<td th:text="${sanPham.maSanPham}"></td>
+								<td th:text="${sanPham.tenSanPham}"></td>
+								<td th:text="${sanPham.loai}"></td>
+								<td th:text="${sanPham.gia}"></td>
+								<td th:text="${sanPham.giaGoc}"></td>
+								<td><img alt=""
+									th:src="@{/images/products/large/{sanPham.hinhAnh}}" width="80"
+									height="80" /></td>
+								<td th:text="${sanPham.moTa}"></td>
+								<td th:text="${sanPham.trangThai}"></td>
+								<td th:text="${sanPham.giaKhuyenMai}"></td>
+
+								<td><a
+									th:href="@{/admin/edit/{sanPham.maSanPham}(maSanPham=${sanPham.maSanPham})}">Edit</a><br>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="border border-2">
+
+
+						<div style="padding-left: 45%">
+							<nav aria-label="Page navigation example">
+								<ul class="pagination">
+									<li th:each="i : ${#numbers.sequence(0, page.totalPages + 3)}"
+										th:class="${page.number == i ? 'active' : ''}"><a
+										class="page-link" th:href="@{/admin/product(m=${i})}"
+										th:text="${i + 1}"></a></li>
+								</ul>
+							</nav>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script type="text/javascript">
+    const inputImg = document.getElementById('imgInput')
+    const img = document.getElementById('img')
+
+    function getImg(event) {
+
+        const file = event.target.files[0]; // 0 = get the first file
+
+        // console.log(file);
+
+        let url = window.URL.createObjectURL(file);
+
+        // console.log(url)
+
+        img.src = url
+    }
+
+    inputImg?.addEventListener('change', getImg)
+</script> -->
+	<script type="text/javascript" th:src="@{/js/jquery-1.10.2.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.easing.1.3.js}"></script>
+	<script type="taext/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.sequence-min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/js/jquery.carouFredSel-6.2.1-packed.js}"></script>
+	<script defer th:src="@{/js/jquery.flexslider.js}"></script>
+	<script type="text/javascript" th:src="@{/js/script.min.js}"></script>
+</body>
+</html>
