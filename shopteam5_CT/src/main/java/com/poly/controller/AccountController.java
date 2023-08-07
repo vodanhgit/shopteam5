@@ -165,35 +165,41 @@ public class AccountController {
 	public String chane_password() {
 		return "home/chane-password";
 	}
+	
+	@PostMapping("/home/chanepassword")
+	public String dmk( Model model, HttpServletRequest req) {
+		String un = paramService.getString("username", "");
+		String pw = paramService.getString("password", "");
+		String pwm = paramService.getString("passwordm", "");
+		String pwm1 = paramService.getString("passwordm1", "");
+		if(un.equals("")||pw.equals("")){
+			model.addAttribute("message", "Vui lòng nhập đầy đủ thông tin!");
+		}else{
+			  if (!pwm.equals(pwm1)) {
+		            model.addAttribute("message", "Xác nhận mật khẩu mới không khớp.");
+		            return "home/chane-password";
+		        }
 
-	String randomString = generateRandomString(10);
-	String Subject = "███ SHOPTEAM5 XIN CHÀO, ĐÂY LÀ MÃ XÁC NHẬN CỦA BẠN ███";
-	String icon1 = "" + "Mã xác nhận email của bạn là: <h>" + randomString + "</h>\n"
-			+ "████████████████████████████████████████\n" + "████████████████████████████████████████\n"
-			+ "██████▀░░░░░░░░▀████████▀▀░░░░░░░▀██████\n" + "████▀░░░░░░░░░░░░▀████▀░░░░░░░░░░░░▀████\n"
-			+ "██▀░░░░░░░░░░░░░░░░▀▀░░░░░░░░░░░░░░░░▀██\n" + "██░░░░░░░░░░░░░░░░░░░▄▄░░░░░░░░░░░░░░░██\n"
-			+ "██░░░░░░░░░░░░░░░░░░█░█░░░░░░░░░░░░░░░██\n" + "██░░░░░░░░░░░░░░░░░▄▀░█░░░░░░░░░░░░░░░██\n"
-			+ "██░░░░░░░░░░████▄▄▄▀░░▀▀▀▀▄░░░░░░░░░░░██\n" + "██▄░░░░░░░░░████░░░░░░░░░░█░░░░░░░░░░▄██\n"
-			+ "████▄░░░░░░░████" + randomString + "░█░░░░░░░░▄████\n" + "██████▄░░░░░████▄▄▄░░░░░░░█░░░░░░▄██████\n"
-			+ "████████▄░░░▀▀▀▀░░░▀▀▀▀▀▀▀░░░░░▄████████\n" + "██████████▄░░░░░░░░░░░░░░░░░░▄██████████\n"
-			+ "████████████▄░░░░░░░░░░░░░░▄████████████\n" + "██████████████▄░░░░░░░░░░▄██████████████\n"
-			+ "████████████████▄░░░░░░▄████████████████\n" + "██████████████████▄▄▄▄██████████████████\n"
-			+ "████████████████████████████████████████\n" + "████████████████████████████████████████\n";
+		        // Lấy thông tin tài khoản từ cơ sở dữ liệu
+		        TaiKhoan taiKhoan = taiKhoanDao.findByTenTaiKhoanThongThuong(un);
 
-	public static String generateRandomString(Integer length) {
-		if (length == null) {
-			throw new IllegalArgumentException("Length must not be null");
-		}
-		String characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		Random random = new Random();
-		StringBuilder sb = new StringBuilder(length);
+		        // Kiểm tra mật khẩu cũ
+		        if (!taiKhoan.getMatKhau().equals(pw)) {
+		            model.addAttribute("message", "Mật khẩu cũ không đúng.");
+		            return "home/chane-password";
+		        }
 
-		for (int i = 0; i < length; i++) {
-			int index = random.nextInt(characters.length());
-			char randomChar = characters.charAt(index);
-			sb.append(randomChar);
-		}
+		        // Cập nhật mật khẩu mới
+		        taiKhoan.setMatKhau(pwm);
+		        taiKhoanDao.save(taiKhoan);
 
-		return sb.toString();
+		        // Hiển thị thông báo thành công
+		        model.addAttribute("message", "Đổi mật khẩu thành công.");
+
+		        return "home/chane-password";
+		    }
+	
+
+		return "home/chane-password";
 	}
 }
