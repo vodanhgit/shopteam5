@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.poly.constant.SessionAttr;
 import com.poly.entities.GioHang;
 import com.poly.entities.TaiKhoan;
 import com.poly.reponstory.GioHangDao;
@@ -26,7 +28,10 @@ import com.poly.service.SessionService_quenMatKhau;
 public class AccountController {
 //	@Autowired
 //	MailerServiceImpl mailer;
-
+	
+	@Autowired
+	HttpSession session;
+	
 	@Autowired
 	SessionService sessionService;
 
@@ -50,7 +55,7 @@ public class AccountController {
 		return "home/login";
 	}
 
-	@PostMapping("dangNhap")
+	@PostMapping("/home/dangNhap")
 	public String login2(Model model, HttpServletRequest req) {
 
 		String un = paramService.getString("username", "");
@@ -71,22 +76,17 @@ public class AccountController {
 						cookieService.remove("user");
 					}
 					model.addAttribute("message", "Đăng nhập thành công!");
-					sessionService.set("username", untk);
+					System.out.println(0);
 					System.out.println("Đăng nhập thành công!");
 					if (tk.isQuyen()) {
-						req.getSession().setAttribute("quanly", untk);
-						req.getSession().setAttribute("user", null);
+						session.setAttribute(SessionAttr.Admin, untk);
 						System.out.println(1);
 					} else {
-						req.getSession().setAttribute("quanly", null);
-						req.getSession().setAttribute("user", untk);
+						session.setAttribute(SessionAttr.User, untk);
 						System.out.println(2);
 					}
 					return "redirect:/home/index";
 				} else {
-					req.getSession().setAttribute("quanly", null);
-					req.getSession().setAttribute("user", null);
-					sessionService.remove("username");
 					model.addAttribute("message", "Sai thông tin!");
 				}
 			} catch (Exception e) {
@@ -100,8 +100,7 @@ public class AccountController {
 
 	@RequestMapping("logout")
 	public String logout(Model model, HttpServletRequest req) {
-		req.getSession().setAttribute("quanly", null);
-		req.getSession().setAttribute("user", null);
+		
 
 		return "home/index";
 	}
