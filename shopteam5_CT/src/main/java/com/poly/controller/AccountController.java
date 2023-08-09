@@ -76,6 +76,7 @@ public class AccountController {
 						cookieService.remove("user");
 					}
 					model.addAttribute("message", "Đăng nhập thành công!");
+					session.setAttribute(SessionAttr.CURRENT_USER, untk);
 					System.out.println(0);
 					System.out.println("Đăng nhập thành công!");
 					if (tk.isQuyen()) {

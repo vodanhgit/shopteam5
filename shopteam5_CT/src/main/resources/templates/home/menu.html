@@ -52,7 +52,7 @@
 									<li><a th:href="@{/home/login}" class="log">Đăng nhập</a></li>
 									<li><a th:href="@{/home/register}" class="reg">Đăng kí</a></li>
 								</th:block>
-								<th:block th:else>
+								<th:block th:unless="${session.currentUser == null}">
 									<li><a th:href="@{/home/index}" class="log">Tài khoản
 											của tôi</a></li>
 									<li><span style="color: white">| &nbsp;&nbsp;&nbsp;
