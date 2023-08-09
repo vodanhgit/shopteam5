@@ -125,82 +125,80 @@ a {
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 p-4 shadow"
-				style="background-color: #0a3d62; height: 100vh">
-	<!-- <div class="header" th:insert="~{/home/menu.html::navbar}"> -->		<%@include file="/WEB-INF/accers/admin/menuTaiKhoan.jsp"%>
-			</div>
-					<div class="col-10 px-0">
-						<nav class="navbar navbar-expand-lg shadow-sm"
-							style="background-color: #ffffff">
-							<div class="container-fluid">
-								<!-- <a class="navbar-brand" href="#">Navbar w/ text</a> -->
+				style="background-color: #0a3d62; height: 100vh"
+				th:insert="~{/admin/menuTaiKhoan.html::menutaikhoan}"></div>
+			<div class="col-10 px-0">
+				<nav class="navbar navbar-expand-lg shadow-sm"
+					style="background-color: #ffffff">
+					<div class="container-fluid">
+						<!-- <a class="navbar-brand" href="#">Navbar w/ text</a> -->
 
-								<div class="collapse navbar-collapse" id="navbarText">
-									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-										<!-- <li class="nav-item"><a class="nav-link active"
+						<div class="collapse navbar-collapse" id="navbarText">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<!-- <li class="nav-item"><a class="nav-link active"
 									aria-current="page" href="#">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="#">Features</a>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
 								</li> -->
-									</ul>
-									<span class="navbar-text" id="dropAccount" role="button"
-										data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize
-											access="isAuthenticated()">
-											<span> Xin chào <sec:authentication
-													property="principal.username" />
-											</span>
-										</sec:authorize> <i class="fa-solid fa-user fs-4"></i>
+							</ul>
+							<span class="navbar-text" id="dropAccount" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize
+									access="isAuthenticated()">
+									<span> Xin chào <sec:authentication
+											property="principal.username" />
 									</span>
-									<ul class="dropdown-menu" aria-labelledby="dropAccount"
-										style="left: auto; right: 10px">
-										<li><a class="dropdown-item" href="/home">Trang chính</a></li>
-										<li><a class="dropdown-item" href="/doimatkhau">Đổi mật khẩu</a></li>
-										<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
-									</ul>
-								</div>
-							</div>
-						</nav>
-						<div class="bg-light p-3">
-							<nav aria-label="breadcrumb"></nav>
+								</sec:authorize> <i class="fa-solid fa-user fs-4"></i>
+							</span>
+							<ul class="dropdown-menu" aria-labelledby="dropAccount"
+								style="left: auto; right: 10px">
+								<li><a class="dropdown-item" href="/home">Trang chính</a></li>
+								<li><a class="dropdown-item" href="/doimatkhau">Đổi mật
+										khẩu</a></li>
+								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+							</ul>
 						</div>
-						<div class="px-4 p-3">
-							
-							<div class="col-md-12" style="margin-top: 30px">
-				<table class="table table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>Mã hóa đơn chi tiết</th>
-							<th>Mã sản phẩm</th>
-							<th>Số lượng</th>
-							<th>Màu</th>
-							<th>Size</th>			
-							<th>Đơn giá</th>
-							<th>Thành tiền</th>
-							<th>Mã hóa đơn</th>
+					</div>
+				</nav>
+				<div class="bg-light p-3">
+					<nav aria-label="breadcrumb"></nav>
+				</div>
+				<div class="px-4 p-3">
 
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="hdct" items="${pagechitietman.content}">
+					<div class="col-md-12" style="margin-top: 30px">
+						<table class="table table-bordered table-hover">
+							<thead>
 								<tr>
-								<td>${hdct.maHoaDonChiTiet}</td>
-									<td>${hdct.sanPham2.maSanPham}</td>
-									<td>${hdct.soLuong}</td>
-									<td>${hdct.mau}</td>
-									<td>${hdct.size}</td>
-									
-									<td><span style="color: red;"><fmt:formatNumber
-												value="${hdct.donGia}" currencySymbol="VNĐ"
-												type="currency" /></span></td>
-									<td><span style="color: red;"><fmt:formatNumber
-												value="${hdct.thanhTien}" currencySymbol="VNĐ"
-												type="currency" /></span></td>
-									<td><strong>${hdct.hoaDon.maHoaDon}</strong></td>
+									<th>Mã hóa đơn chi tiết</th>
+									<th>Mã sản phẩm</th>
+									<th>Số lượng</th>
+									<th>Màu</th>
+									<th>Kích thước</th>
+									<th>Đơn giá</th>
+									<th>Thành tiền</th>
+									<th>Mã hóa đơn</th>
+
 								</tr>
-							</c:forEach>
-					</tbody>
-				</table>
-				<!-- <nav aria-label="Page navigation example">
+							</thead>
+							<tbody>
+											<tr th:each="hds : ${hds}">
+								<td th:text="${hds.maHoaDon}"></td>
+								<td th:text="${hds.tenNguoiMua}"></td>
+								<td th:text="${hds.diaChi}"></td>
+								<td th:text="${hds.ngayDatHang}"></td>
+								<td th:text="${hds.sdt}"></td>
+								<td th:text="${hds.tongTien}"></td>
+								<td th:text="${hds.trangThai}"></td>
+								<td th:text="${hds.ghiChu}"></td>
+								<td><a href="/managment/managment">Quay lại</a></td>
+							</tr>
+											</tbody>
+										</table>
+
+						
+
+				
+						<!-- <nav aria-label="Page navigation example">
 					<ul class="pagination" style="padding-left: 40%">
 						<li class="page-item"><a class="page-link"
 							href="/infoMan?f=0"><svg xmlns="http://www.w3.org/2000/svg"
@@ -247,13 +245,13 @@ a {
 </svg></a></li>
 					</ul>
 				</nav> -->
-			</div>
-						</div>
-				
-		</div>
-	</div>
+					</div>
+				</div>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
