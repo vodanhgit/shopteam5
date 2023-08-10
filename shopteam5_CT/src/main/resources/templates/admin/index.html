@@ -6,6 +6,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -48,13 +49,13 @@
 								data-bs-toggle="dropdown" aria-expanded="false"> <sec:authorize
 									access="isAuthenticated()">
 									<span> Xin chào <i class="fa-solid fa-user fs-4"
-										th:text="${thongtintaikhoan.tenTaiKhoan}"></i>
+										th:text="${session.currentUser}"></i>
 									</span>
 								</sec:authorize>
 							</span>
 							<ul class="dropdown-menu" aria-labelledby="dropAccount"
 								style="left: auto; right: 10px">
-								<li><a class="dropdown-item" href="/home">Trang chính</a></li>
+								<li><a class="dropdown-item" href="/home/index">Trang chính</a></li>
 								<li><a class="dropdown-item" href="/doimatkhau">Đổi mật
 										khẩu</a></li>
 								<li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>

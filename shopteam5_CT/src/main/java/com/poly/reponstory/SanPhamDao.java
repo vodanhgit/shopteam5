@@ -115,6 +115,6 @@ public interface SanPhamDao extends JpaRepository<SanPham, Integer> {
 	            "ORDER BY totalSales DESC")
 	    List<Object[]> findTop5BestSellingProductsByCategory();
 	    
-	    @Query("SELECT sp FROM SanPham sp WHERE sp.giaKhuyenMai IS NOT NULL")
+	    @Query("SELECT sp FROM SanPham sp WHERE sp.gia IS NOT NULL and sp.giaGoc IS NOT NULL")
 	    Page<SanPham> findByGiaKhuyenMai(Pageable pageable);
 }

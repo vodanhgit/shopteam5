@@ -99,11 +99,13 @@ public class AccountController {
 		return "home/login";
 	}
 
-	@RequestMapping("logout")
+	@RequestMapping("/home/log-out")
 	public String logout(Model model, HttpServletRequest req) {
-		
+		session.removeAttribute(SessionAttr.CURRENT_USER);
+		session.removeAttribute(SessionAttr.Admin);
+		session.removeAttribute(SessionAttr.User);
 
-		return "home/index";
+		return "redirect:/home/index";
 	}
 
 	@GetMapping("/home/register")

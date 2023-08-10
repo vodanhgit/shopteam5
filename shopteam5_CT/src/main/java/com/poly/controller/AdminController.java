@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.poly.constant.SessionAttr;
 import com.poly.entities.HoaDon;
 import com.poly.entities.HoaDonChiTiet;
 import com.poly.entities.TaiKhoan;
@@ -64,24 +65,24 @@ public class AdminController {
 			model.addAttribute("huy", null);
 			model.addAttribute("ten", "readonly");
 		}
-		String check = session.get("username");
+		String check = session.get(SessionAttr.Admin);
 		System.out.println(check);
 		TaiKhoan tk = taikhoandao.findByTenTaiKhoanThongThuong(check);
 		model.addAttribute("thongtintaikhoan", tk);
 
-		TaiKhoan item = new TaiKhoan();
-		model.addAttribute("item", item);
-		List<TaiKhoan> items = taikhoandao.findAll();
-
-		model.addAttribute("items", items);
-		String untk = check;
-		if (tk.isQuyen() == true) {
-			req.getSession().setAttribute("quanly", untk);
-			req.getSession().setAttribute("user", null);
-		} else {
-			req.getSession().setAttribute("quanly", null);
-			req.getSession().setAttribute("user", untk);
-		}
+//		TaiKhoan item = new TaiKhoan();
+//		model.addAttribute("item", item);
+//		List<TaiKhoan> items = taikhoandao.findAll();
+//
+//		model.addAttribute("items", items);
+//		String untk = check;
+//		if (tk.isQuyen() == true) {
+//			req.getSession().setAttribute("quanly", untk);
+//			req.getSession().setAttribute("user", null);
+//		} else {
+//			req.getSession().setAttribute("quanly", null);
+//			req.getSession().setAttribute("user", untk);
+//		}
 
 		return "admin/index";
 	}

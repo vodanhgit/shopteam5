@@ -7,24 +7,25 @@
 <title>ShopTeam 5</title>
 <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
 <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
 <link rel="stylesheet"
 	href="http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100"
-	 type="text/css">
+	type="text/css">
 <link rel="stylesheet" th:href="@{/css/flexslider.css}" type="text/css"
 	media="screen" />
-<link th:href="@{/css/sequence-looptheme.css}" th:rel="stylesheet" media="all" />
+<link th:href="@{/css/sequence-looptheme.css}" th:rel="stylesheet"
+	media="all" />
 </head>
 
 <body id="home">
 	<div class="wrapper">
-<!-- 		<div class="header" th:replace="~{/home/menu::form}"> -->
-		<div class="header" th:insert="~{/home/menu.html::navbar}">
-<!-- 			<%@include file="/WEB-INF/accers/menu.jsp"%> -->
-<!-- 	<nav th:insert="~{/home/menu.html::navbar}"></nav> -->
-<!-- 	<div > </div> -->
-	
-		</div>
+		<!-- 		<div class="header" th:replace="~{/home/menu::form}"> -->
+		<div class="header" th:insert="~{/home/menu.html::navbar}"></div>
+			<!-- 			<%@include file="/WEB-INF/accers/menu.jsp"%> -->
+			<!-- 	<nav th:insert="~{/home/menu.html::navbar}"></nav> -->
+			<!-- 	<div > </div> -->
+
+		
 		<div class="clearfix"></div>
 		<div class="hom-slider">
 			<div class="container">
@@ -104,7 +105,7 @@
 		</div>
 		<div class="clearfix"></div>
 		<div class="container_fullwidth">
-		<div class="container">
+			<div class="container">
 				<div class="hot-products">
 
 					<h3 class="title">
@@ -117,57 +118,51 @@
 					<ul id="hot">
 						<li>
 							<div class="row">
-								<c:forEach var="item" items="${items}">
-									<form action="/chitietsanpham/${item.maSanPham}" method="post">
-									<input type="hidden" value="${item.maSanPham}" name="msp">
-									<div class="col-md-4 col-sm-6">
-										<div class="products">
-											<div class="thumbnail">
-<!-- 												<a href=""> <img -->
-<!-- 													src="../@{/images/products/large/${item.hinhAnh}" alt="Product Name" -->
-<!-- 													style="height: 90%;"> -->
-												</a>
-											</div>
-											<div class="productname" style="display: none;"></div>
-											<div class="productname">${item.tenSanPham}</div>
-											<h4 class="price"><fmt:formatNumber value="${item.gia}"
-													currencySymbol="VNĐ" type="currency" /></h4>
-											<h4 class="price" style="text-decoration: line-through; color: gray;"><fmt:formatNumber value="${item.giaGoc}"
-													currencySymbol="VNĐ" type="currency" /></h4>
-											<div class="button_group">
-<!-- 												<button class="button add-cart" type="button" -->
-<!-- 													formaction="/product/create">Thêm vào giỏ</button> -->
-
-											<button class="button add-cart" type="submit">Chi tiết sản phẩm</button>
-
-											</div>
+								<div class="col-md-4 col-sm-6" th:each="item : ${items}">
+									<div class="products">
+										<div class="thumbnail">
+											<!-- <a href=""> <img src="../@{/images/products/large/${item.hinhAnh}" alt="Product Name" style="height: 90%;">
+											</a>  -->
 										</div>
+										<div class="productname" style="display: none;"></div>
+										<div class="productname" th:text="${item.tenSanPham}"></div>
+										<h4 class="price">
+											<span
+												th:text="${#numbers.formatDecimal(item.gia, 0, 'COMMA', 2, 'POINT')} + ' VNĐ'"></span>
+										</h4>
+										<h4 class="price"
+											style="text-decoration: line-through; color: gray;">
+											<span
+												th:text="${#numbers.formatDecimal(item.giaGoc, 0, 'COMMA', 2, 'POINT')} + ' VNĐ'"></span>
+										</h4>
+										<center>
+											<a class="button add-cart mb-3" type="button"
+												th:href="@{/home/detail-product/{maSanPham}(maSanPham=${item.maSanPham})}">Chi
+												tiết sản phẩm</a>
+										</center>
 									</div>
-									</form>
-								</c:forEach>
+								</div>
 							</div>
 						</li>
-						
-
-
 					</ul>
 					<div style="padding-left: 50%">
-							<nav aria-label="Page
+						<nav aria-label="Page
 						navigation example">
-								<ul class="pagination">
-									<c:forEach var="i" begin="0" end="${page.totalPages +1}">
-										<a class="page-link" href="/index?n=${i}">${i+1} </a>
-									</c:forEach>
-								</ul>
-							</nav>
+							<ul class="pagination">
+								<!-- <div th:each="i : ${#numbers.sequence(0, page.totalPages + 1)}">
+									<a class="page-link" th:href="@{/home/index(n=${i})}"
+										th:text="${i + 1}"></a>
+								</div> -->
+							</ul>
+						</nav>
 
-						</div>
+					</div>
 				</div>
-
+				
+<!-- 				TRUYỀN FILE NHÃN HÀNG <div th:insert="~{/home/trademark :: trademark}"></div> -->
 
 				<div class="clearfix"></div>
 				<div class="clearfix"></div>
-				<%@include file="/WEB-INF/accers/nhanhang.jsp"%>
 			</div>
 		</div>
 		<div class="clearfix"></div>
