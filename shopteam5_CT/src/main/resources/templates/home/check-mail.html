@@ -16,7 +16,7 @@
 	<hr width="1500px">
 	<div class="box">
 		<div class="container">
-			<form action="/xacnhanma/${email}" method="post">
+			<form action="/home/check-code/${email}" method="post">
 				<div class="top">
 					<header>Quên mật khẩu</header>
 				</div>
@@ -26,10 +26,11 @@
 						th:text="'Mã email đã được gửi qua' + ${email} + ', Bạn không nhận
 						được mã?/"></label> -->
 					<!-- <input th:value="${email}" type="hidden"> <a
-						th:href="/sendemail/${email}">Gửi lại</a> -->
+						th:href="/home/send-email/{email} (email = ${email})">Gửi lại</a> -->
 				</div>
 				<br> <br>
 				<div class="input-field">
+					<input type="text" name="email" th:value="${email}" hidden/>
 					<input type="text" class="input" placeholder="Nhập mã xác nhận"
 						id="" name="maxacnhan" th:value="${param.maxacnhan}" /> <i
 						class="bx bxl-gmail"></i><br>
